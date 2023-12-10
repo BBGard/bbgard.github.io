@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {NextUIProvider} from "@nextui-org/react";
+import HeaderNavbar from '../components/HeaderNavbar.jsx';
+
 ---
+<NextUIProvider>
+	<HeaderNavbar />
+	<Layout title="Home - Benjamin Gardiner" >
+		<main >
 
-<Layout title="Home - Benjamin Gardiner">
-	<main>
+			<h1 class="main-title">Hi,<br />I'm Ben.</h1>
 
-		<h1 class="main-title">Hi,<br />I'm Ben.</h1>
-
-
-	</main>
 </Layout>
+</NextUIProvider>
 
 <style>
 	main {
@@ -32,4 +35,5 @@ import Layout from '../layouts/Layout.astro';
 		font-size: clamp(5rem, 12rem, 16rem);
     text-shadow: 6px 6px 0px rgba(100.99999999999987, 0, 255, 0.3);
 	}
+
 </style>
