@@ -1,39 +1,34 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import {NextUIProvider} from "@nextui-org/react";
-import HeaderNavbar from '../components/HeaderNavbar.jsx';
-
+import Layout from "../layouts/Layout.astro";
+import NavigationBar from "../components/NavigationBar.astro";
 ---
-<NextUIProvider>
-	<HeaderNavbar />
-	<Layout title="Home - Benjamin Gardiner" >
-		<main >
 
-			<h1 class="main-title">Hi,<br />I'm Ben.</h1>
-
+<NavigationBar />
+<Layout title="Home - Benjamin Gardiner">
+  <main>
+    <h1 class="main-title">Hi,<br />I'm Ben.</h1>
+  </main>
 </Layout>
-</NextUIProvider>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	h1 {
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
     font-family: "Aldrich", Sans-serif;
     font-weight: 600;
     line-height: 1.2em;
-	}
-	h1.main-title {
-		text-align: left;
-		color: #6EC1E4;
-		font-size: clamp(5rem, 12rem, 16rem);
+  }
+  h1.main-title {
+    text-align: left;
+    color: #6ec1e4;
+    font-size: clamp(5rem, 12rem, 16rem);
     text-shadow: 6px 6px 0px rgba(100.99999999999987, 0, 255, 0.3);
-	}
-
+  }
 </style>
