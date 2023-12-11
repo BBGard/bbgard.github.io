@@ -4,173 +4,124 @@ import "../styles/global.css";
 import headshot from "../assets/Headshot_2020_Colour.jpg";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
+const aboutText_1 = [
+  "Greetings! I'm Benjamin Gardiner, an IT graduate with a fervor for technology.",
+  "My journey involves exploring the realms of user experience, design, software engineering, and web development, where I continually evolve my skills to stay at the forefront of innovation.",
+];
+const aboutText_2 = [
+  "Welcome! I'm Benjamin Gardiner, a digital craftsman on a quest for perfection.",
+  "Armed with a degree in Information Technology, my focus extends to refining user experiences, crafting elegant designs, and mastering the intricacies of software engineering and web development.",
+];
+const aboutText_3 = [
+  "Hey there! I'm Benjamin Gardiner, a code artisan weaving digital experiences.",
+  "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
+];
 
+// Randomise the about text
+const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
+const randomIndex = Math.floor(Math.random() * aboutTexts.length);
+const aboutText = aboutTexts[randomIndex];
 ---
 
 <Layout title={pageTitle}>
   <main>
-    <section class="full-height" id="#top">
-      <h1 class="main-title">Hi,<br />I'm Ben.</h1>
+    <section class="hero-section" id="#top">
+      <h1 class="main-title show-cursor">Hi,<br />I'm Ben.</h1>
       <button class="btn btn-primary" onclick="window.location.href='#about'"
         >Learn More</button
       >
     </section>
-    <section class="full-height full-width" id="about">
-      <h2 class="secondary-title">About Ben</h2>
-      <div class="text-image-right">
+    <section id="about">
+      <h2 class="secondary-title show-cursor">About Ben</h2>
+      <div class="flex-columns">
         <div class="text-box">
           <p>
-            Benjamin Gardiner is a versatile individual who continually seeks to
-            expand his skill set and challenge his own capabilities.
+            {aboutText[0]}<br />{aboutText[1]}
           </p>
-          <p>
-            Having recently completed a Bachelor of Information Technology, he
-            continues to be engaged in learning, focusing on user experience,
-            design, software engineering, and web development, as he strives to
-            enhance his skills in these fields.
-          </p>
-          <p>
-            Ben has a keen eye for aesthetics and is proficient in a wide range
-            of design tools, software, and programming languages.
-          </p>
-          <p>
-            With a passion for excellence and a constant drive to improve, Ben
-            consistently delivers top-quality work that meets or exceeds
-            expectations.
-          </p>
+          <!-- <button class="btn btn-primary" >Shuffle</button> -->
+          <button
+            class="btn btn-primary"
+            onclick="window.location.href='#projects'">Projects</button
+          >
         </div>
         <div class="image-box">
-          <img src={headshot.src} alt="Ben Gardiner" />
+          <img class="show-cursor" src={headshot.src} alt="Ben Gardiner" />
         </div>
       </div>
     </section>
+    <section id="projects">
+      <h2 class="secondary-title">Projects</h2>
+      <div class="flex-columns">
+        <div class="text-box"></div>
+        <div class="image-box"></div>
+      </div>
+    </section>
   </main>
+
+  <style>
+    h1 {
+      font-family: var(--font-primary);
+      font-weight: 600;
+      line-height: 1.2em;
+      margin: 0;
+    }
+    h1.main-title {
+      text-align: left;
+      color: var(--primary);
+      font-size: clamp(5rem, 10rem, 12rem);
+      text-shadow: 6px 6px 0px var(--accent-transparent);
+      transition: all 0.2s ease-in-out;
+    }
+
+    h2.secondary-title {
+      font-family: var(--font-primary);
+      font-weight: 600;
+      line-height: 1.2em;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--primary);
+      font-size: clamp(3rem, 6rem, 8rem);
+      text-shadow: 6px 6px 0px var(--accent-transparent);
+      transition: all 0.2s ease-in-out;
+    }
+
+    @media screen and (max-width: 800px) {
+    }
+
+    .text-box {
+      width: 60%;
+      padding: 2rem;
+      font-size: 1.5rem;
+      line-height: 1.5em;
+    }
+
+    .image-box {
+      width: 40%;
+      padding: 2rem;
+    }
+
+    .image-box img {
+      border: 4px solid var(--primary);
+      box-shadow: 6px 6px 0px var(--accent-transparent);
+      border-radius: 50%;
+      width: 100%;
+      /* Initially black and white */
+      filter: grayscale(100%);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .image-box img:hover {
+      filter: grayscale(0%);
+      box-shadow: 3px 3px 0px var(--accent-color-transparent);
+    }
+
+    .main-title:hover,
+    .secondary-title:hover {
+      text-shadow: 3px 3px 0px var(--accent-color-transparent);
+    }
+
+    .btn-primary {
+      margin-top: 2rem;
+    }
+  </style>
 </Layout>
-
-<style>
-  h1 {
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: 1.2em;
-    margin: 0;
-  }
-  h1.main-title {
-    text-align: left;
-    color: var(--primary);
-    font-size: clamp(5rem, 10rem, 12rem);
-    text-shadow: 6px 6px 0px var(--accent-transparent);
-    transition: all 0.2s ease-in-out;
-  }
-
-  h2.secondary-title {
-    font-family: var(--font-primary);
-    font-weight: 600;
-    line-height: 1.2em;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--primary);
-    font-size: clamp(3rem, 6rem, 8rem);
-    text-shadow: 6px 6px 0px var(--accent-transparent);
-    transition: all 0.2s ease-in-out;
-  }
-
-  .text-image-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-	@media screen and (max-width: 800px) {
-		.text-image-right {
-			flex-direction: column;
-		}
-
-		.text-box {
-			width: 100%;
-			padding: 2rem;
-			font-size: 1.5rem;
-			line-height: 1.5em;
-		}
-
-		.image-box {
-			width: 100%;
-			padding: 2rem;
-			/* Initially black and white */
-			filter: grayscale(100%);
-			transition: all 0.2s ease-in-out;
-		}
-
-		.text-image-right:hover .image-box {
-			filter: grayscale(0%);
-		}
-
-		.image-box img {
-			border-radius: 25px;
-			width: 100%;
-		}
-
-		.main-title {
-			text-align: center;
-		}
-
-		.secondary-title {
-			text-align: center;
-		}
-
-		.btn-primary {
-			margin-top: 2rem;
-		}
-
-		/* .full-height {
-			height: auto;
-		} */
-
-		.full-width {
-			width: 100%;
-		}
-
-
-	}
-
-	.text-box {
-		width: 60%;
-		padding: 2rem;
-		font-size: 1.5rem;
-		line-height: 1.5em;
-	}
-
-	.image-box {
-		width: 40%;
-		padding: 2rem;
-		/* Initially black and white */
-		filter: grayscale(100%);
-		transition: all 0.2s ease-in-out;
-	}
-
-	.text-image-right:hover .image-box {
-		filter: grayscale(0%);
-	}
-
-	.image-box img {
-		border-radius: 25px;
-		width: 100%;
-	}
-
-  .main-title:hover,
-  .secondary-title:hover {
-    text-shadow: 3px 3px 0px var(--accent-color-transparent);
-  }
-
-  .full-height {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-  .btn-primary {
-    margin-top: 2rem;
-  }
-</style>
