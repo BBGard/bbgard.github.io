@@ -1,37 +1,161 @@
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Begin of custom styles */
+
 :root {
-  --accent: 136, 58, 234;
-  --accent-light: 224, 204, 250;
-  --accent-dark: 49, 10, 101;
-  --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
-  );
+  /* Define variables */
+/* Theme: elegant newspaper style */
+/* Colors */
+--primary: #000000;
+--secondary: #ffffff;
+--accent: #4c4c4c;
+--accent-transparent: rgba(76, 76, 76, 0.6);
+--accent-color: #a800ab;
+--accent-color-transparent: rgba(168, 0, 171, 0.6);
+--background-light: #ffffff;
+--background-dark: #000000;
+
+
+
+/* Fonts */
+--font-primary: 'Montserrat', sans-serif;
+--font-secondary: 'Montserrat', sans-serif;
+--font-accent: 'Montserrat', sans-serif;
+--font-logo: 'Indie Flower', sans-serif;
+
+/* Font sizes */
+--font-size-1: 2rem;
+--font-size-2: 1.5rem;
+--font-size-3: 1.25rem;
+--font-size-4: 1rem;
+--font-size-5: 0.875rem;
+--font-size-6: 0.75rem;
+
 }
 
 * {
   box-sizing: border-box;
 }
 
+
+
 html {
-  font-family: Montserrat, system-ui, sans-serif;
-  background-color: #0D192E;
+  font-family: var(--font-primary);
+  background-color: var(--background-light);
   background-size: 224px;
+  scroll-behavior: smooth;
 }
 
 main {
   margin: auto;
   padding: 1rem;
-  width: 800px;
-  max-width: calc(100% - 2rem);
-  color: white;
+  width: 100%;
+  max-width: 1200px;
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
 section {
-  /* margin: 2rem 0; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -40,6 +164,11 @@ section {
 section.full-height {
   height: 100%;
   min-height: 70svh;
+}
+
+section.full-width {
+  width: 100%;
+  padding: 0 1rem;
 }
 
 code {
@@ -55,54 +184,56 @@ code {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--font-size-1);
   font-weight: 700;
   margin: 0;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-2);
   font-weight: 600;
   margin: 0;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: var(--font-size-3);
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: var(--font-size-4);
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
 }
 
 h5 {
-  font-size: 0.875rem;
+  font-size: var(--font-size-5);
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
 }
 
 h6 {
-  font-size: 0.75rem;
+  font-size: var(--font-size-6);
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
 }
 
 p {
+  font-family: var(--font-primary);
   margin: 0;
   margin-bottom: 1rem;
+  font-size: var(--font-size-3);
 }
 
 a {
-  color: rgb(var(--accent));
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -131,113 +262,31 @@ blockquote {
   border-left: 0.25rem solid rgb(var(--accent));
 }
 
-/* nav styles */
-.hamburger {
-  display: none;
-  position: absolute;
-  right: 0;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.hamburger .line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #ffffff;
-}
-
-.hamburger.is-active .line:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.is-active .line:nth-child(1) {
-  transform: rotate(-45deg) translate(-11px, 10px);
-}
-
-.hamburger.is-active .line:nth-child(3) {
-  transform: rotate(45deg) translate(-11px, -10px);
-}
-
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0D192E;
-  color: #fff;
-  padding: 1rem;
-  margin: 0;
-}
-
-.navbar .logo {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .logo .logo-text {
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: none;
-  color: #fff;
-  /* TODO get fonts working */
-}
-
-.logo img {
-  width: 100px;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-
-.nav-links li {
-  list-style: none;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-divider {
-  width: 100%;
-  height: 4px;
-  background-color: #f9de15;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-.expanded {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #0D192E;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  padding: 0;
-  font-size: 2rem;
-}
 
 /* No scroll when menu open */
 .no-scroll {
   overflow: hidden;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 0.125rem solid var(--accent);
+  background-color: var(--accent);
+  color: var(--secondary);
+  text-decoration: none;
+  text-align: center;
+  font-size: var(--font-size-4);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px var(--accent-transparent);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+  color: var(--accent);
+  box-shadow: 3px 3px 0px var(--accent-color-transparent);
 }
