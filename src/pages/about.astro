@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+
+const pageTitle = "About Ben";
+
+const identity = {
+  name: "Benjamin Gardiner",
+  title: "Software Engineer",
+  location: "Daylesford, Australia",
+  email: "ben.b.gardiner@gmail.com",
+};
+
+const socialLinks = {
+  github: "github.com/bbgard",
+  linkedin: "https://www.linkedin.com/in/benjamin-gardiner-6b8478263/",
+};
+
+const skills = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "React",
+  "Node.js",
+  "Java",
+  "Git",
+  "Wordpress",
+  "GraphQL",
+  "Firebase",
+  "PostgreSQL",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "green";
+---
+
+<Layout title={pageTitle}>
+  <main>
+    <section class="full-height">
+
+    <h1>About Ben</h1>
+    <p>
+      {identity.name} is a versatile individual who continually seeks to expand
+      his skill set and challenge his own capabilities.<br /><br />
+       Having recently completed a Bachelor of Information Technology, he
+      continues to be engaged in learning, focusing on user experience, design,
+      software engineering, and web development, as he strives to enhance his
+      skills in these fields.
+      <br /><br />
+       Ben has a keen eye for aesthetics and is proficient in a wide range of
+      design tools, software, and programming languages.
+      <br /><br />
+       With a passion for excellence and a constant drive to improve, Ben
+      consistently delivers top-quality work that meets or exceeds expectations.
+    </p>
+    <p>Some of Ben's skills:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+    </section>
+  </main>
+</Layout>
+
+<style define:vars={{ skillColor }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+</style>

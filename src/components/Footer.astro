@@ -1,0 +1,21 @@
+---
+import Social from './Social.astro';
+import githubIcon from '../assets/github-mark-white.png';
+import linkedinIcon from '../assets/LinkedIn_icon.svg';
+---
+
+<footer>
+  <Social icon={githubIcon} platform="GitHub" username="bbgard"/>
+  <Social icon={linkedinIcon} platform="LinkedIn" username="in/benjamin-gardiner-6b8478263/"/>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
