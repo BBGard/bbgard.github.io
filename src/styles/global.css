@@ -158,6 +158,8 @@ main {
   max-width: 1200px;
 }
 
+/* Sections */
+
 section {
   height: 100svh;
   display: flex;
@@ -180,15 +182,82 @@ section {
 }
 
 
-
-/* section.full-height {
-  height: 100svh;
+h2.secondary-title {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2em;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary);
+  font-size: clamp(3rem, 6rem, 8rem);
+  text-shadow: 6px 6px 0px var(--accent-transparent);
+  transition: all 0.2s ease-in-out;
 }
 
-section.full-width {
+.text-box {
+  width: 60%;
+  padding: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+
+.image-box {
+  width: 40%;
+  padding: 2rem;
+}
+
+.image-box img {
+  border: 4px solid var(--primary);
+  box-shadow: 6px 6px 0px var(--accent-transparent);
+  border-radius: 50%;
   width: 100%;
-  padding: 0 1rem;
-} */
+  /* Initially black and white */
+  filter: grayscale(100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.image-box img:hover {
+  filter: grayscale(0%);
+  box-shadow: 3px 3px 0px var(--accent-color-transparent);
+}
+
+.secondary-title:hover {
+  text-shadow: 3px 3px 0px var(--accent-color-transparent);
+}
+
+@media screen and (max-width: 800px) {
+  section {
+   display: block;
+   margin: 0 auto;
+   text-align: center;
+   height: 100%;
+   min-height: 100svh;
+   margin-bottom: 20%;
+  }
+
+  .flex-columns {
+    flex-direction: column-reverse;
+    height: 100%;
+    width: 100%;
+    }
+
+    .text-box, .image-box {
+      width: 100%;
+    }
+
+}
+
+
+/* End Sections */
+
+
+article {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Text */
 
 code {
   font-family:
@@ -281,11 +350,7 @@ blockquote {
   border-left: 0.25rem solid rgb(var(--accent));
 }
 
-
-/* No scroll when menu open */
-.no-scroll {
-  overflow: hidden;
-}
+/* End Text */
 
 /* Buttons */
 .btn {
@@ -310,12 +375,16 @@ blockquote {
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
 }
+/* End Button */
+
+
+/* Helper Classes */
 
 .show-cursor {
   cursor: pointer;
 }
 
-article {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+/* No scroll when menu open */
+.no-scroll {
+  overflow: hidden;
 }
