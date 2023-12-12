@@ -308,20 +308,14 @@ blockquote {
   background-color: var(--secondary);
   color: var(--accent);
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
+  transform: translate(2px, 2px);
 }
 
 .show-cursor {
   cursor: pointer;
 }
 
-h2.secondary-title {
-  font-family: var(--font-primary);
-  font-weight: 600;
-  line-height: 1.2em;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--primary);
-  font-size: clamp(3rem, 6rem, 8rem);
-  text-shadow: 6px 6px 0px var(--accent-transparent);
-  transition: all 0.2s ease-in-out;
+article {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }

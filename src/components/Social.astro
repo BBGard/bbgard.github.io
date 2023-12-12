@@ -1,7 +1,8 @@
 ---
-const {icon, platform, username } = Astro.props;
+const { icon, invert, platform, username } = Astro.props;
 ---
-<div class="flex items-center">
+
+<div class={invert ? "footer-logo-box invert" : "footer-logo-box"}>
   <div class="mr-2">
     <img src={icon.src} alt={platform} />
   </div>
@@ -9,37 +10,56 @@ const {icon, platform, username } = Astro.props;
     <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
   </div>
 
-<style>
-  a {
-    color: white;
-    text-decoration: none;
-  }
+  <style>
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
 
-  a:hover {
-    text-decoration: underline;
-  }
+    a:hover {
+      text-decoration: underline;
+    }
 
-  img {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
 
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .footer-logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      border: 0.125rem solid var(--accent);
+      background-color: var(--accent);
+      text-decoration: none;
+      text-align: center;
+      font-size: var(--font-size-4);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 6px 6px 0px var(--accent-transparent);
+      transition: all 0.2s ease-in-out;
+    }
 
-  }
+    .footer-logo-box:hover {
+      background-color: var(--secondary);
+      box-shadow: 3px 3px 0px var(--accent-color-transparent);
+      transform: translate(2px, 2px);
+    }
 
-  .mr-2 {
-    margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
+    .footer-logo-box:hover a {
+      color: var(--accent);
+    }
 
-  }
+    .footer-logo-box.invert:hover img {
+      filter: invert(1);
+    }
 
-  .items-center {
-    padding: 0.5rem 1rem;
-    align-items: center;
-  }
-</style>
+    .mr-2 {
+      margin-right: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</div>

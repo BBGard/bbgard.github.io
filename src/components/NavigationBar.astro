@@ -65,6 +65,14 @@ const Navbar = {
     font-weight: 400;
     text-decoration: none;
     color: var(--accent);
+    text-shadow: 1px 1px 0px var(--accent-transparent);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .navbar .logo .logo-text:hover {
+    color: var(--primary);
+    text-shadow: 1px 1px 0px var(--accent-color-transparent);
+    transform: translate(2px, 2px);
   }
 
   .logo img {
@@ -82,6 +90,26 @@ const Navbar = {
   .nav-links li {
     list-style: none;
     margin: 0;
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--accent-transparent);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-links li:hover {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow:
+      1px 1px 0px var(--accent-color-transparent),
+      -1px -1px 0px var(--accent-transparent);
+    transition: all 0.2s ease-in-out;
+
+    transform: translate(2px, 2px);
   }
 
   .nav-links a {
@@ -93,8 +121,9 @@ const Navbar = {
 
   .nav-divider {
     width: 100%;
-    height: 4px;
+    height: 2px;
     background-color: var(--accent);
+    box-shadow: 2px 2px 0px var(--accent-transparent);
     margin: 0;
   }
 
@@ -119,7 +148,7 @@ const Navbar = {
     padding: 0;
   }
 
-  .expanded li a{
+  .expanded li a {
     font-size: 3rem;
     line-height: 5rem;
   }
