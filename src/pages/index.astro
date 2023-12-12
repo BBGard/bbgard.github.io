@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../layouts/HeroSectionFull.astro";
 import ImgTextSectionFull from "../layouts/ImgTextSectionFull.astro";
+import githubIcon from "../assets/github-mark-white.png";
+import linkedinIcon from "../assets/LinkedIn_icon.svg";
+import Social from "../components/Social.astro";
 import "../styles/global.css";
 import headshot from "../assets/Headshot_2020_Colour.jpg";
 
@@ -33,6 +36,7 @@ const aboutText = aboutTexts[randomIndex];
         >Learn More</button
       >
     </HeroSectionFull>
+
     <ImgTextSectionFull
       id="about"
       title="About Ben"
@@ -42,26 +46,56 @@ const aboutText = aboutTexts[randomIndex];
       <p>
         {aboutText[0]}<br />{aboutText[1]}
       </p>
-      <button class="btn btn-primary" onclick="window.location.href='#projects'"
-        >Projects</button
-      >
+      <div class="button-group">
+        <Social
+          icon={githubIcon}
+          invert={true}
+          platform="GitHub"
+          username="bbgard"
+        />
+        <button
+          class="btn btn-primary"
+          onclick="window.location.href='#projects'">Projects</button
+        >
+        <Social
+          icon={linkedinIcon}
+          platform="LinkedIn"
+          username="in/benjamin-gardiner-6b8478263/"
+        />
+      </div>
     </ImgTextSectionFull>
     <ImgTextSectionFull id="projects" title="Projects">
       <p>Coming Soon...</p>
     </ImgTextSectionFull>
-		<ImgTextSectionFull id="contact" title="Contact">
-			<p>Coming Soon...</p>
-		</ImgTextSectionFull>
+    <ImgTextSectionFull id="contact" title="Contact">
+      <p>Coming Soon...</p>
+    </ImgTextSectionFull>
   </main>
 </Layout>
 
 <style>
+  .main-title {
+    text-align: left;
+		margin-bottom: 2rem;
+  }
 
-	.main-title {
-		text-align: left;
-	}
+  .btn-primary {
+    /* margin-top: 2rem; */
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
 
-	.btn-primary {
-		margin-top: 2rem;
-	}
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .btn-primary {
+      font-size: 1rem;
+    }
+  }
 </style>

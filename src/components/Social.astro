@@ -3,10 +3,12 @@ const { icon, invert, platform, username } = Astro.props;
 ---
 
 <div class={invert ? "footer-logo-box invert" : "footer-logo-box"}>
-  <div class="mr-2">
-    <img src={icon.src} alt={platform} />
+  <div class="mr-2 icon">
+    <a href={`https://www.${platform}.com/${username}`} target="_blank">
+      <img src={icon.src} alt={platform} />
+    </a>
   </div>
-  <div>
+  <div class="link">
     <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
   </div>
 
@@ -56,10 +58,26 @@ const { icon, invert, platform, username } = Astro.props;
       filter: invert(1);
     }
 
-    .mr-2 {
+    .mr-2 a {
       margin-right: 0.5rem;
       display: flex;
       align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .link {
+        display: none;
+      }
+
+      .footer-logo-box {
+        padding: 0.5rem;
+     }
+      .icon a {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   </style>
 </div>
