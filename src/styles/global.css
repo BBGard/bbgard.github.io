@@ -313,3 +313,15 @@ blockquote {
 .show-cursor {
   cursor: pointer;
 }
+
+h2.secondary-title {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2em;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary);
+  font-size: clamp(3rem, 6rem, 8rem);
+  text-shadow: 6px 6px 0px var(--accent-transparent);
+  transition: all 0.2s ease-in-out;
+}

@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeroSectionFull from "../layouts/HeroSectionFull.astro";
+import ImgTextSectionFull from "../layouts/ImgTextSectionFull.astro";
 import "../styles/global.css";
 import headshot from "../assets/Headshot_2020_Colour.jpg";
 
@@ -25,37 +27,28 @@ const aboutText = aboutTexts[randomIndex];
 
 <Layout title={pageTitle}>
   <main>
-    <section class="hero-section" id="#top">
+    <HeroSectionFull>
       <h1 class="main-title show-cursor">Hi,<br />I'm Ben.</h1>
       <button class="btn btn-primary" onclick="window.location.href='#about'"
         >Learn More</button
       >
-    </section>
-    <section id="about">
-      <h2 class="secondary-title show-cursor">About Ben</h2>
-      <div class="flex-columns">
-        <div class="text-box">
-          <p>
-            {aboutText[0]}<br />{aboutText[1]}
-          </p>
-          <!-- <button class="btn btn-primary" >Shuffle</button> -->
-          <button
-            class="btn btn-primary"
-            onclick="window.location.href='#projects'">Projects</button
-          >
-        </div>
-        <div class="image-box">
-          <img class="show-cursor" src={headshot.src} alt="Ben Gardiner" />
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      <h2 class="secondary-title">Projects</h2>
-      <div class="flex-columns">
-        <div class="text-box"></div>
-        <div class="image-box"></div>
-      </div>
-    </section>
+    </HeroSectionFull>
+    <ImgTextSectionFull
+      id="about"
+      title="About Ben"
+      imgSrc={headshot.src}
+      imgAlt="Image of Ben"
+    >
+      <p>
+        {aboutText[0]}<br />{aboutText[1]}
+      </p>
+      <button class="btn btn-primary" onclick="window.location.href='#projects'"
+        >Projects</button
+      >
+    </ImgTextSectionFull>
+    <ImgTextSectionFull id="projects" title="Projects">
+      <p>Coming Soon...</p>
+    </ImgTextSectionFull>
   </main>
 
   <style>
@@ -73,50 +66,10 @@ const aboutText = aboutTexts[randomIndex];
       transition: all 0.2s ease-in-out;
     }
 
-    h2.secondary-title {
-      font-family: var(--font-primary);
-      font-weight: 600;
-      line-height: 1.2em;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--primary);
-      font-size: clamp(3rem, 6rem, 8rem);
-      text-shadow: 6px 6px 0px var(--accent-transparent);
-      transition: all 0.2s ease-in-out;
-    }
-
     @media screen and (max-width: 800px) {
     }
 
-    .text-box {
-      width: 60%;
-      padding: 2rem;
-      font-size: 1.5rem;
-      line-height: 1.5em;
-    }
-
-    .image-box {
-      width: 40%;
-      padding: 2rem;
-    }
-
-    .image-box img {
-      border: 4px solid var(--primary);
-      box-shadow: 6px 6px 0px var(--accent-transparent);
-      border-radius: 50%;
-      width: 100%;
-      /* Initially black and white */
-      filter: grayscale(100%);
-      transition: all 0.2s ease-in-out;
-    }
-
-    .image-box img:hover {
-      filter: grayscale(0%);
-      box-shadow: 3px 3px 0px var(--accent-color-transparent);
-    }
-
-    .main-title:hover,
-    .secondary-title:hover {
+    .main-title:hover {
       text-shadow: 3px 3px 0px var(--accent-color-transparent);
     }
 
