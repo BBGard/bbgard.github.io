@@ -7,7 +7,7 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
- *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
   all: unset;
   display: revert;
 }
@@ -107,32 +107,35 @@ meter {
 
 :root {
   /* Define variables */
-/* Theme: elegant newspaper style */
-/* Colors */
---primary: #000000;
---secondary: #ffffff;
---accent: #4c4c4c;
---accent-transparent: rgba(76, 76, 76, 0.6);
---accent-color: #a800ab;
---accent-color-transparent: rgba(168, 0, 171, 0.6);
---background-light: #ffffff;
---background-dark: #000000;
+  /* Theme: elegant newspaper style */
+  /* Colors */
+  --primary: #000000;
+  --secondary: #ffffff;
+  --accent: #4c4c4c;
+  --accent-transparent: rgba(76, 76, 76, 0.6);
+  --accent-color: #a800ab;
+  --accent-color-transparent: rgba(168, 0, 171, 0.6);
+  --background-light: #ffffff;
+  --background-dark: #000000;
 
 
 
-/* Fonts */
---font-primary: 'Montserrat', sans-serif;
---font-secondary: 'Montserrat', sans-serif;
---font-accent: 'Montserrat', sans-serif;
---font-logo: 'Indie Flower', sans-serif;
+  /* Fonts */
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --font-accent: 'Montserrat', sans-serif;
+  --font-logo: 'Indie Flower', sans-serif;
+  --font-code: 'Fira Code', monospace;
 
-/* Font sizes */
---font-size-1: 2rem;
---font-size-2: 1.5rem;
---font-size-3: 1.25rem;
---font-size-4: 1rem;
---font-size-5: 0.875rem;
---font-size-6: 0.75rem;
+  /* Font sizes */
+  --font-size-1: 2rem;
+  --font-size-2: 1.5rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1rem;
+  --font-size-5: 0.875rem;
+  --font-size-6: 0.75rem;
+  --font-size-dynamic-1: clamp(5rem, 30vw, 10rem);
+  --font-size-dynamic-2: clamp(3rem, 15vw, 6rem);
 
 }
 
@@ -181,19 +184,6 @@ section {
   align-items: center;
 }
 
-
-h2.secondary-title {
-  font-family: var(--font-primary);
-  font-weight: 600;
-  line-height: 1.2em;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--primary);
-  font-size: clamp(3rem, 6rem, 8rem);
-  text-shadow: 6px 6px 0px var(--accent-transparent);
-  transition: all 0.2s ease-in-out;
-}
-
 .text-box {
   width: 60%;
   padding: 2rem;
@@ -221,29 +211,26 @@ h2.secondary-title {
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
 }
 
-.secondary-title:hover {
-  text-shadow: 3px 3px 0px var(--accent-color-transparent);
-}
-
 @media screen and (max-width: 800px) {
   section {
-   display: block;
-   margin: 0 auto;
-   text-align: center;
-   height: 100%;
-   min-height: 100svh;
-   margin-bottom: 20%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+    min-height: 100svh;
+    margin-bottom: 20%;
   }
 
   .flex-columns {
     flex-direction: column-reverse;
     height: 100%;
     width: 100%;
-    }
+  }
 
-    .text-box, .image-box {
-      width: 100%;
-    }
+  .text-box, .image-box {
+    width: 100%;
+    text-align: left;
+  }
 
 }
 
@@ -259,30 +246,37 @@ article {
 
 /* Text */
 
-code {
-  font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace;
-}
-
 h1 {
-  font-size: var(--font-size-1);
-  font-weight: 700;
+  font-size: var(--font-size-dynamic-1);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2em;
   margin: 0;
   margin-bottom: 1rem;
+  text-shadow: 6px 6px 0px var(--accent-transparent);
+	transition: all 0.2s ease-in-out;
+}
+
+h1:hover {
+  text-shadow: 3px 3px 0px var(--accent-color-transparent);
 }
 
 h2 {
-  font-size: var(--font-size-2);
-  font-weight: 600;
+  font-size: var(--font-size-dynamic-2);
   margin: 0;
   margin-bottom: 1rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2em;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary);
+  text-shadow: 4px 4px 0px var(--accent-transparent);
+  transition: all 0.2s ease-in-out;
+}
+
+h2:hover {
+  text-shadow: 2px 2px 0px var(--accent-color-transparent);
 }
 
 h3 {
@@ -375,6 +369,7 @@ blockquote {
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
 }
+
 /* End Button */
 
 
