@@ -7,7 +7,7 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
   all: unset;
   display: revert;
 }
@@ -157,140 +157,49 @@ html, body {
 }
 
 main {
-  margin: 0 auto;
   padding: 1rem;
+  margin: 2rem 0;
   width: 100%;
   max-width: 1200px;
 }
 
-/* Sections */
-
 section {
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
-
-.hero-section {
-  /* padding-top: 10%; */
-  /* justify-content: flex-start; */
-  margin-top: -10%;
-}
-
-
-.flex-columns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.text-box {
-  width: 60%;
-  padding: 2rem;
-  font-size: 1.5rem;
-  line-height: 1.5em;
-}
-
-.image-box {
-  width: 40%;
-  padding: 2rem;
-}
-
-.image-box img {
-  border: 4px solid var(--primary);
-  box-shadow: 6px 6px 0px var(--accent-transparent);
-  border-radius: 50%;
-  width: 100%;
-  /* Initially black and white */
-  filter: grayscale(100%);
-  transition: all 0.2s ease-in-out;
-}
-
-.image-box img:hover {
-  filter: grayscale(0%);
-  box-shadow: 3px 3px 0px var(--accent-color-transparent);
-}
-
-@media screen and (max-width: 800px) {
-  section {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    height: 100%;
-    min-height: 100svh;
-    margin-bottom: 20%;
-  }
-
-  .hero-section {
-    margin-top: 0;
-  }
-
-  .flex-columns {
-    flex-direction: column-reverse;
-    height: 100%;
-    width: 100%;
-  }
-
-  .text-box, .image-box {
-    width: 100%;
-    text-align: left;
-  }
-
-}
-
-
-/* End Sections */
-
 
 article {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 
 /* Text */
 
 h1 {
-  font-size: var(--font-size-dynamic-1);
+  font-size: var(--font-size-1);
   font-family: var(--font-primary);
   font-weight: 600;
-  line-height: 1.2em;
   margin: 0;
   margin-bottom: 1rem;
-  text-shadow: 6px 6px 0px var(--accent-transparent);
-  transition: all 0.2s ease-in-out;
 }
 
-h1:hover {
-  text-shadow: 3px 3px 0px var(--accent-color-transparent);
-}
 
 h2 {
-  font-size: var(--font-size-dynamic-2);
-  margin: 0;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-2);
   font-family: var(--font-primary);
   font-weight: 600;
-  line-height: 1.2em;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--primary);
-  text-shadow: 4px 4px 0px var(--accent-transparent);
-  transition: all 0.2s ease-in-out;
+  margin: 2rem 0 1rem 0;
 }
 
-h2:hover {
-  text-shadow: 2px 2px 0px var(--accent-color-transparent);
-}
+
 
 h3 {
   font-size: var(--font-size-3);
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
+
 }
 
 h4 {
@@ -318,16 +227,35 @@ p {
   font-family: var(--font-primary);
   margin: 0;
   margin-bottom: 1rem;
-  font-size: var(--font-size-3);
 }
 
 a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin: 0.25em;
+  border: dotted 1px #a1a1a1;
+  border-radius: .5em;
+  padding: .5em 1em;
+  font-size: 1.15em;
+  background-color: #F8FCFD;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+ol {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
+  list-style-type: decimal;
 }
 
 ul {

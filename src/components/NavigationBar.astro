@@ -7,8 +7,7 @@ const Navbar = {
     { text: "About", url: "#about" },
     { text: "Projects", url: "#projects" },
     { text: "Contact", url: "#contact" },
-    { text: "AboutPage", url: "/about" },
-    { text: "BlogPage", url: "/blog" },
+    { text: "Blog", url: "/blog" },
   ],
 };
 ---
@@ -29,12 +28,9 @@ const Navbar = {
     <li>
       <a href={Navbar.links[2].url}>{Navbar.links[2].text}</a>
     </li>
-    <!-- <li>
+    <li>
       <a href={Navbar.links[3].url}>{Navbar.links[3].text}</a>
     </li>
-    <li>
-      <a href={Navbar.links[4].url}>{Navbar.links[4].text}</a>
-    </li> -->
   </ul>
   <Hamburger />
 </nav>
