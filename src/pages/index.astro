@@ -5,6 +5,7 @@ import ImgTextSectionFull from "../layouts/ImgTextSectionFull.astro";
 import githubIcon from "../assets/github-mark-white.png";
 import linkedinIcon from "../assets/LinkedIn_icon.svg";
 import Social from "../components/Social.astro";
+import Card from "../components/Card.astro";
 import "../styles/global.css";
 import headshot from "../assets/Headshot_2020_Colour.jpg";
 
@@ -66,7 +67,12 @@ const aboutText = aboutTexts[randomIndex];
 
     </ImgTextSectionFull>
     <ImgTextSectionFull id="projects" title="Projects">
-      <p>Coming Soon...</p>
+      <Card
+        title="HOSPFLOW - The Hospitality Management App"
+        info="Bachelor of I.T. Capstone Project. I served as the lead developer for a web application aimed at enhancing hospitality operations. React.js for the front-end and Amazon’s AWS Amplify for the back-end infrastructure."
+        tags={["React.js", "AWS Amplify", "GraphQL", "Node.js", "MongoDB"]}
+        link="www.hospflow.app"
+      />
     </ImgTextSectionFull>
     <ImgTextSectionFull id="contact" title="Contact">
       <p>Coming Soon...</p>

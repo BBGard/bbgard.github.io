@@ -19,7 +19,7 @@ interface Props {
 const { id = "", title = "", reverse = false, imgSrc = "", imgAlt = "" } = Astro.props;
 ---
 
-<section id={id}>
+<section id={id} class="test">
   <h2 class="secondary-title show-cursor">{title}</h2>
   <div class={reverse ? "flex-columns-reverse" : "flex-columns"}>
     <div class="text-box">

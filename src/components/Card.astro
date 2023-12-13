@@ -1,0 +1,108 @@
+---
+interface Props {
+  title?: string;
+  info?: string;
+  tags?: string[];
+  link?: string;
+}
+
+const {
+  title = "",
+  info = "",
+  tags = [],
+  link,
+} = Astro.props;
+
+---
+
+<div class="cards">
+  <article class="card">
+    {
+      tags ? (
+        <div class="tags">
+          {tags.map((tag) => (
+            <a class="tag" href={`/tags/${tag}`}>
+              {tag}
+            </a>
+          ))}
+        </div>
+      ) : null
+    }
+    <h3 class="title">{title}</h3>
+    <p class="info">{info}</p>
+    {link ? (
+      <button class="btn card-btn" onclick={`window.open('${link}', '_blank')`}>
+       Read More
+      </button>
+    ) : null}
+  </article>
+</div>
+
+
+
+<style>
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+  }
+  .card {
+    border-radius: 0.25rem;
+    border: 0.125rem solid var(--accent);
+    color: var(--primary);
+    box-shadow: 6px 6px 0px var(--accent-transparent);
+    background-color: var(--secondary);
+    padding: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    box-shadow: 3px 3px 0px var(--accent-color-transparent);
+    transform: translate(2px, 2px);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    font-size: var(--font-size-6);
+    background-color: var(--accent);
+    box-shadow: 2px 2px 0px var(--accent-transparent);
+    border: 0.125rem solid var(--accent);
+
+    color: var(--secondary);
+    font-weight: 600;
+    padding: 0.5em 0.75em;
+    line-height: 1;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .tag:hover {
+    text-decoration: none;
+    background-color: var(--secondary);
+    color: var(--primary);
+    box-shadow: 1px 1px 0px var(--accent-color-transparent);
+    transform: translate(1px, 1px);
+  }
+  .title {
+    font-size: var(--font-size-3);
+    color: var(--primary);
+    line-height: 1.25;
+    margin-top: 2rem;
+    font-weight: 600;
+  }
+
+  .info {
+    font-size: var(--font-size-4);
+  }
+
+</style>
