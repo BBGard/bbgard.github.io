@@ -366,7 +366,7 @@ blockquote {
   font-size: var(--font-size-4);
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 6px 6px 0px var(--accent-transparent);
+  box-shadow: 4px 4px 0px var(--accent-transparent);
   transition: all 0.2s ease-in-out;
 }
 
