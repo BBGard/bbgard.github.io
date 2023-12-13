@@ -194,12 +194,12 @@ section {
   line-height: 1.5em;
 }
 
-.image-box {
+.headshot {
   width: 40%;
   padding: 2rem;
 }
 
-.image-box img {
+.headshot img {
   border: 4px solid var(--primary);
   box-shadow: 6px 6px 0px var(--accent-transparent);
   border-radius: 50%;
@@ -209,10 +209,29 @@ section {
   transition: all 0.2s ease-in-out;
 }
 
-.image-box img:hover {
+.headshot img:hover {
   filter: grayscale(0%);
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
 }
+
+.image-box {
+  width: 40%;
+  padding: 2rem;
+}
+
+.image-box img {
+  max-width: 300px;
+  filter: grayscale(100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.image-box img:hover {
+  filter: grayscale(0%);
+ translate: 2px 2px;
+}
+
+
+
 
 @media screen and (max-width: 800px) {
   section {

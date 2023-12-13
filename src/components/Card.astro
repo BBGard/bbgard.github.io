@@ -6,6 +6,7 @@ interface Props {
   link?: string;
 }
 
+
 const {
   title = "",
   info = "",
@@ -21,7 +22,7 @@ const {
       tags ? (
         <div class="tags">
           {tags.map((tag) => (
-            <a class="tag" href={`/tags/${tag}`}>
+            <a class="tag" href={`/tags/${tag.toLowerCase()}`}>
               {tag}
             </a>
           ))}
