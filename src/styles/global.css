@@ -123,10 +123,9 @@ meter {
 
 
   /* Fonts */
-  --font-primary: 'Montserrat', sans-serif;
-  --font-secondary: 'Montserrat', sans-serif;
-  --font-accent: 'Montserrat', sans-serif;
-  --font-logo: 'Indie Flower', sans-serif;
+  --font-primary: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-logo:  'Nimbus Mono PS', 'Courier New', monospace;
+  /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
   --font-code: 'Fira Code', monospace;
 
   /* Font sizes */
@@ -217,6 +216,8 @@ section {
 .image-box {
   width: 40%;
   padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .image-box img {
@@ -253,9 +254,14 @@ section {
     width: 100%;
   }
 
-  .text-box, .image-box {
+  .text-box {
     width: 100%;
     text-align: left;
+  }
+
+  .image-box {
+    width: 100%;
+
   }
 
 }

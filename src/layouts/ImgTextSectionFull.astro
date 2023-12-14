@@ -14,9 +14,10 @@ interface Props {
   reverse?: boolean;
   imgSrc?: string;
   imgAlt?: string;
+  imgLink?: string;
 }
 
-const { id = "", title = "", reverse = false, imgSrc = "", imgAlt = "" } = Astro.props;
+const { id = "", title = "", reverse = false, imgSrc = "", imgAlt = "", imgLink="" } = Astro.props;
 ---
 
 <section id={id}>
@@ -26,8 +27,8 @@ const { id = "", title = "", reverse = false, imgSrc = "", imgAlt = "" } = Astro
       <!-- Text/buttons etc inserted here -->
       <slot />
     </div>
-    <div class="image-box">
+    <a class="image-box" href={imgLink} target="_blank">
       <img src={imgSrc} alt={imgAlt} />
-    </div>
+    </a>
   </div>
 </section>
