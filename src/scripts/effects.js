@@ -48,3 +48,28 @@ const observer = new IntersectionObserver((entries) => {
 images.forEach((image) => {
 	observer.observe(image);
 });
+
+
+/**
+ * @function slideIn
+ * @description This function slides in any element as it comes into view.
+ */
+
+// Get all the elements to slide in
+const slideInElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
+console.log(slideInElements);
+
+
+// Create an observer
+const slideInObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.intersectionRatio > 0) {
+			entry.target.classList.add("slide-in-animation");
+		}
+	});
+});
+
+// Observe each element
+slideInElements.forEach((element) => {
+	slideInObserver.observe(element);
+});

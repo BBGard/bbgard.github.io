@@ -547,3 +547,29 @@ h2.colorized {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
+.slide-in-left.slide-in-animation {
+  animation: slide-in-from-left 0.5s;
+}
+
+.slide-in-right.slide-in-animation {
+  animation: slide-in-from-right 0.5s;
+}
+
+@keyframes  slide-in-from-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-in-from-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
