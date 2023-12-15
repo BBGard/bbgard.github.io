@@ -124,7 +124,7 @@ meter {
 
   /* Fonts */
   --font-primary: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-  --font-logo:  'Nimbus Mono PS', 'Courier New', monospace;
+  --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
   /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
   --font-code: 'Fira Code', monospace;
 
@@ -236,7 +236,7 @@ section {
 
 .image-box img:hover {
   filter: grayscale(0%);
- translate: 2px 2px;
+  translate: 2px 2px;
 }
 
 
@@ -395,6 +395,7 @@ blockquote {
   width: 90%;
   max-width: 1000px;
 }
+
 .card {
   border-radius: 0.25rem;
   border: 0.125rem solid var(--accent);
@@ -439,6 +440,7 @@ blockquote {
   box-shadow: 1px 1px 0px var(--accent-color-transparent);
   transform: translate(1px, 1px);
 }
+
 .title {
   font-size: var(--font-size-3);
   color: var(--primary);
@@ -492,123 +494,12 @@ blockquote {
 
 
 /* Animations  */
-img.colorized {
-  filter: grayscale(0%);
-}
-
-h1.colorized {
-  text-shadow: 3px 3px 0px var(--accent-color-transparent);
-}
-
-h2.colorized {
-  text-shadow: 2px 2px 0px var(--accent-color-transparent);
-}
-
-.card.colorized {
-  box-shadow: 3px 3px 0px var(--accent-color-transparent);
-  transform: translate(2px, 2px);}
-
-.shake {
-  animation: shake 0.5s;
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-.slide-in-left.slide-in-animation {
-  animation: slide-in-from-left 1s;
-}
-
-.slide-in-right.slide-in-animation {
-  animation: slide-in-from-right 1s;
-}
-
-.slide-in-bottom.slide-in-animation {
-  animation: slide-in-from-bottom 1s;
-}
-
-.slide-in-top.slide-in-animation {
-  animation: slide-in-from-top 1s;
-}
-
-@keyframes  slide-in-from-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slide-in-from-right {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slide-in-from-bottom {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes slide-in-from-top {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
 /* Animations with reduced motion support */
 /* Animations */
 @media (prefers-reduced-motion: no-preference) {
-  /* Apply animations only if the user prefers standard motion */
 
-  img.colorized,
-  h1.colorized,
-  h2.colorized,
-  .card.colorized {
+  /* Apply animations only if the user prefers standard motion */
+  img.colorized {
     filter: grayscale(0%);
   }
 
@@ -625,12 +516,109 @@ h2.colorized {
     transform: translate(2px, 2px);
   }
 
-  /* Add reduced motion animations here if needed */
-  .shake,
-  .slide-in-left.slide-in-animation,
-  .slide-in-right.slide-in-animation,
-  .slide-in-bottom.slide-in-animation,
+  shake {
+    animation: shake 0.5s;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+
+  .slide-in-left.slide-in-animation {
+    animation: slide-in-from-left 1s;
+  }
+
+  .slide-in-right.slide-in-animation {
+    animation: slide-in-from-right 1s;
+  }
+
+  .slide-in-bottom.slide-in-animation {
+    animation: slide-in-from-bottom 1s;
+  }
+
   .slide-in-top.slide-in-animation {
-    animation: unset; /* Disable animations for reduced motion users */
+    animation: slide-in-from-top 1s;
+  }
+
+  @keyframes slide-in-from-left {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slide-in-from-right {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slide-in-from-bottom {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes slide-in-from-top {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
   }
 }
