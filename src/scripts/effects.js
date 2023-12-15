@@ -11,13 +11,13 @@
 document.querySelectorAll(".shakeable").forEach((element) => {
   element.addEventListener("click", () => {
     element.classList.add("shake");
+		// if element uses a shadow, add the colorized class
+		if (element.tagName === "H1" || element.tagName === "H2" || element.className.includes("card")) {
+			element.classList.add("colorized");
+		}
+
     setTimeout(() => {
       element.classList.remove("shake");
-
-			// if element uses a shadow, add the colorized class
-			if (element.tagName === "H1" || element.tagName === "H2" || element.className.includes("card")) {
-				element.classList.add("colorized");
-			}
 
     }, 1000);
   });
