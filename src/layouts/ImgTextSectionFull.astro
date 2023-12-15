@@ -21,15 +21,12 @@ const { id = "", title = "", reverse = false, imgSrc = "", imgAlt = "", imgLink=
 ---
 
 <section id={id}>
-  <h2 class="secondary-title show-cursor shakeable">{title}</h2>
+  <h2 class="secondary-title show-cursor shakeable slide-in-bottom">{title}</h2>
   <div class={reverse ? "flex-columns-reverse" : "flex-columns"}>
     <div class={reverse ? "slide-in-right text-box" : "slide-in-left text-box"}>
       <!-- Text/buttons etc inserted here -->
       <slot />
     </div>
-    <!-- <div class={reverse ? "slide-in-left image-box" : "slide-in-right image-box"}>
-      <img src={imgSrc} alt={imgAlt} />
-    </div> -->
     <a class={reverse ? "slide-in-left image-box" : "slide-in-right image-box"}href={imgLink} target="_blank">
       <img class={reverse ? "slide-in-left" : "slide-in-right"} src={imgSrc} alt={imgAlt} />
     </a>

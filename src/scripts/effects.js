@@ -56,9 +56,7 @@ images.forEach((image) => {
  */
 
 // Get all the elements to slide in
-const slideInElements = document.querySelectorAll(".slide-in-left, .slide-in-right");
-console.log(slideInElements);
-
+const slideInElements = document.querySelectorAll(".slide-in-left, .slide-in-right, .slide-in-bottom, .slide-in-top");
 
 // Create an observer
 const slideInObserver = new IntersectionObserver((entries) => {

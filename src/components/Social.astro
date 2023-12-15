@@ -2,13 +2,13 @@
 const { icon, invert, platform, username } = Astro.props;
 ---
 
-<div class={invert ? "footer-logo-box invert" : "footer-logo-box"}>
-  <div class="mr-2 icon">
+<div class={invert ? "footer-logo-box invert slide-in-bottom" : "footer-logo-box slide-in-bottom"}>
+  <div class="mr-2 icon slide-in-left">
     <a href={`https://www.${platform}.com/${username}`} target="_blank">
       <img src={icon.src} alt={platform} />
     </a>
   </div>
-  <div class="link">
+  <div class="link slide-in-right">
     <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
   </div>
 

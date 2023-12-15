@@ -549,11 +549,19 @@ h2.colorized {
 }
 
 .slide-in-left.slide-in-animation {
-  animation: slide-in-from-left 0.5s;
+  animation: slide-in-from-left 1s;
 }
 
 .slide-in-right.slide-in-animation {
-  animation: slide-in-from-right 0.5s;
+  animation: slide-in-from-right 1s;
+}
+
+.slide-in-bottom.slide-in-animation {
+  animation: slide-in-from-bottom 1s;
+}
+
+.slide-in-top.slide-in-animation {
+  animation: slide-in-from-top 1s;
 }
 
 @keyframes  slide-in-from-left {
@@ -571,5 +579,58 @@ h2.colorized {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* Animations with reduced motion support */
+/* Animations */
+@media (prefers-reduced-motion: no-preference) {
+  /* Apply animations only if the user prefers standard motion */
+
+  img.colorized,
+  h1.colorized,
+  h2.colorized,
+  .card.colorized {
+    filter: grayscale(0%);
+  }
+
+  h1.colorized {
+    text-shadow: 3px 3px 0px var(--accent-color-transparent);
+  }
+
+  h2.colorized {
+    text-shadow: 2px 2px 0px var(--accent-color-transparent);
+  }
+
+  .card.colorized {
+    box-shadow: 3px 3px 0px var(--accent-color-transparent);
+    transform: translate(2px, 2px);
+  }
+
+  /* Add reduced motion animations here if needed */
+  .shake,
+  .slide-in-left.slide-in-animation,
+  .slide-in-right.slide-in-animation,
+  .slide-in-bottom.slide-in-animation,
+  .slide-in-top.slide-in-animation {
+    animation: unset; /* Disable animations for reduced motion users */
   }
 }
