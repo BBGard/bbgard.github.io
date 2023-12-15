@@ -4,10 +4,10 @@ import Hamburger from "./Hamburger.astro";
 const Navbar = {
   logo: "/path/to/logo.png",
   links: [
-    { text: "About", url: "#about" },
-    { text: "Projects", url: "#projects" },
-    { text: "Contact", url: "#contact" },
-    { text: "Blog", url: "/blog" },
+    { text: "About", url: "/#about" },
+    { text: "Projects", url: "/#projects" },
+    { text: "Contact", url: "/#contact" },
+    { text: "Dev.Log", url: "/blog" },
   ],
 };
 ---
@@ -82,12 +82,12 @@ const Navbar = {
     width: 50%;
     margin: 0;
     padding: 0;
+    font-weight: 600;
   }
 
   .nav-links li {
     list-style: none;
     margin: 0;
-
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -113,6 +113,7 @@ const Navbar = {
     color: var(--primary);
     text-decoration: none;
     font-size: var(--font-size-4);
+    font-family: var(--font-logo);
     font-weight: 600;
   }
 

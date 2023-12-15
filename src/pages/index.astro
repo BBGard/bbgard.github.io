@@ -33,14 +33,14 @@ const aboutText = aboutTexts[randomIndex];
 <Layout title={pageTitle}>
   <main>
     <HeroSectionFull>
-      <h1 class="main-title show-cursor">Hi,<br />I'm Ben.</h1>
+      <h1 class="main-title show-cursor shakeable">Hi,<br />I'm Ben.</h1>
       <button class="btn btn-primary" onclick=";window.location.href='#about'"
         >Learn More</button
       >
     </HeroSectionFull>
     <Divider />
     <section id="about">
-      <h2 class="secondary-title show-cursor">About Ben</h2>
+      <h2 class="secondary-title show-cursor shakeable">About Ben</h2>
       <div class="flex-columns">
         <div class="text-box">
           <p>
@@ -65,18 +65,25 @@ const aboutText = aboutTexts[randomIndex];
           </div>
         </div>
         <div class="headshot">
-          <img class="show-cursor" src={headshot.src} alt="Image of Ben" />
+          <img class="show-cursor shakeable" src={headshot.src} alt="Image of Ben"/>
         </div>
       </div>
     </section>
     <Divider />
 
-    <ImgTextSectionFull id="projects" title="Projects" imgSrc="https://drive.google.com/uc?export=view&id=1Xx-GJ9vRXLtjnV9IrCajuo5yuWX0shiZ" imgAlt="mobile app mockups" imgLink="https://www.hospflow.app">
+    <ImgTextSectionFull
+      id="projects"
+      title="Projects"
+      imgSrc="https://drive.google.com/uc?export=view&id=1Xx-GJ9vRXLtjnV9IrCajuo5yuWX0shiZ"
+      imgAlt="mobile app mockups"
+      imgLink="https://www.hospflow.app"
+    >
       <Card
         title="HOSPFLOW - The Hospitality Management App"
         info="Bachelor of I.T. Capstone Project. I served as the lead developer for a web application aimed at enhancing hospitality operations. React.js for the front-end and Amazon’s AWS Amplify for the back-end infrastructure."
         tags={["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB"]}
-        link="https://www.hospflow.app"
+        blogLink="/posts/2023-12-13"
+        extLink="https://hospflow.app"
       />
     </ImgTextSectionFull>
     <Divider />
@@ -87,11 +94,10 @@ const aboutText = aboutTexts[randomIndex];
   </main>
 </Layout>
 
-
 <style>
   .main-title {
     text-align: left;
-		margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 
   .btn-primary {

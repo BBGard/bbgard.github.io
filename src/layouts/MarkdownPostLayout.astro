@@ -7,17 +7,17 @@ const tags = frontmatter.tags;
 ---
 
 <Layout title={frontmatter.title}>
-  <main>
+  <main class="blog">
     <article class="blog-article">
       <h1 class="blog-h1">{frontmatter.title}</h1>
-      <p class="blog-p">{frontmatter.pubDate.slice(0, 10)}</p>
-      <p><em>{frontmatter.description}</em></p>
-      <p>Written by: {frontmatter.author}</p>
-      <img
+      <p class="blog-date">{frontmatter.pubDate.slice(0, 10)}</p>
+      <p class="blog-author">Written by: {frontmatter.author}</p>
+      <img class="blog-image"
         src={frontmatter.image.url}
         width="300"
         alt={frontmatter.image.alt}
       />
+      <p class="blog-description"><em>{frontmatter.description}</em></p>
       <slot />
       <div class="tags">
         {
@@ -31,33 +31,3 @@ const tags = frontmatter.tags;
     </article>
   </main>
 </Layout>
-<style>
-  a {
-    color: var(--accent-color);
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    border: 0.125rem solid var(--accent-transparent);
-    text-decoration: none;
-    text-align: center;
-    font-size: var(--font-size-4);
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px var(--accent-transparent);
-    transition: all 0.2s ease-in-out;
-  }
-
-  .tag:hover {
-    background-color: var(--secondary);
-    box-shadow: 3px 3px 0px var(--accent-color-transparent);
-    transform: translate(2px, 2px);
-  }
-</style>
