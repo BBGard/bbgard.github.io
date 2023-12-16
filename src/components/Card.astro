@@ -16,6 +16,7 @@ const {
   extLink,
 } = Astro.props;
 
+const formattedinfo = info.split("\n");
 ---
 
 <div class="cards">
@@ -32,7 +33,10 @@ const {
       ) : null
     }
     <h3 class="title">{title}</h3>
-    <p class="info">{info}</p>
+    <!-- <p class="info">{info}</p> -->
+    <!-- <p class="info">{formattedinfo}</p> -->
+    {formattedinfo.map(info => <p class="info">{info}</p>)}
+    <div class="card-button-group">
     {blogLink ? (
       <button class="btn card-btn" onclick={`window.open('${blogLink}', '_blank')`}>
         Read More
@@ -44,6 +48,7 @@ const {
        Check it Out
       </button>
     ) : null}
+    </div>
   </article>
 </div>
 

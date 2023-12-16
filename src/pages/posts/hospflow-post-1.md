@@ -5,9 +5,9 @@ pubDate: 2023-12-13
 description: My Bachelor of Information Technology Final Year Capstone Project
 author: Ben Gardiner
 image:
-    url: "https://drive.google.com/uc?export=view&id=10OFdvcUcBwga6orkK0DqQByiXWeJtDoU"
+    url: "../src/assets/images/hf_2.webp"
     alt: "HOSPFLOW logo white."
-tags: ["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB", "University" ]
+tags: ["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB", "University", "Wordpress", "HTML", "CSS", ]
 ---
 
 ## Introduction
@@ -51,3 +51,4 @@ Built using React.js, AWS Amplify, GraphQL, Node.js, and DynamoDB, HOSPFLOW is a
 
 ## The Result
 Our team successfully developed an MVP for the HOSPFLOW app, which was well-received by the client. The app is currently in the testing phase, with plans to launch in the future after pitching to investors.
+In addition to the app, we also developed a website for HOSPFLOW using Wordpress, HTML, and CSS. The website showcases the app’s features and benefits, helping to generate interest and attract investors.

@@ -1,0 +1,73 @@
+---
+import Card from "./Card.astro";
+/**
+ * @name ImgTextSectionFull
+ * @desc A simple component to display a Card component and an image side by side.
+ * @param {string} title - The title of the component.
+ * @param {boolean} reverse - Whether to reverse the order of the image and text.
+ * @param {string} info - The text to display.
+ * @param {string[]} tags - An array of tags to display.
+ * @param {string} blogLink - The link to the blog post.
+ * @param {string} extLink - The link to an external site.
+ * @param {object} image - An object containing the image details.
+ * @param {string} image.src - The image source.
+ * @param {string} image.alt - The image alt text.
+ * @param {string} image.link - The image link.
+ */
+interface Props {
+  title?: string;
+  info?: string;
+  tags?: string[];
+  blogLink?: string;
+  extLink?: string;
+  reverse?: boolean;
+  image?: {
+    src: string;
+    alt: string;
+    link: string;
+  };
+}
+
+const {
+  title = "",
+  info = "",
+  tags = [],
+  blogLink = "",
+  extLink = "",
+  reverse = false,
+  image = {
+    src: "",
+    alt: "",
+    link: "",
+  },
+} = Astro.props;
+---
+
+<section class="project-section">
+  <div class={reverse ? "flex-columns-reverse" : "flex-columns"}>
+    <div
+      class={reverse
+        ? "slide-in-right text-box text-box-reverse"
+        : "slide-in-left text-box"}
+    >
+      <Card
+        title={title}
+        info={info}
+        tags={tags}
+        blogLink={blogLink}
+        extLink={extLink}
+      />
+    </div>
+    <a
+      class={reverse ? "slide-in-left image-box" : "slide-in-right image-box"}
+      href={image.link}
+      target="_blank"
+    >
+      <img
+        class={reverse ? "slide-in-left" : "slide-in-right"}
+        src={image.src}
+        alt={image.alt}
+      />
+    </a>
+  </div>
+</section>

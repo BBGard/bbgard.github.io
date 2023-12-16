@@ -23,7 +23,7 @@ const tags = frontmatter.tags;
         {
           tags.map((tag) => (
             <p class="tag">
-              <a href={`/tags/${tag}`}>{tag}</a>
+              <a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>
             </p>
           ))
         }

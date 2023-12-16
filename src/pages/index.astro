@@ -1,15 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroSectionFull from "../layouts/HeroSectionFull.astro";
-import ImgTextSectionFull from "../layouts/ImgTextSectionFull.astro";
+import HeroSectionFull from "../components/HeroSectionFull.astro";
+import ProjectSection from "../components/ProjectSection.astro";
 import githubIcon from "../assets/github-mark-white.png";
 import linkedinIcon from "../assets/LinkedIn_icon.svg";
 import Social from "../components/Social.astro";
-import Card from "../components/Card.astro";
 import Divider from "../components/Divider.astro";
 import "../styles/global.css";
-import headshot from "../assets/Headshot_2020_Colour.jpg";
-import hospflow_mockups from "../assets/images/hf_5.webp";
+import headshot from "../assets/images/Headshot_crop.webp";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 const aboutText_1 = [
@@ -24,6 +22,8 @@ const aboutText_3 = [
   "Hey there! I'm Benjamin Gardiner, a code artisan weaving digital experiences.",
   "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
 ];
+
+const allProjects = await Astro.glob("../pages/projects/*.md");
 
 // Randomise the about text
 const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
@@ -43,7 +43,7 @@ const aboutText = aboutTexts[randomIndex];
     <section id="about">
       <h2 class="secondary-title show-cursor shakeable slide-in-bottom">About Ben</h2>
       <div class="flex-columns">
-        <div class="text-box slide-in-left">
+        <div class="text-box text-box-clamp slide-in-left">
           <p>
             {aboutText[0]}<br />{aboutText[1]}
           </p>
@@ -71,27 +71,27 @@ const aboutText = aboutTexts[randomIndex];
       </div>
     </section>
     <Divider />
+    <!-- Projects Section -->
+    <div id="projects">
+      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">Projects</h2>
 
-    <ImgTextSectionFull
-      id="projects"
-      title="Projects"
-      imgSrc={hospflow_mockups.src}
-      imgAlt="mobile app mockups"
-      imgLink="https://www.hospflow.app"
-    >
-      <Card
-        title="HOSPFLOW - The Hospitality Management App"
-        info="Bachelor of I.T. Capstone Project. I served as the lead developer for a web application aimed at enhancing hospitality operations. React.js for the front-end and Amazon’s AWS Amplify for the back-end infrastructure."
-        tags={["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB"]}
-        blogLink="/posts/2023-12-13"
-        extLink="https://hospflow.app"
-      />
-    </ImgTextSectionFull>
+      {allProjects.map((project, index) => (
+        <ProjectSection
+          title={project.frontmatter.title}
+          info={project.frontmatter.info}
+          tags={project.frontmatter.tags}
+          blogLink={project.frontmatter.blogLink}
+          extLink={project.frontmatter.extLink}
+          image={project.frontmatter.image}
+          reverse={index % 2 === 1}
+        />
+        <Divider />
+      ))}
+    </div>
     <Divider />
 
-    <ImgTextSectionFull id="contact" title="Contact">
-      <p>Coming Soon...</p>
-    </ImgTextSectionFull>
+    <!-- Contact Section -->
+
   </main>
 </Layout>
 
@@ -109,7 +109,7 @@ const aboutText = aboutTexts[randomIndex];
 
   .button-group {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     margin-top: 2rem;
     gap: 2rem;
