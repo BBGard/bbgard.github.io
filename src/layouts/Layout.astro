@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ReturnToTopButton from "../components/ReturnToTopButton.astro";
 interface Props {
   title: string;
 }
@@ -22,12 +23,13 @@ const { title } = Astro.props;
     <Header />
 
     <slot />
-
+    <ReturnToTopButton />
     <Footer />
     <script>
       import "../scripts/menu.js";
 			import "../scripts/effects.js";
       import "../scripts/contact.js";
+      import "../scripts/returnToTop.js";
     </script>
   </body>
 </html>

@@ -1,0 +1,48 @@
+---
+import arrow from "../assets/double-arrow-up.svg";
+---
+
+<div class="return-to-top">
+  <a href="#top">
+    <img src={ arrow.src } alt="Return to top" />
+  </a>
+</div>
+
+<style>
+.return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.return-to-top a {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  box-shadow: 2px 2px 0px var(--accent-transparent);
+      transition: all 0.2s ease-in-out;
+      border-radius: 0.25rem;
+      border: 0.125rem solid var(--accent);
+      background-color: var(--accent);
+  padding: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.return-to-top a:hover {
+  background-color: var(--secondary);
+      color: var(--accent);
+      box-shadow: 1px 1px 0px var(--accent-color-transparent);
+      transform: translate(2px, 2px);
+}
+
+.return-to-top a img {
+  width: 2rem;
+  filter: invert(1);
+  transition: none;
+}
+
+.return-to-top a:hover img {
+  filter: invert(0);
+}
+</style>
