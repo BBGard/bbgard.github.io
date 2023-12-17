@@ -398,6 +398,12 @@ article {
   transform: translate(2px, 2px);
 }
 
+.card-center {
+  margin: 2rem auto;
+  padding-top: 0;
+  max-width: 600px;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;

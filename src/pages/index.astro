@@ -7,7 +7,7 @@ import linkedinIcon from "../assets/LinkedIn_icon.svg";
 import Social from "../components/Social.astro";
 import Divider from "../components/Divider.astro";
 import "../styles/global.css";
-import headshot from "../assets/images/Headshot_crop.webp";
+import headshot from "../assets/images/Headshot_2023_small.webp";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 const aboutText_1 = [
@@ -34,14 +34,19 @@ const aboutText = aboutTexts[randomIndex];
 <Layout title={pageTitle}>
   <main>
     <HeroSectionFull>
-      <h1 class="main-title show-cursor shakeable slide-in-left">Hi,<br />I'm Ben.</h1>
-      <button class="btn btn-primary slide-in-right" onclick=";window.location.href='#about'"
-        >Learn More</button
+      <h1 class="main-title show-cursor shakeable slide-in-left">
+        Hi,<br />I'm Ben.
+      </h1>
+      <button
+        class="btn btn-primary slide-in-right"
+        onclick=";window.location.href='#about'">Learn More</button
       >
     </HeroSectionFull>
     <Divider />
     <section id="about">
-      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">About Ben</h2>
+      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
+        About Ben
+      </h2>
       <div class="flex-columns">
         <div class="text-box text-box-clamp slide-in-left">
           <p>
@@ -66,58 +71,100 @@ const aboutText = aboutTexts[randomIndex];
           </div>
         </div>
         <div class="headshot slide-in-right">
-          <img class="show-cursor shakeable" src={headshot.src} alt="Image of Ben"/>
+          <img
+            class="show-cursor shakeable"
+            src={headshot.src}
+            alt="Image of Ben"
+          />
         </div>
       </div>
     </section>
     <Divider />
     <!-- Projects Section -->
     <div id="projects">
-      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">Projects</h2>
+      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
+        Projects
+      </h2>
 
-      {allProjects.map((project, index) => (
-        <ProjectSection
-          title={project.frontmatter.title}
-          info={project.frontmatter.info}
-          tags={project.frontmatter.tags}
-          blogLink={project.frontmatter.blogLink}
-          extLink={project.frontmatter.extLink}
-          image={project.frontmatter.image}
-          reverse={index % 2 === 1}
+      {
+        allProjects.map((project, index) => (
+          <ProjectSection
+            title={project.frontmatter.title}
+            info={project.frontmatter.info}
+            tags={project.frontmatter.tags}
+            blogLink={project.frontmatter.blogLink}
+            extLink={project.frontmatter.extLink}
+            image={project.frontmatter.image}
+            reverse={index % 2 === 1}
+          />
+        ))
+      }
+      <article class="card card-center shakeable slide-in-bottom">
+        <h3 class="title">More Projects</h3>
+        <p>For more projects, check out my GitHub!</p>
+        <Social
+          icon={githubIcon}
+          invert={true}
+          platform="GitHub"
+          username="bbgard"
         />
-        <Divider />
-      ))}
+      </article>
     </div>
-    <Divider />
+
+    <Divider size="normal" margin="bottom" />
 
     <!-- Contact Section -->
+    <div id="contact">
+      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
+        Contact
+      </h2>
+      <article class="card card-center shakeable slide-in-bottom">
+        <h3 class="title">Get in touch!</h3>
+        <p>
+          If you'd like to get in touch, feel free to reach out via email or
+          LinkedIn!
+        </p>
+        <Social
+          icon={linkedinIcon}
+          platform="LinkedIn"
+          username="in/benjamin-gardiner-6b8478263/"
+        />
+        <p>Or, send me an email at:</p>
+        <a href="mailto:ben.b.gardiner@gmail.com">
+          <p class="email"></p>
+        </a>
+      </article>
+    </div>
 
+    <style>
+      .main-title {
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+
+      .btn-primary {
+        /* margin-top: 2rem; */
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .button-group {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        margin-top: 2rem;
+        gap: 2rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        .btn-primary {
+          font-size: 1rem;
+        }
+
+        .headshot {
+          width: 100%;
+        }
+      }
+    </style>
   </main>
 </Layout>
-
-<style>
-  .main-title {
-    text-align: left;
-    margin-bottom: 2rem;
-  }
-
-  .btn-primary {
-    /* margin-top: 2rem; */
-    padding: 1rem;
-    font-size: 1.5rem;
-  }
-
-  .button-group {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    margin-top: 2rem;
-    gap: 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    .btn-primary {
-      font-size: 1rem;
-    }
-  }
-</style>
