@@ -6,6 +6,7 @@ import githubIcon from "../assets/github-mark-white.png";
 import linkedinIcon from "../assets/LinkedIn_icon.svg";
 import Social from "../components/Social.astro";
 import Divider from "../components/Divider.astro";
+import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2023_small.webp";
 
@@ -111,29 +112,16 @@ const aboutText = aboutTexts[randomIndex];
       </article>
     </div>
 
-    <Divider size="normal" margin="bottom" />
+    <Divider size="full" margin="large" />
 
     <!-- Contact Section -->
     <div id="contact">
+      <section>
       <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
         Contact
       </h2>
-      <article class="card card-center shakeable slide-in-bottom">
-        <h3 class="title">Get in touch!</h3>
-        <p>
-          If you'd like to get in touch, feel free to reach out via email or
-          LinkedIn!
-        </p>
-        <Social
-          icon={linkedinIcon}
-          platform="LinkedIn"
-          username="in/benjamin-gardiner-6b8478263/"
-        />
-        <p>Or, send me an email at:</p>
-        <a href="mailto:ben.b.gardiner@gmail.com">
-          <p class="email"></p>
-        </a>
-      </article>
+      <ContactForm />
+    </section>
     </div>
 
     <style>
@@ -143,17 +131,8 @@ const aboutText = aboutTexts[randomIndex];
       }
 
       .btn-primary {
-        /* margin-top: 2rem; */
         padding: 1rem;
         font-size: 1.5rem;
-      }
-
-      .button-group {
-        display: flex;
-        /* justify-content: center; */
-        align-items: center;
-        margin-top: 2rem;
-        gap: 2rem;
       }
 
       @media screen and (max-width: 768px) {

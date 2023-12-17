@@ -113,6 +113,7 @@ meter {
   --secondary: #ffffff;
   --accent: #4c4c4c;
   --accent-light: #a1a1a1;
+  --accent-form: #e7e7e7;
   --accent-transparent: rgba(76, 76, 76, 0.6);
   --accent-color: #a800ab;
   --accent-color-light: #fdf6ff;
@@ -521,6 +522,13 @@ article {
   color: var(--accent);
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 2rem;
 }
 
 

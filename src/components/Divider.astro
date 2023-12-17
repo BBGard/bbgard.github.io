@@ -1,13 +1,21 @@
 ---
-const {size, margin} = Astro.props;
+const {margin} = Astro.props;
 ---
 
-<div class={`divider divider-${size} divider-${margin}`}></div>
+<div class={`divider divider-margin-${margin}`}></div>
 <style>
   .divider {
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 100%;
     height: 1px;
     background-color: var(--accent);
+  }
+
+ .divider-full {
+  width: 100%;
+ }
+
+  .divider-margin-large {
+    margin:5rem 0 10rem 0;
   }
 </style>

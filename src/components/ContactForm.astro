@@ -1,0 +1,136 @@
+---
+import { submitForm } from "../scripts/contact.js";
+import Social from "./Social.astro";
+import githubIcon from "../assets/github-mark-white.png";
+import linkedinIcon from "../assets/LinkedIn_icon.svg";
+import emailIcon from "../assets/email_icon.svg";
+---
+
+<div class="form-container">
+  <div class="contact slide-in-bottom shakeable">
+    <h3>Get in touch!</h3>
+    <h4>Questions? Enquiries? Feedback?</h4>
+    <p>
+      I'd love to hear from you! Send me an email and I'll get back to you as
+      soon as I can.<br/><br/> Alternatively, you can find me on LinkedIn or GitHub using
+      the links below.
+    </p>
+    <!-- <a class="button-link"  href="mailto:ben.b.gardiner@gmail.com?subject=bbgard%20enquiry" target="_blank">
+      <img src={emailIcon.src} alt="email icon" width="20" height="20" style="margin-right: 0.5rem;"/>
+			Send Email	</a> -->
+    <div class="button-group">
+      <a
+        class="slide-in-left button-link"
+        href="mailto:ben.b.gardiner@gmail.com?subject=bbgard%20enquiry"
+        target="_blank"
+      >
+        <img src={emailIcon.src} alt="email icon" /><span>Send Email</span>
+      </a>
+
+      <Social
+        icon={githubIcon}
+        invert={true}
+        platform="GitHub"
+        username="bbgard"
+      />
+      <Social
+        icon={linkedinIcon}
+        platform="LinkedIn"
+        username="in/benjamin-gardiner-6b8478263/"
+      />
+    </div>
+  </div>
+
+  <style>
+    .button-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      border: 0.125rem solid var(--accent);
+      background-color: var(--accent);
+      color: var(--secondary);
+      text-decoration: none;
+      text-align: center;
+      font-size: var(--font-size-4);
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px var(--accent-transparent);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .button-link:hover {
+      background-color: var(--secondary);
+      color: var(--accent);
+      box-shadow: 3px 3px 0px var(--accent-color-transparent);
+      transform: translate(2px, 2px);
+    }
+
+    .button-link img {
+      width: 1.5rem;
+      height: 1.5rem;
+      filter: invert(1);
+      transition: none;
+    }
+
+    .button-link:hover img {
+      filter: invert(0);
+      color: var(--accent);
+    }
+
+    .button-link a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    .button-link a:hover {
+      text-decoration: underline;
+    }
+
+    .button-link span {
+      margin-left: 0.5rem;
+    }
+
+    .form-container {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .contact {
+      border-radius: 0.25rem;
+      border: 0.125rem solid var(--accent);
+      color: var(--primary);
+      box-shadow: 6px 6px 0px var(--accent-transparent);
+      background-color: var(--secondary);
+      padding: 1.5rem;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .contact:hover {
+      box-shadow: 3px 3px 0px var(--accent-color-transparent);
+      transform: translate(2px, 2px);
+    }
+
+    .contact h3 {
+      font-size: var(--font-size-1);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .contact h4 {
+      margin-bottom: 2rem;
+      display: block;
+      font-weight: 500;
+      font-size: var(--font-size-3);
+    }
+
+    .contact p {
+      margin-bottom: 2rem;
+    }
+  </style>
+</div>
