@@ -7,7 +7,7 @@ tags: ["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB"]
 blogLink: "/posts/hospflow-post-1"
 extLink: "https://hospflow.app"
 image:
-    src: "/public/images/hf_5.webp"
+    src: "../../src/assets/images/hf_5.webp"
     alt: "HOSPFLOW app screenshots"
     link: "https://www.hospflow.app"
 ---

@@ -10,7 +10,7 @@ tags: ["Wordpress", "HTML", "CSS",]
 blogLink: "/posts/dud-post-1"
 extLink: "https://www.dont-undermine-daylesford.website"
 image:
-    src: "/public/images/dud_2.webp"
+    src: "../../src/assets/images/dud_2.webp"
     alt: "Don't Undermine Daylesford website screenshots"
     link: "https://www.dont-undermine-daylesford.website"
 ---
