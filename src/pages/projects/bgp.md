@@ -10,7 +10,7 @@ tags: ["Wordpress", "HTML", "CSS",]
 blogLink: "/posts/bgp-post-1"
 extLink: "https://www.bengardinerphotography.com"
 image:
-    src: "src/assets/images/bgp_2.webp"
+    src: "/public/images/bgp_2.webp"
     alt: "Ben Gardiner Photography website screenshots"
     link: "https://www.bengardinerphotography.com"
 ---

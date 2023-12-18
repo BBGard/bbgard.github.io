@@ -9,7 +9,7 @@ tags: ["HTML", "CSS", "Wordpress"]
 blogLink: "/posts/hospflow-post-1"
 extLink: "https://hospflow.app"
 image:
-    src: "src/assets/images/hf_1.webp"
+    src: "/public/images/hf_1.webp"
     alt: "HOSPFLOW app screenshots"
     link: "https://www.hospflow.app"
 ---
