@@ -548,11 +548,6 @@ article {
 
 
 /* Animations  */
-/* Animations with reduced motion support */
-/* Animations */
-/* @media (prefers-reduced-motion: no-preference) { */
-
-/* Apply animations only if the user prefers standard motion */
 img.colorized {
   filter: grayscale(0%);
 }
@@ -570,56 +565,8 @@ h2.colorized {
   transform: translate(2px, 2px);
 }
 
-shake {
-  animation: shake 0.5s;
-}
 
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
+/* Slide animations */
 .slide-in-left.slide-in-animation {
   animation: slide-in-from-left 1s;
 }
@@ -676,5 +623,77 @@ shake {
   }
 }
 
+/* Shake animation */
+.shake {
+  animation: shake 0.5s;
+}
 
-/* } */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+
+/* Fade animation */
+.fade-in {
+  opacity: 0%;
+}
+
+.fade-in.animation-finished {
+  opacity: 100%;
+}
+
+.fade-in-animation {
+  animation: fade-in-animation 2s;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}

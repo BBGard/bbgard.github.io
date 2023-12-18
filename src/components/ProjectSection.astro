@@ -47,8 +47,8 @@ const {
   <div class={reverse ? "flex-columns-reverse" : "flex-columns"}>
     <div
       class={reverse
-        ? "slide-in-right text-box text-box-reverse"
-        : "slide-in-left text-box"}
+        ? "fade-in text-box text-box-reverse"
+        : "fade-in text-box"}
     >
       <Card
         title={title}
@@ -59,12 +59,12 @@ const {
       />
     </div>
     <a
-      class={reverse ? "slide-in-left image-box" : "slide-in-right image-box"}
+      class="fade-in image-box"
       href={image.link}
       target="_blank"
     >
       <img
-        class={reverse ? "slide-in-left" : "slide-in-right"}
+        class="fade-in"
         src={image.src}
         alt={image.alt}
       />
