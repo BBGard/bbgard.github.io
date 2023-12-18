@@ -132,7 +132,7 @@ meter {
   /* Font sizes */
   --font-size-1: 2rem;
   --font-size-2: 1.5rem;
-  --font-size-3: 1.1rem;
+  --font-size-3: 1.2rem;
   --font-size-4: 1rem;
   --font-size-5: 0.875rem;
   --font-size-6: 0.75rem;
@@ -239,6 +239,7 @@ p {
   margin: 0;
   margin-bottom: 1rem;
   font-size: var(--font-size-3);
+  font-weight: 400;
 }
 
 a {
@@ -317,6 +318,13 @@ section {
   width: 50%;
   font-size: var(--font-size-3);
   margin: 0 10% 0 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .text-box {
+    margin: 0;
+  }
+
 }
 
 .text-box-clamp {
@@ -534,6 +542,12 @@ article {
   align-items: center;
   margin-top: 2rem;
   gap: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .button-group {
+    justify-content: center;
+  }
 }
 
 

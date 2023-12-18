@@ -9,6 +9,7 @@ import Divider from "../components/Divider.astro";
 import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
 import headshot from "/public/images/Headshot_2023_small.webp";
+import Card from "../components/Card.astro";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 const aboutText_1 = [
@@ -49,9 +50,9 @@ const aboutText = aboutTexts[randomIndex];
         About Ben
       </h2>
       <div class="flex-columns">
-        <div class="text-box text-box-clamp fade-in">
-          <p>
-            {aboutText[0]}<br />{aboutText[1]}
+        <div class="text-box text-box-clamp fade-in card shakeable">
+          <p class="about-text">
+            {aboutText[0]}<br/><br/>{aboutText[1]}
           </p>
           <div class="button-group">
             <Social
@@ -133,6 +134,11 @@ const aboutText = aboutTexts[randomIndex];
       .btn-primary {
         padding: 1rem;
         font-size: 1.5rem;
+      }
+
+      .about-text {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
       }
 
       @media screen and (max-width: 768px) {
