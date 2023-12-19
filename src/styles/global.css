@@ -354,11 +354,13 @@ section {
   width: 100%;
   /* Initially black and white */
   filter: grayscale(100%);
+  transition: all 0.2s ease-in-out;
 }
 
 .headshot img:hover {
   filter: grayscale(0%);
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
+  transform: translate(2px, 2px);
 }
 
 .image-box {
