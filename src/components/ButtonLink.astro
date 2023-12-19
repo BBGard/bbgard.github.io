@@ -1,0 +1,148 @@
+---
+/**
+ * @name ButtonLink
+ * @desc A custom button with a link and optional image/icon
+ * @param {string} icon - The URL of the icon to display
+ * @param {string} btnText - The text to display on the button
+ * @param {string} btnLink - The URL to link to
+ * @param {string} btnTarget - The target of the link
+ * @param {boolean} reverse - Whether to reverse the order of the icon and text
+ * @param {boolean} invertHover - Whether to invert the icon on hover
+ * @param {boolean} invert - Whether to invert the icon noramlly
+ * @param {string} size - The size of the button
+ * @param {string} customClass - Any custom classes to add to the button
+ */
+
+interface Props {
+  icon?: string;
+  btnText?: string;
+  btnLink?: string;
+  btnTarget?: string;
+  reverse?: boolean;
+  invertHover?: boolean;
+  invert?: boolean;
+  size?: string;
+  customClass?: string;
+}
+
+const {
+  icon = "",
+  btnText = "",
+  btnLink = "",
+  btnTarget = "_self",
+  reverse = "false",
+  invertHover = "false",
+  invert = "false",
+  size = "normal",
+  customClass = "",
+} = Astro.props;
+
+---
+
+<a href={btnLink} target={btnTarget} class={icon ? `btn btn-${size} btn-icon slide-in-bottom ${customClass}` : `btn btn-${size} slide-in-bottom ${customClass}`}>
+  {
+    reverse ? (
+      <>
+      {icon ?
+      <div class={invertHover === true ? "mr-2 slide-in-left icon invert-hover" : "mr-2 slide-in-left"}>
+        <img class={invert === true ? "invert" : ""} src={icon} alt={btnText} />
+      </div>
+     : null}
+      <div class={icon ? "slide-in-right link" : "slide-in-right"}>
+        <span>{btnText}</span>
+      </div>
+      </>
+    ) : (
+      <>
+      <div class={icon ? "slide-in-left link" : "slide-in-left"}>
+        <span>{btnText}</span>
+      </div>
+      {icon ?
+      <div class={invertHover === true ? "ml-2 slide-in-left icon invert-hover" : "ml-2 slide-in-left"}>
+        <img class={invert === true ? "invert" : ""} src={icon} alt={btnText} />
+      </div>
+      : null}
+      </>
+    )
+  }
+</a>
+
+<style>
+  .btn-large {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .btn-small {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      transition: none;
+    }
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-icon:hover .invert-hover > img {
+      filter: invert(1);
+    }
+
+    .invert {
+      filter: invert(1);
+    }
+
+    .btn-icon:hover .invert-hover > img.invert {
+      filter: invert(0);
+    }
+
+    .mr-2 {
+      margin-right: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .ml-2 {
+      margin-left: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 1000px) {
+      .link {
+        display: none;
+      }
+
+      .btn-icon {
+        padding: 0.5rem;
+      }
+
+      .icon {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+</style>

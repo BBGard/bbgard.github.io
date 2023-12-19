@@ -9,6 +9,8 @@ import Divider from "../components/Divider.astro";
 import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2023_small.webp";
+import ButtonLink from "../components/ButtonLink.astro";
+import emailIcon from "../assets/email_icon.svg";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 const aboutText_1 = [
@@ -38,10 +40,7 @@ const aboutText = aboutTexts[randomIndex];
       <h1 class="main-title show-cursor shakeable fade-in">
         Hi,<br />I'm Ben.
       </h1>
-      <button
-        class="btn btn-primary slide-in-right"
-        onclick=";window.location.href='#about'">Learn More</button
-      >
+      <ButtonLink btnText="Learn More" btnLink="#about" size="large" />
     </HeroSectionFull>
     <Divider />
     <section id="about">
@@ -51,19 +50,16 @@ const aboutText = aboutTexts[randomIndex];
       <div class="flex-columns">
         <div class="text-box text-box-clamp fade-in card shakeable">
           <p class="about-text">
-            {aboutText[0]}<br/><br/>{aboutText[1]}
+            {aboutText[0]}<br /><br />{aboutText[1]}
           </p>
           <div class="button-group">
             <Social
               icon={githubIcon}
-              invert={true}
+              invertHover={true}
               platform="GitHub"
               username="bbgard"
             />
-            <button
-              class="btn btn-primary slide-in-bottom"
-              onclick=";window.location.href='#projects'">Projects</button
-            >
+            <ButtonLink btnText="Projects" btnLink="#projects" size="large" />
             <Social
               icon={linkedinIcon}
               platform="LinkedIn"
@@ -97,18 +93,29 @@ const aboutText = aboutTexts[randomIndex];
             extLink={project.frontmatter.extLink}
             image={project.frontmatter.image}
             reverse={index % 2 === 1}
+            nextBtn={true}
           />
         ))
       }
       <article class="card card-center shakeable slide-in-bottom">
         <h3 class="title">More Projects</h3>
         <p>For more projects, check out my GitHub!</p>
-        <Social
-          icon={githubIcon}
-          invert={true}
-          platform="GitHub"
-          username="bbgard"
-        />
+        <div class="butotn-group">
+          <Social
+            icon={githubIcon}
+            invertHover={true}
+            platform="GitHub"
+            username="bbgard"
+          />
+          <ButtonLink
+            btnText="Contact"
+            btnLink="#contact"
+            size="full"
+            icon={emailIcon.src}
+            invert={true}
+            invertHover={true}
+          />
+        </div>
       </article>
     </div>
 
@@ -117,11 +124,11 @@ const aboutText = aboutTexts[randomIndex];
     <!-- Contact Section -->
     <div id="contact">
       <section>
-      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
-        Contact
-      </h2>
-      <ContactForm />
-    </section>
+        <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
+          Contact
+        </h2>
+        <ContactForm />
+      </section>
     </div>
 
     <style>
@@ -130,14 +137,14 @@ const aboutText = aboutTexts[randomIndex];
         margin-bottom: 2rem;
       }
 
-      .btn-primary {
-        padding: 1rem;
-        font-size: 1.5rem;
-      }
-
       .about-text {
         font-size: 1.3rem;
         line-height: 2.2rem;
+      }
+
+      .next-project {
+        display: flex;
+        justify-content: center;
       }
 
       @media screen and (max-width: 768px) {
@@ -149,7 +156,6 @@ const aboutText = aboutTexts[randomIndex];
           width: 100%;
         }
       }
-
     </style>
   </main>
 </Layout>

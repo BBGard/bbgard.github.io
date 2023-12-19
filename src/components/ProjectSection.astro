@@ -13,6 +13,7 @@ import Card from "./Card.astro";
  * @param {string} image.src - The image source.
  * @param {string} image.alt - The image alt text.
  * @param {string} image.link - The image link.
+ * @param {boolean} nextBtn - Whether to show a next button.
  */
 interface Props {
   title?: string;
@@ -21,6 +22,7 @@ interface Props {
   blogLink?: string;
   extLink?: string;
   reverse?: boolean;
+  nextBtn?: boolean;
   image?: {
     src: string;
     alt: string;
@@ -35,6 +37,7 @@ const {
   blogLink = "",
   extLink = "",
   reverse = false,
+  nextBtn = false,
   image = {
     src: "",
     alt: "",
@@ -56,6 +59,7 @@ const {
         tags={tags}
         blogLink={blogLink}
         extLink={extLink}
+        nextBtn={nextBtn}
       />
     </div>
     <a

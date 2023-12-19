@@ -1,10 +1,12 @@
 ---
+import ButtonLink from './ButtonLink.astro';
 interface Props {
   title?: string;
   info?: string;
   tags?: string[];
   blogLink?: string;
   extLink?: string;
+  nextBtn?: boolean;
 }
 
 
@@ -14,6 +16,7 @@ const {
   tags = [],
   blogLink,
   extLink,
+  nextBtn = false,
 } = Astro.props;
 
 const formattedinfo = info.split("\n");
@@ -38,15 +41,35 @@ const formattedinfo = info.split("\n");
     {formattedinfo.map(info => <p class="info">{info}</p>)}
     <div class="card-button-group">
     {blogLink ? (
-      <button class="btn card-btn" onclick={`window.open('${blogLink}', '_blank')`}>
-        Read More
-      </button>
+      // <button class="btn card-btn" onclick={`window.open('${blogLink}', '_blank')`}>
+      //   dev.log
+      // </button>
+      <ButtonLink
+        btnText='dev.log'
+        btnLink={blogLink}
+        btnTarget='_blank'
+      />
     ) : null
     }
     {extLink ? (
-      <button class="btn card-btn" onclick={`window.open('${extLink}', '_blank')`}>
-       Check it Out
-      </button>
+      // <button class="btn card-btn" onclick={`window.open('${extLink}', '_blank')`}>
+      //  Visit
+      // </button>
+      <ButtonLink
+        btnText='Visit'
+        btnLink={extLink}
+        btnTarget='_blank'
+      />
+    ) : null}
+    {nextBtn ? (
+      // <button class="btn card-btn next-btn">
+      //  Next
+      // </button>
+      <ButtonLink
+        btnText='Next'
+        btnTarget='_self'
+        customClass='next-btn'
+      />
     ) : null}
     </div>
   </article>
