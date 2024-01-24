@@ -8,7 +8,8 @@ tags: ["React.js", "Material UI", "Firebase", "Firestore", "Netlify", "GitHub"]
 blogLink: "/posts/daily-workouts-post-1"
 extLink: "https://github.com/BBGard/daily-workouts"
 image:
-    src: "https://drive.google.com/uc?export=view&id=1itCGSuIUqB6sDt0NUrxR3mEJKC8YCoOf"
+    # src: "https://drive.google.com/uc?export=view&id=1itCGSuIUqB6sDt0NUrxR3mEJKC8YCoOf"
+    src: "src/assets/images/dw_1.webp"
     alt: "Daily Workouts app screenshots"
     link: "https://github.com/BBGard/daily-workouts"
 ---

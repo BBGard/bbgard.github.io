@@ -10,7 +10,8 @@ tags: ["Astro", "Wordpress", "HTML", "CSS",]
 blogLink: "/posts/bgp-post-1"
 extLink: "https://www.bengardinerphotography.com"
 image:
-    src: "https://drive.google.com/uc?export=view&id=1Ew6g5IFaXZmp8aIQfbb88eWQP5MtZ6xi"
+    # src: "https://drive.google.com/uc?export=view&id=1Ew6g5IFaXZmp8aIQfbb88eWQP5MtZ6xi"
+    src: "src/assets/images/bgp_2.webp"
     alt: "Ben Gardiner Photography website screenshots"
     link: "https://www.bengardinerphotography.com"
 ---
