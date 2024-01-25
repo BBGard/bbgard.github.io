@@ -12,7 +12,7 @@ import { Image } from 'astro:assets';
  * @param {string[]} tags - An array of tags to display.
  * @param {string} blogLink - The link to the blog post.
  * @param {string} extLink - The link to an external site.
- * @param {object} image - An object containing the image details.
+
  * @param {string} image.src - The image source.
  * @param {string} image.alt - The image alt text.
  * @param {string} image.link - The image link.
@@ -26,11 +26,12 @@ interface Props {
   extLink?: string;
   reverse?: boolean;
   nextBtn?: boolean;
-  image?: {
-    src: string;
-    alt: string;
-    link: string;
-  };
+  image: {src?: string; width?: number; height?: number; format?: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif"; };
+  // image?: {
+  //   src: string;
+  //   alt: string;
+  //   link: string;
+  // };
 }
 
 const {
@@ -43,9 +44,15 @@ const {
   nextBtn = false,
   image = {
     src: "",
-    alt: "",
-    link: "",
-  },
+    width: 0,
+    height: 0,
+    format: "webp",
+  }
+  // image = {
+  //   src: "",
+  //   alt: "",
+  //   link: "",
+  // },
 } = Astro.props;
 
 // Find all blog posts
@@ -53,7 +60,7 @@ const {
 
 // // Find this blog post
 // const thisBlogPost = allBlogPosts.find((post) => post.data.title === title);
-
+const myImage = import(image.src);
 ---
 
 <section class="project-section">
@@ -74,10 +81,11 @@ const {
     </div>
     <a
       class="fade-in image-box"
-      href={image.link}
+      href={""}
       target="_blank"
     >
-    <Image src={import(image.src)} alt={""} format="webp"/>
+    <Image src={myImage} alt="" width="907" height="537" format="webp"/>
+    <!-- <Image src={import(image.src)} alt={""} format="webp"/> -->
 
       <!-- <img
         class="fade-in"

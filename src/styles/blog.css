@@ -158,7 +158,8 @@ html, body {
 }
 
 main {
-  margin: 2rem auto;
+  margin: 0 auto;
+  margin-top: 6rem;
   max-width: 800px;
   display: flex;
   flex-direction: column;
