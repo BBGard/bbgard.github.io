@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/HeroSectionFull.astro";
 import ProjectSection from "../components/ProjectSection.astro";
@@ -26,7 +28,10 @@ const aboutText_3 = [
   "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
 ];
 
-const allProjects = await Astro.glob("../pages/projects/*.md");
+// Get all projects/blog posts
+// const allProjects = await Astro.glob("../pages/projects/*.md");
+  const allProjects = await getCollection('project');
+// const allBlogPosts = await getCollection('blog');
 
 // Randomise the about text
 const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
@@ -86,12 +91,12 @@ const aboutText = aboutTexts[randomIndex];
       {
         allProjects.map((project, index) => (
           <ProjectSection
-            title={project.frontmatter.title}
-            info={project.frontmatter.info}
-            tags={project.frontmatter.tags}
-            blogLink={project.frontmatter.blogLink}
-            extLink={project.frontmatter.extLink}
-            image={project.frontmatter.image}
+            title={project.data.title}
+            info={project.data.info}
+            tags={project.data.tags}
+            blogLink={project.data.blogLink}
+            extLink={project.data.extLink}
+            image={project.data.image}
             reverse={index % 2 === 1}
             nextBtn={true}
           />
