@@ -1,7 +1,5 @@
 ---
 import Card from "./Card.astro";
-import { Image } from 'astro:assets';
-// import { getCollection } from 'astro:content';
 
 /**
  * @name ProjectSection
@@ -12,10 +10,9 @@ import { Image } from 'astro:assets';
  * @param {string[]} tags - An array of tags to display.
  * @param {string} blogLink - The link to the blog post.
  * @param {string} extLink - The link to an external site.
-
- * @param {string} image.src - The image source.
- * @param {string} image.alt - The image alt text.
- * @param {string} image.link - The image link.
+ * @param {string} image - The image to display.
+ * @param {string} imgAlt - The image alt text.
+ * @param {string} imgLink - The image link.
  * @param {boolean} nextBtn - Whether to show a next button.
  */
 interface Props {
@@ -26,12 +23,9 @@ interface Props {
   extLink?: string;
   reverse?: boolean;
   nextBtn?: boolean;
-  image: {src?: string; width?: number; height?: number; format?: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif"; };
-  // image?: {
-  //   src: string;
-  //   alt: string;
-  //   link: string;
-  // };
+  image?: {src?: string; width?: number; height?: number; format?: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif"; };
+  imgAlt?: string;
+  imgLink?: string;
 }
 
 const {
@@ -47,22 +41,17 @@ const {
     width: 0,
     height: 0,
     format: "webp",
-  }
-  // image = {
-  //   src: "",
-  //   alt: "",
-  //   link: "",
-  // },
+  },
+  imgAlt = "",
+  imgLink = "",
 } = Astro.props;
 
-// Find all blog posts
-// const allBlogPosts = await getCollection('blog');
 
-// // Find this blog post
-// const thisBlogPost = allBlogPosts.find((post) => post.data.title === title);
-// const myImage = import(image.src);
+// This is a hackey solution, but it works for now.
+// Grab all image files
 const allImages = await Astro.glob('../assets/images/*.webp');
-// console.log(allImages);
+
+// Find the image file that matches the image prop
 const projectImage = allImages.find((img) => img.default.src.includes(image.src));
 ---
 
@@ -84,21 +73,10 @@ const projectImage = allImages.find((img) => img.default.src.includes(image.src)
     </div>
     <a
       class="fade-in image-box"
-      href={""}
+      href={imgLink}
       target="_blank"
     >
-    <!-- <Image src={myImage} alt="" width="907" height="537" format="webp"/> -->
-    <img src={projectImage.default.src} alt="" width={projectImage.default.width} height={projectImage.default.height}/>
-
-    <!-- <Image src={projectImage.src} alt="" width={projectImage.width} height={projectImage.height}/> -->
-    <!-- <Image src={import(image.src)} alt={""} format="webp"/> -->
-
-      <!-- <img
-        class="fade-in"
-        src={image.src}
-        alt={image.alt}
-      /> -->
-      <!-- <Image src={myImage} alt={image.alt} format="webp"/> -->
+    <img src={projectImage.default.src} alt={imgAlt} width={projectImage.default.width} height={projectImage.default.height}/>
     </a>
   </div>
 </section>

@@ -28,10 +28,8 @@ const aboutText_3 = [
   "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
 ];
 
-// Get all projects/blog posts
-// const allProjects = await Astro.glob("../pages/projects/*.md");
+// Get all projects
   const allProjects = await getCollection('project');
-// const allBlogPosts = await getCollection('blog');
 
 // Randomise the about text
 const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
@@ -97,6 +95,8 @@ const aboutText = aboutTexts[randomIndex];
             blogLink={project.data.blogLink}
             extLink={project.data.extLink}
             image={project.data.image}
+            imgAlt={project.data.imgAlt}
+            imgLink={project.data.imgLink}
             reverse={index % 2 === 1}
             nextBtn={true}
           />
