@@ -60,7 +60,10 @@ const {
 
 // // Find this blog post
 // const thisBlogPost = allBlogPosts.find((post) => post.data.title === title);
-const myImage = import(image.src);
+// const myImage = import(image.src);
+const allImages = await Astro.glob('../assets/images/*.webp');
+// console.log(allImages);
+const projectImage = allImages.find((img) => img.default.src.includes(image.src));
 ---
 
 <section class="project-section">
@@ -84,7 +87,8 @@ const myImage = import(image.src);
       href={""}
       target="_blank"
     >
-    <Image src={myImage} alt="" width="907" height="537" format="webp"/>
+    <!-- <Image src={myImage} alt="" width="907" height="537" format="webp"/> -->
+    <img src={projectImage.src} alt="" width={image.width} height={image.height}/>
     <!-- <Image src={import(image.src)} alt={""} format="webp"/> -->
 
       <!-- <img
