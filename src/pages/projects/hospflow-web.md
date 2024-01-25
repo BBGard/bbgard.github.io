@@ -10,7 +10,8 @@ blogLink: "/posts/hospflow-post-1"
 extLink: "https://hospflow.app"
 image:
     # src: "https://drive.google.com/uc?export=view&id=1tjp-GpTqA6z4_ncd9-6XHQKl4Ju_fsem"
-    src: "src/assets/images/hf_1.webp"
+    # src: "src/assets/images/hf_1.webp"
+    src: "../assets/images/hf_1.webp"
     alt: "HOSPFLOW app screenshots"
     link: "https://www.hospflow.app"
 ---

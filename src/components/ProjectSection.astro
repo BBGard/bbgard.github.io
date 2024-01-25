@@ -1,6 +1,7 @@
 ---
 import Card from "./Card.astro";
 import { Image } from 'astro:assets';
+// import { getCollection } from 'astro:content';
 
 /**
  * @name ProjectSection
@@ -47,6 +48,12 @@ const {
   },
 } = Astro.props;
 
+// Find all blog posts
+// const allBlogPosts = await getCollection('blog');
+
+// // Find this blog post
+// const thisBlogPost = allBlogPosts.find((post) => post.data.title === title);
+
 ---
 
 <section class="project-section">
@@ -70,6 +77,8 @@ const {
       href={image.link}
       target="_blank"
     >
+    <Image src={import(image.src)} alt={""} format="webp"/>
+
       <!-- <img
         class="fade-in"
         src={image.src}
