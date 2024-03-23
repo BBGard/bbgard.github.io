@@ -57,7 +57,7 @@ images.forEach((image) => {
  */
 
 // Get all the elements to slide in
-const slideInElements = document.querySelectorAll(".slide-in-left, .slide-in-right, .slide-in-bottom, .slide-in-top");
+const slideInElements = document.querySelectorAll(".slide-in-left, .slide-in-left-d1, .slide-in-left-d2, .slide-in-left-d3, .slide-in-left-d4, .slide-in-right, .slide-in-bottom, .slide-in-top");
 
 // Create an observer
 const slideInObserver = new IntersectionObserver((entries) => {
@@ -69,9 +69,22 @@ const slideInObserver = new IntersectionObserver((entries) => {
 			entry.target.classList.add("animation-finished");
 
 			// Remove the class after the animation is done
+			let timeoutDuration = 1000; // Default timeout duration
+
+			// Check if the element has a class that includes d1, d2, d3, or d4
+			if (entry.target.classList.contains("slide-in-left-d1")) {
+				timeoutDuration = 1500;
+			} else if (entry.target.classList.contains("slide-in-left-d2")) {
+				timeoutDuration = 2000;
+			} else if (entry.target.classList.contains("slide-in-left-d3")) {
+				timeoutDuration = 2500;
+			} else if (entry.target.classList.contains("slide-in-left-d4")) {
+				timeoutDuration = 3000;
+			}
+
 			setTimeout(() => {
 				entry.target.classList.remove("slide-in-animation");
-			}, 1000);
+			}, timeoutDuration);
 		}
 	});
 });

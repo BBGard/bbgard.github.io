@@ -49,15 +49,33 @@ const aboutText = aboutTexts[randomIndex];
     </HeroSectionFull>
     <Divider />
     <section id="about">
-      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
-        About Ben
+      <h2 class="secondary-title show-cursor shakeable slide-in-bottom title-black-bg">
+        Profile
       </h2>
       <div class="flex-columns">
-        <div class="text-box text-box-clamp fade-in card shakeable">
+        <div class="column">
+        <div class="text-box text-box-clamp slide-in-left card shakeable">
           <p class="about-text">
-            {aboutText[0]}<br /><br />{aboutText[1]}
+            <strong>High-achieving recent IT graduate</strong>with a track record of academic excellence.
           </p>
-          <div class="button-group">
+        </div>
+        <div class="text-box text-box-clamp slide-in-left-d1 card shakeable">
+          <p class="about-text">
+            <strong>Adept in dynamic web development</strong>, I bring a proactive problem-solving approach, alongside a commitment to continuous self-improvement and learning.
+          </p>
+        </div>
+        <div class="text-box text-box-clamp slide-in-left-d2 card shakeable">
+          <p class="about-text">
+            <strong>Demonstrating strong leadership and communication skills</strong>, I am eager to embark on a fulfilling career in software and web development.
+          </p>
+        </div>
+        <div class="text-box text-box-clamp slide-in-left-d3 card shakeable">
+          <p class="about-text">
+            <strong>Seeking opportunities</strong> with organisations committed to fostering continual learning, collaborative innovation, and growth.
+          </p>
+        </div>
+      </div>
+          <!-- <div class="button-group">
             <Social
               icon={githubIcon}
               invertHover={true}
@@ -70,8 +88,8 @@ const aboutText = aboutTexts[randomIndex];
               platform="LinkedIn"
               username="in/benjamin-gardiner-6b8478263/"
             />
-          </div>
-        </div>
+          </div> -->
+
         <div class="headshot fade-in">
           <img
             class="show-cursor shakeable"

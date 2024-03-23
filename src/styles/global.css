@@ -118,7 +118,7 @@ meter {
   --accent-color: #a800ab;
   --accent-color-light: #fdf6ff;
   --accent-color-transparent: rgba(168, 0, 171, 0.6);
-  --background-light: #ffffff;
+  --background-light: #f2f2f2;
   --background-nav: #ececec;
   --background-dark: #000000;
 
@@ -239,7 +239,7 @@ h6 {
 p {
   font-family: var(--font-primary);
   margin: 0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   font-size: var(--font-size-3);
   font-weight: 400;
 }
@@ -273,6 +273,10 @@ blockquote {
   margin-bottom: 1rem;
   padding-left: 1rem;
   border-left: 0.25rem solid rgb(var(--accent));
+}
+
+strong {
+  font-weight: 600;
 }
 
 /* Sections */
@@ -319,21 +323,27 @@ section {
   width: 100%;
 }
 
+.column {
+  width: 100%;
+  padding: 2rem;
+}
+
 .text-box {
-  width: 50%;
+  width: 100%;
   font-size: var(--font-size-3);
-  margin: 0 10% 0 0;
+  margin: 0 10% 5% 0;
+
 }
 
 @media screen and (max-width: 1000px) {
-  .text-box {
+  /* .text-box {
     margin: 0;
-  }
+  } */
 
 }
 
 .text-box-clamp {
-  width: 50%;
+  width: 100%;
   font-size: var(--font-size-3);
   max-width: 600px;
 }
@@ -408,7 +418,7 @@ article {
   color: var(--primary);
   box-shadow: 6px 6px 0px var(--accent-transparent);
   background-color: var(--secondary);
-  padding: 1.5rem;
+  padding: 1rem;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   -webkit-tap-highlight-color:transparent;
@@ -556,6 +566,15 @@ article {
 
 /* End Button */
 
+/* Special Classes */
+
+.title-black-bg {
+  background-color: var(--background-dark);
+  color: var(--secondary);
+  text-transform: uppercase;
+  padding: 0 1rem;
+}
+
 
 /* Helper Classes */
 
@@ -591,6 +610,19 @@ h2.colorized {
 /* Slide animations */
 .slide-in-left.slide-in-animation {
   animation: slide-in-from-left 1s;
+}
+
+.slide-in-left-d1.slide-in-animation {
+  animation: slide-in-from-left 1.5s;
+}
+.slide-in-left-d2.slide-in-animation {
+  animation: slide-in-from-left 2s;
+}
+.slide-in-left-d3.slide-in-animation {
+  animation: slide-in-from-left 2.5s;
+}
+.slide-in-left-d4.slide-in-animation {
+  animation: slide-in-from-left 3s;
 }
 
 .slide-in-right.slide-in-animation {
