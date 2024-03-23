@@ -331,7 +331,7 @@ section {
 .text-box {
   width: 100%;
   font-size: var(--font-size-3);
-  margin: 0 10% 5% 0;
+  margin: 0 10% 2% 0;
 
 }
 
@@ -510,7 +510,8 @@ article {
   }
 
   .text-box, .text-box-reverse {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cards {
@@ -532,14 +533,14 @@ article {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: 0.125rem solid var(--accent);
-  background-color: var(--accent);
+  background-color: var(--background-dark);
   color: var(--secondary);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 4px 4px 0px var(--accent-transparent);
+  box-shadow: 4px 4px 0px var(--accent);
   transition: all 0.2s ease-in-out;
 }
 
