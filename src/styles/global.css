@@ -315,6 +315,12 @@ section {
   padding: 0 10%;
 }
 
+@media screen and (max-width: 800px) {
+  .project-section-full {
+    padding: 0 2%;
+  }
+}
+
 .blog {
   max-width: 800px;
   margin: 0 auto;
@@ -340,6 +346,12 @@ section {
 .column {
   width: 100%;
   padding: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    padding: 1rem;
+  }
 }
 
 .text-box {
