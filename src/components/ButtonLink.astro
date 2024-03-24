@@ -23,6 +23,7 @@ interface Props {
   invert?: boolean;
   size?: string;
   customClass?: string;
+  animation?: string;
 }
 
 const {
@@ -35,30 +36,32 @@ const {
   invert = "false",
   size = "normal",
   customClass = "",
+  animation = "slide-in-bottom",
+
 } = Astro.props;
 
 ---
 
-<a href={btnLink} target={btnTarget} class={icon ? `btn btn-${size} btn-icon slide-in-bottom ${customClass}` : `btn btn-${size} slide-in-bottom ${customClass}`}>
+<a href={btnLink} target={btnTarget} class={icon ? `btn btn-${size} btn-icon ${animation} ${customClass}` : `btn btn-${size} ${animation} ${customClass}`}>
   {
     reverse ? (
       <>
       {icon ?
-      <div class={invertHover === true ? "mr-2 slide-in-left icon invert-hover" : "mr-2 slide-in-left"}>
+      <div class={invertHover === true ? `mr-2 ${animation} icon invert-hover` : `mr-2 ${animation}`}>
         <img class={invert === true ? "invert" : ""} src={icon} alt={btnText} />
       </div>
      : null}
-      <div class={icon ? "slide-in-right link" : "slide-in-right"}>
+      <div class={icon ? `${animation} link` : `${animation}`}>
         <span>{btnText}</span>
       </div>
       </>
     ) : (
       <>
-      <div class={icon ? "slide-in-left link" : "slide-in-left"}>
+      <div class={icon ? `${animation} link` : `${animation}`}>
         <span>{btnText}</span>
       </div>
       {icon ?
-      <div class={invertHover === true ? "ml-2 slide-in-left icon invert-hover" : "ml-2 slide-in-left"}>
+      <div class={invertHover === true ? `ml-2 ${animation} icon invert-hover` : `ml-2 ${animation}`}>
         <img class={invert === true ? "invert" : ""} src={icon} alt={btnText} />
       </div>
       : null}

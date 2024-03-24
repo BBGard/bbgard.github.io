@@ -82,7 +82,7 @@ const infoParagraphs = info.split("\n");
     >
       <div class="center-title gap">
         <h3
-          class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
+          class="secondary-title shakeable fade-in title-black-bg uppercase"
         >
           {title}
         </h3>
@@ -93,7 +93,7 @@ const infoParagraphs = info.split("\n");
             <div class="tags">
               {tags.map((tag) => (
                 <a
-                  class={reverse ? 'tag slide-in-right' : 'tag slide-in-left'}
+                  class={reverse ? 'tag fade-in' : 'tag fade-in'}
                   href={`/tags/${tag.toLowerCase()}`}
                 >
                   {tag}
@@ -107,13 +107,13 @@ const infoParagraphs = info.split("\n");
         {
           infoParagraphs.map((paragraph) => (
 
-          <div class={reverse ? 'gap text-box-center slide-in-right card shakeable' : 'gap text-box-center slide-in-left card shakeable'}>
+          <div class={reverse ? 'gap text-box-center fade-in card shakeable' : 'gap text-box-center fade-in card shakeable'}>
               <p class='info-text'>{paragraph}</p>
             </div>
           ))
         }
         {endBtn ?
-          <div class={reverse ? 'gap text-box-center slide-in-right card shakeable' : 'gap text-box-center slide-in-left card shakeable'}>
+          <div class={reverse ? 'gap text-box-center fade-in card shakeable' : 'gap text-box-center fade-in card shakeable'}>
             <p class="info-text">For more projects, check out my GitHub!</p>
           </div>
         : null
@@ -122,7 +122,7 @@ const infoParagraphs = info.split("\n");
       <div class="button-box">
         {
           extLink ? (
-            <ButtonLink btnText="Visit" btnLink={extLink} btnTarget="_blank" size="medium"/>
+            <ButtonLink btnText="Visit" btnLink={extLink} btnTarget="_blank" size="medium" animation="fade"/>
           ) : null
         }
         {
@@ -132,6 +132,7 @@ const infoParagraphs = info.split("\n");
               btnTarget="_self"
               customClass="prev-btn"
               size="medium"
+              animation="fade"
             />
           ) : null
         }
@@ -142,6 +143,7 @@ const infoParagraphs = info.split("\n");
               btnTarget="_self"
               customClass="next-btn"
               size="medium"
+              animation="fade"
             />
           ) : null
         }
@@ -152,6 +154,7 @@ const infoParagraphs = info.split("\n");
               btnLink="https://github.com/bbgard"
               btnTarget="_blank"
               size="medium"
+              animation="fade"
             />
           ) : null
         }
@@ -198,4 +201,11 @@ const infoParagraphs = info.split("\n");
   .gap-2 {
     margin-bottom: 2rem;
   }
+
+  @media screen and (max-width: 768px) {
+    .button-box {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
 </style>

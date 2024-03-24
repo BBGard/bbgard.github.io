@@ -355,9 +355,9 @@ section {
 
 
 @media screen and (max-width: 1000px) {
-  /* .text-box {
-    margin: 0;
-  } */
+  .text-box {
+    margin-bottom: 2rem;
+  }
 
 }
 
