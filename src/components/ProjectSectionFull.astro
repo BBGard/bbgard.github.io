@@ -176,7 +176,18 @@ const infoParagraphs = info.split("\n");
     </a>
   </div>
 
+  {endBtn ? (
 
+    <ButtonLink
+      btnText="What's Next?"
+      btnLink="#contact"
+      btnTarget="_self"
+      size="large"
+      animation="fade"
+      customClass="scroll-btn"
+    />
+
+  ) : null}
 
 </section>
 
