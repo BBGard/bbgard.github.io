@@ -245,7 +245,7 @@ p {
   font-family: var(--font-primary);
   margin: 0;
   /* margin-bottom: 1rem; */
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-4);
   font-weight: 400;
 }
 
@@ -356,7 +356,7 @@ section {
 
 .text-box {
   width: 40%;
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-4);
   margin: 0 10% 2% 0;
 
 }
@@ -375,7 +375,7 @@ section {
 
 .text-box-clamp {
   width: 100%;
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-4);
   max-width: 600px;
 }
 
