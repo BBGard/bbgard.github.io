@@ -7,7 +7,7 @@ author: Ben Gardiner
 image:
     url: "https://drive.google.com/uc?export=view&id=1vsjSGChyA68hLeD_U2h6pzoiHFO-sesr"
     alt: "HOSPFLOW logo white."
-tags: ["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB", "University", "Wordpress", "HTML", "CSS", ]
+tags: ["React.js", "AWS Amplify", "GraphQL", "Node.js", "DynamoDB", "University", "Wordpress", "HTML5", "CSS3", "JavaScript" ]
 ---
 
 ## Introduction

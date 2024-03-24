@@ -7,6 +7,6 @@ author: Ben Gardiner
 image:
     url: "https://drive.google.com/uc?export=view&id=1JkQJm0gJfQDkJ5Lx9K841h1VVRpM4KrU"
     alt: "Ben Gardiner Photography website screenshots"
-tags: ["Astro", "Wordpress", "HTML", "CSS",]
+tags: ["Astro", "Wordpress", "HTML5", "CSS3", "JavaScript"]
 ---
 Coming soon

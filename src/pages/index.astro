@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/HeroSectionFull.astro";
-import ProjectSection from "../components/ProjectSection.astro";
+import ProjectSectionFull from "../components/ProjectSectionFull.astro";
 import githubIcon from "../assets/github-mark-white.png";
 import linkedinIcon from "../assets/LinkedIn_icon.svg";
 import Social from "../components/Social.astro";
@@ -17,78 +17,67 @@ import ButtonLink from "../components/ButtonLink.astro";
 import emailIcon from "../assets/email_icon.svg";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
-const aboutText_1 = [
-  "Greetings! I'm Benjamin Gardiner, an IT graduate with a fervor for technology.",
-  "My journey involves exploring the realms of user experience, design, software engineering, and web development, where I continually evolve my skills to stay at the forefront of innovation.",
-];
-const aboutText_2 = [
-  "Welcome! I'm Benjamin Gardiner, a digital craftsman on a quest for perfection.",
-  "Armed with a degree in Information Technology, my focus extends to refining user experiences, crafting elegant designs, and mastering the intricacies of software engineering and web development.",
-];
-const aboutText_3 = [
-  "Hey there! I'm Benjamin Gardiner, a code artisan weaving digital experiences.",
-  "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
-];
+// const aboutText_1 = [
+//   "Greetings! I'm Benjamin Gardiner, an IT graduate with a fervor for technology.",
+//   "My journey involves exploring the realms of user experience, design, software engineering, and web development, where I continually evolve my skills to stay at the forefront of innovation.",
+// ];
+// const aboutText_2 = [
+//   "Welcome! I'm Benjamin Gardiner, a digital craftsman on a quest for perfection.",
+//   "Armed with a degree in Information Technology, my focus extends to refining user experiences, crafting elegant designs, and mastering the intricacies of software engineering and web development.",
+// ];
+// const aboutText_3 = [
+//   "Hey there! I'm Benjamin Gardiner, a code artisan weaving digital experiences.",
+//   "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
+// ];
 
 // Get all projects
   const allProjects = await getCollection('project');
+  // Order projects by index
+  allProjects.sort((a, b) => a.data.index - b.data.index);
 
 // Randomise the about text
-const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
-const randomIndex = Math.floor(Math.random() * aboutTexts.length);
-const aboutText = aboutTexts[randomIndex];
+// const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
+// const randomIndex = Math.floor(Math.random() * aboutTexts.length);
+// const aboutText = aboutTexts[randomIndex];
 ---
 
 <Layout title={pageTitle}>
   <main>
     <HeroSectionFull>
-      <h1 class="main-title show-cursor shakeable fade-in title-black-bg">
-        Hi,<br />I'm Ben.
+      <h1 class="main-title shakeable fade-in title-black-bg">
+        Hi, I'm Ben.
       </h1>
-      <ButtonLink btnText="Learn More" btnLink="#about" size="large" />
+      <ButtonLink btnText="Go on..." btnLink="#about" size="large" />
     </HeroSectionFull>
     <Divider />
     <section id="about">
-      <h2 class="secondary-title show-cursor shakeable slide-in-bottom title-black-bg">
+      <h2 class="secondary-title shakeable slide-in-bottom title-black-bg uppercase">
         Profile
       </h2>
       <div class="flex-columns">
         <div class="column">
         <div class="text-box text-box-clamp slide-in-left card shakeable">
           <p class="about-text">
-            <strong>High-achieving recent IT graduate</strong>with a track record of academic excellence.
+            <strong>High-achieving IT graduate</strong> with a track record of academic excellence.
           </p>
         </div>
         <div class="text-box text-box-clamp slide-in-left-d1 card shakeable">
           <p class="about-text">
-            <strong>Adept in dynamic web development</strong>, I bring a proactive problem-solving approach, alongside a commitment to continuous self-improvement and learning.
+            <strong>Adept web developer</strong> experienced in creating dynamic and responsive websites.
           </p>
         </div>
         <div class="text-box text-box-clamp slide-in-left-d2 card shakeable">
           <p class="about-text">
-            <strong>Demonstrating strong leadership and communication skills</strong>, I am eager to embark on a fulfilling career in software and web development.
+            <strong>Proactive problem-solver</strong> with a knack for identifying innovative solutions to complex challenges.
           </p>
         </div>
         <div class="text-box text-box-clamp slide-in-left-d3 card shakeable">
           <p class="about-text">
-            <strong>Seeking opportunities</strong> with organisations committed to fostering continual learning, collaborative innovation, and growth.
+            <strong>Committed to continuous self-improvement and learning</strong>, actively seeking out new challenges to expand my skill set and knowledge base.
           </p>
         </div>
       </div>
-          <!-- <div class="button-group">
-            <Social
-              icon={githubIcon}
-              invertHover={true}
-              platform="GitHub"
-              username="bbgard"
-            />
-            <ButtonLink btnText="Projects" btnLink="#projects" size="large" />
-            <Social
-              icon={linkedinIcon}
-              platform="LinkedIn"
-              username="in/benjamin-gardiner-6b8478263/"
-            />
-          </div> -->
+
 
         <div class="headshot fade-in">
           <img
@@ -99,19 +88,20 @@ const aboutText = aboutTexts[randomIndex];
         </div>
 
       </div>
-      <ButtonLink btnText="Projects" btnLink="#projects" size="large" />
+      <ButtonLink btnText="I'm listening.." btnLink="#projects" size="large" />
 
     </section>
     <Divider />
     <!-- Projects Section -->
     <div id="projects">
-      <h2 class="secondary-title show-cursor shakeable slide-in-bottom">
+      <div class="center-title">
+      <h2 class="secondary-title shakeable slide-in-bottom title-black-bg uppercase">
         Projects
       </h2>
-
+    </div>
       {
         allProjects.map((project, index) => (
-          <ProjectSection
+          <ProjectSectionFull
             title={project.data.title}
             info={project.data.info}
             tags={project.data.tags}
@@ -121,7 +111,7 @@ const aboutText = aboutTexts[randomIndex];
             imgAlt={project.data.imgAlt}
             imgLink={project.data.imgLink}
             reverse={index % 2 === 1}
-            nextBtn={true}
+            nextBtn={index !== allProjects.length - 1}
           />
         ))
       }

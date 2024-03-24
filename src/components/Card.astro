@@ -28,7 +28,7 @@ const formattedinfo = info.split("\n");
       tags ? (
         <div class="tags">
           {tags.map((tag) => (
-            <a class="tag" href={`/tags/${tag.toLowerCase()}`}>
+            <a class="tag" href={`/tags/${tag.toLowerCase()}`} target="_blank">
               {tag}
             </a>
           ))}

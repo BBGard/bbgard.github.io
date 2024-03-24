@@ -12,6 +12,7 @@ const projectCollection = defineCollection({
     image: image(),
     imgAlt: z.string(),
     imgLink: z.string(),
+    index: z.number(),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)

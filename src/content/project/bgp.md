@@ -1,15 +1,16 @@
 ---
-title: "Ben Gardiner Photography - Website"
+title: "Ben Gardiner Photography"
 info:
-  My personal photography website!
+  My personal photography website.
 
-  Currently built using Astro (previously WordPress), this site showcases my passion for landscape and nature photography.
+  Built using Astro (previously WordPress), this site showcases my passion for landscape and nature photography.
 
-  The site undergoes yearly updates and changes as I continue to learn and improve my skills as a developer and photographer.
-tags: ["Astro", "Wordpress", "HTML", "CSS",]
+  Undergoes yearly updates as I continue to learn and improve my skills as a developer and photographer.
+tags: ["Astro", "Wordpress", "HTML5", "CSS3", "JavaScript",]
 blogLink: "/posts/bgp-post-1"
 extLink: "https://www.bengardinerphotography.com"
 image: "../../assets/images/bgp_2.webp"
 imgAlt: "Ben Gardiner Photography website screenshots"
 imgLink: "https://www.bengardinerphotography.com"
+index: 4
 ---

@@ -126,7 +126,7 @@ meter {
 
   /* Fonts */
   --font-primary: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-  --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
+   --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
   /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
   --font-code: 'Fira Code', monospace;
 
@@ -139,6 +139,7 @@ meter {
   --font-size-6: 0.75rem;
   --font-size-dynamic-1: clamp(5rem, 30vw, 10rem);
   --font-size-dynamic-2: clamp(3rem, 15vw, 6rem);
+  --font-size-dynamic-3: clamp(2rem, 10vw, 4rem);
 
 }
 
@@ -161,7 +162,6 @@ main {
   margin: 0 auto;
   padding: 1rem;
   width: 100%;
-  max-width: 1400px;
 }
 
 
@@ -209,11 +209,16 @@ h2:hover {
 }
 
 h3 {
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-dynamic-3);
+  font-family: var(--font-primary);
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
+  line-height: 1.2em;
+  text-align: center;
+  color: var(--primary);
 }
+
 
 h4 {
   font-size: var(--font-size-4);
@@ -287,6 +292,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .hero-section {
@@ -299,6 +306,13 @@ section {
 .project-section {
   height: auto;
   margin: 10% auto;
+}
+
+.project-section-full {
+  margin: 10% auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 10%;
 }
 
 .blog {
@@ -329,11 +343,16 @@ section {
 }
 
 .text-box {
-  width: 100%;
+  width: 40%;
   font-size: var(--font-size-3);
   margin: 0 10% 2% 0;
 
 }
+
+.text-box-center {
+  margin: 0 auto;
+}
+
 
 @media screen and (max-width: 1000px) {
   /* .text-box {
@@ -353,7 +372,7 @@ section {
 }
 
 .headshot {
-  width: 40%;
+  width: 50%;
   padding: 2rem;
 }
 
@@ -374,7 +393,8 @@ section {
 }
 
 .image-box {
-  width: 50%;
+  /* width: 50%; */
+  width: 60%;
   padding: 2rem;
   text-align: center;
   margin: 0 auto;
@@ -420,8 +440,9 @@ article {
   background-color: var(--secondary);
   padding: 1rem;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
   -webkit-tap-highlight-color:transparent;
+  /* width: 100%; */
 }
 
 .card:hover {
@@ -443,11 +464,10 @@ article {
 }
 
 .tag {
-  font-size: var(--font-size-6);
-  background-color: var(--accent);
+  font-size: var(--font-size-4);
+  background-color: var(--background-dark);
   box-shadow: 2px 2px 0px var(--accent-transparent);
   border: 0.125rem solid var(--accent);
-
   color: var(--secondary);
   font-weight: 600;
   padding: 0.5em 0.75em;
@@ -572,7 +592,6 @@ article {
 .title-black-bg {
   background-color: var(--background-dark);
   color: var(--secondary);
-  text-transform: uppercase;
   padding: 0 1rem;
 }
 
@@ -581,6 +600,17 @@ article {
 
 .show-cursor {
   cursor: pointer;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* No scroll when menu open */

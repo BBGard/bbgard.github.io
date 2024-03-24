@@ -7,6 +7,6 @@ author: Ben Gardiner
 image:
     url: "https://drive.google.com/uc?export=view&id=15NivXqHW4KFxKC8_Kp_JW6hJqxYpJZRm"
     alt: "Don't Undermine Daylesford website screenshots"
-tags: ["Wordpress", "HTML", "CSS",]
+tags: ["Wordpress", "HTML5", "CSS3", "JavaScript"]
 ---
 Coming soon
