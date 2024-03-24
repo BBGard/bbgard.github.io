@@ -12,5 +12,5 @@ extLink: "https://www.bengardinerphotography.com"
 image: "../../assets/images/bgp_2.webp"
 imgAlt: "Ben Gardiner Photography website screenshots"
 imgLink: "https://www.bengardinerphotography.com"
-index: 4
+index: 5
 ---

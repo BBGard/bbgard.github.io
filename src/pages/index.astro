@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/HeroSectionFull.astro";
@@ -31,9 +31,9 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
 // ];
 
 // Get all projects
-  const allProjects = await getCollection('project');
-  // Order projects by index
-  allProjects.sort((a, b) => a.data.index - b.data.index);
+const allProjects = await getCollection("project");
+// Order projects by index
+allProjects.sort((a, b) => a.data.index - b.data.index);
 
 // Randomise the about text
 // const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
@@ -44,40 +44,45 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
 <Layout title={pageTitle}>
   <main>
     <HeroSectionFull>
-      <h1 class="main-title shakeable fade-in title-black-bg">
-        Hi, I'm Ben.
-      </h1>
+      <h1 class="main-title shakeable fade-in title-black-bg">Hi, I'm Ben.</h1>
       <ButtonLink btnText="Go on..." btnLink="#about" size="large" />
     </HeroSectionFull>
     <Divider />
     <section id="about">
-      <h2 class="secondary-title shakeable slide-in-bottom title-black-bg uppercase">
+      <h2
+        class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
+      >
         Profile
       </h2>
       <div class="flex-columns">
         <div class="column">
-        <div class="text-box text-box-clamp slide-in-left card shakeable">
-          <p class="about-text">
-            <strong>High-achieving IT graduate</strong> with a track record of academic excellence.
-          </p>
+          <div class="text-box text-box-clamp slide-in-left card shakeable">
+            <p class="about-text">
+              <strong>High-achieving IT graduate</strong> with a track record of
+              academic excellence.
+            </p>
+          </div>
+          <div class="text-box text-box-clamp slide-in-left-d1 card shakeable">
+            <p class="about-text">
+              <strong>Adept web developer</strong> experienced in creating dynamic
+              and responsive websites.
+            </p>
+          </div>
+          <div class="text-box text-box-clamp slide-in-left-d2 card shakeable">
+            <p class="about-text">
+              <strong>Proactive problem-solver</strong> with a knack for identifying
+              innovative solutions to complex challenges.
+            </p>
+          </div>
+          <div class="text-box text-box-clamp slide-in-left-d3 card shakeable">
+            <p class="about-text">
+              <strong
+                >Committed to continuous self-improvement and learning</strong
+              >, actively seeking out new challenges to expand my skill set and
+              knowledge base.
+            </p>
+          </div>
         </div>
-        <div class="text-box text-box-clamp slide-in-left-d1 card shakeable">
-          <p class="about-text">
-            <strong>Adept web developer</strong> experienced in creating dynamic and responsive websites.
-          </p>
-        </div>
-        <div class="text-box text-box-clamp slide-in-left-d2 card shakeable">
-          <p class="about-text">
-            <strong>Proactive problem-solver</strong> with a knack for identifying innovative solutions to complex challenges.
-          </p>
-        </div>
-        <div class="text-box text-box-clamp slide-in-left-d3 card shakeable">
-          <p class="about-text">
-            <strong>Committed to continuous self-improvement and learning</strong>, actively seeking out new challenges to expand my skill set and knowledge base.
-          </p>
-        </div>
-      </div>
-
 
         <div class="headshot fade-in">
           <img
@@ -86,19 +91,19 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
             alt="Image of Ben"
           />
         </div>
-
       </div>
       <ButtonLink btnText="I'm listening.." btnLink="#projects" size="large" />
-
     </section>
     <Divider />
     <!-- Projects Section -->
     <div id="projects">
       <div class="center-title">
-      <h2 class="secondary-title shakeable slide-in-bottom title-black-bg uppercase">
-        Projects
-      </h2>
-    </div>
+        <h2
+          class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
+        >
+          Projects
+        </h2>
+      </div>
       {
         allProjects.map((project, index) => (
           <ProjectSectionFull
@@ -112,30 +117,12 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
             imgLink={project.data.imgLink}
             reverse={index % 2 === 1}
             nextBtn={index !== allProjects.length - 1}
+            prevBtn={index !== 0}
+            hidden={index !== 0}
+            endBtn={index === allProjects.length - 1}
           />
         ))
       }
-      <article class="card card-center shakeable slide-in-bottom">
-        <h3 class="title">More Projects</h3>
-        <p>For more projects, check out my GitHub!</p>
-        <div class="butotn-group">
-          <Social
-            icon={githubIcon}
-            invertHover={true}
-            platform="GitHub"
-            username="bbgard"
-            size="full"
-          />
-          <ButtonLink
-            btnText="Contact"
-            btnLink="#contact"
-            size="full"
-            icon={emailIcon.src}
-            invert={true}
-            invertHover={true}
-          />
-        </div>
-      </article>
     </div>
 
     <Divider size="full" margin="large" />
@@ -164,6 +151,10 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
       .next-project {
         display: flex;
         justify-content: center;
+      }
+
+      article p {
+        text-align: center;
       }
 
       @media screen and (max-width: 768px) {

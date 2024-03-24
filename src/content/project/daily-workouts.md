@@ -14,5 +14,5 @@ extLink: "https://github.com/BBGard/daily-workouts"
 image: "../../assets/images/dw_1.webp"
 imgAlt: "Daily Workouts app screenshots"
 imgLink: "https://github.com/BBGard/daily-workouts"
-index: 5
+index: 4
 ---

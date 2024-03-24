@@ -1,6 +1,9 @@
 ---
 import Card from "./Card.astro";
 import ButtonLink from "./ButtonLink.astro";
+import githubIcon from "../assets/github-mark-white.png";
+import emailIcon from "../assets/email_icon.svg";
+import Social from "../components/Social.astro";
 
 /**
  * @name ProjectSectionFull
@@ -15,6 +18,7 @@ import ButtonLink from "./ButtonLink.astro";
  * @param {string} imgAlt - The image alt text.
  * @param {string} imgLink - The image link.
  * @param {boolean} nextBtn - Whether to show a next button.
+ * @param {boolean} hidden - Whether to hide the component.
  */
 interface Props {
   title?: string;
@@ -24,6 +28,8 @@ interface Props {
   extLink?: string;
   reverse?: boolean;
   nextBtn?: boolean;
+  prevBtn?: boolean;
+  endBtn?: boolean;
   image?: {
     src?: string;
     width?: number;
@@ -32,6 +38,7 @@ interface Props {
   };
   imgAlt?: string;
   imgLink?: string;
+  hidden?: boolean;
 }
 
 const {
@@ -42,6 +49,8 @@ const {
   extLink = "",
   reverse = false,
   nextBtn = false,
+  prevBtn = false,
+  endBtn = false,
   image = {
     src: "",
     width: 0,
@@ -50,6 +59,7 @@ const {
   },
   imgAlt = "",
   imgLink = "",
+  hidden = false,
 } = Astro.props;
 
 // This is a hackey solution, but it works for now.
@@ -65,7 +75,7 @@ const projectImage = allImages.find((img) =>
 const infoParagraphs = info.split("\n");
 ---
 
-<section class="project-section-full">
+<section class={hidden ? 'project-section-full hidden' : 'project-section-full'}>
   <div class={reverse ? "flex-columns-reverse" : "flex-columns"}>
     <div
       class={reverse ? "fade-in text-box text-box-reverse" : "fade-in text-box"}
@@ -83,7 +93,7 @@ const infoParagraphs = info.split("\n");
             <div class="tags">
               {tags.map((tag) => (
                 <a
-                  class="tag slide-in-left"
+                  class={reverse ? 'tag slide-in-right' : 'tag slide-in-left'}
                   href={`/tags/${tag.toLowerCase()}`}
                 >
                   {tag}
@@ -97,16 +107,32 @@ const infoParagraphs = info.split("\n");
         {
           infoParagraphs.map((paragraph) => (
 
-          <div class="gap text-box-center slide-in-left card shakeable">
-              <p class="slide-in-left info-text">{paragraph}</p>
+          <div class={reverse ? 'gap text-box-center slide-in-right card shakeable' : 'gap text-box-center slide-in-left card shakeable'}>
+              <p class='info-text'>{paragraph}</p>
             </div>
           ))
+        }
+        {endBtn ?
+          <div class={reverse ? 'gap text-box-center slide-in-right card shakeable' : 'gap text-box-center slide-in-left card shakeable'}>
+            <p class="info-text">For more projects, check out my GitHub!</p>
+          </div>
+        : null
         }
     </div>
       <div class="button-box">
         {
           extLink ? (
             <ButtonLink btnText="Visit" btnLink={extLink} btnTarget="_blank" size="medium"/>
+          ) : null
+        }
+        {
+          prevBtn ? (
+            <ButtonLink
+              btnText="Previous Project"
+              btnTarget="_self"
+              customClass="prev-btn"
+              size="medium"
+            />
           ) : null
         }
         {
@@ -119,6 +145,17 @@ const infoParagraphs = info.split("\n");
             />
           ) : null
         }
+        {
+          endBtn ? (
+            <ButtonLink
+              btnText="GitHub"
+              btnLink="https://github.com/bbgard"
+              btnTarget="_blank"
+              size="medium"
+            />
+          ) : null
+        }
+
       </div>
     </div>
     <a class="fade-in image-box" href={imgLink} target="_blank">
@@ -130,7 +167,11 @@ const infoParagraphs = info.split("\n");
       />
     </a>
   </div>
+
+
+
 </section>
+
 
 <style>
   .tag-box {

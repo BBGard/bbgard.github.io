@@ -613,6 +613,10 @@ article {
   align-items: center;
 }
 
+.hidden {
+  display: none;
+}
+
 /* No scroll when menu open */
 .no-scroll {
   overflow: hidden;
