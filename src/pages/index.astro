@@ -4,41 +4,19 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/HeroSectionFull.astro";
 import ProjectSectionFull from "../components/ProjectSectionFull.astro";
-import githubIcon from "../assets/github-mark-white.png";
-import linkedinIcon from "../assets/LinkedIn_icon.svg";
-import Social from "../components/Social.astro";
 import Divider from "../components/Divider.astro";
 import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
-// import headshot from "../assets/images/Headshot_2023_small_2.webp";
-// import headshot from "../assets/images/Headshot_2024.webp";
-import headshot from "../assets/images/Headshot_crop.webp";
+import headshot from "../assets/images/headshot_2024_crop.webp";
 import ButtonLink from "../components/ButtonLink.astro";
-import emailIcon from "../assets/email_icon.svg";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
-// const aboutText_1 = [
-//   "Greetings! I'm Benjamin Gardiner, an IT graduate with a fervor for technology.",
-//   "My journey involves exploring the realms of user experience, design, software engineering, and web development, where I continually evolve my skills to stay at the forefront of innovation.",
-// ];
-// const aboutText_2 = [
-//   "Welcome! I'm Benjamin Gardiner, a digital craftsman on a quest for perfection.",
-//   "Armed with a degree in Information Technology, my focus extends to refining user experiences, crafting elegant designs, and mastering the intricacies of software engineering and web development.",
-// ];
-// const aboutText_3 = [
-//   "Hey there! I'm Benjamin Gardiner, a code artisan weaving digital experiences.",
-//   "With a Bachelor's in Information Technology, I channel my passion into sculpting seamless user experiences, creating captivating designs, and crafting robust solutions in the realm of web development.",
-// ];
 
 // Get all projects
 const allProjects = await getCollection("project");
 // Order projects by index
 allProjects.sort((a, b) => a.data.index - b.data.index);
 
-// Randomise the about text
-// const aboutTexts = [aboutText_1, aboutText_2, aboutText_3];
-// const randomIndex = Math.floor(Math.random() * aboutTexts.length);
-// const aboutText = aboutTexts[randomIndex];
 ---
 
 <Layout title={pageTitle}>
