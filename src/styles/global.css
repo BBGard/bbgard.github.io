@@ -315,7 +315,7 @@ section {
   padding: 0 10%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .project-section-full {
     padding: 0 2%;
   }
@@ -348,7 +348,7 @@ section {
   padding: 2rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .column {
     padding: 1rem;
   }
@@ -366,7 +366,7 @@ section {
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .text-box {
     margin-bottom: 2rem;
   }
@@ -516,7 +516,7 @@ article {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   section {
     display: block;
     margin: 0 auto;
@@ -590,7 +590,7 @@ article {
   gap: 2rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .button-group {
     justify-content: center;
   }
