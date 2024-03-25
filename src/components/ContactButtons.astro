@@ -1,0 +1,55 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import Social from "./Social.astro";
+import emailIcon from "../assets/email_icon.svg";
+import githubIcon from "../assets/github-mark.png";
+import linkedinIcon from "../assets/LinkedIn_icon.svg";
+
+const {
+  align = "center",
+ } = Astro.props;
+
+
+---
+
+<div class=`button-group contact-buttons align-${align}`>
+  <ButtonLink
+    icon={emailIcon.src}
+    btnText="Email"
+    btnLink="mailto:ben.b.gardiner@gmail.com?subject=bbgard%20enquiry"
+    invert={false}
+    invertHover={false}
+    btnTarget="_blank"
+  />
+
+  <Social
+    icon={githubIcon}
+    invertHover={false}
+    platform="GitHub"
+    username="bbgard"
+  />
+  <Social
+    icon={linkedinIcon}
+    platform="LinkedIn"
+    username="in/benjamin-gardiner-6b8478263/"
+  />
+</div>
+<style>
+  .contact-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .align-center {
+    justify-content: center;
+  }
+
+  .align-left {
+    justify-content: flex-start;
+  }
+
+  .align-right {
+    justify-content: flex-end;
+  }
+
+</style>

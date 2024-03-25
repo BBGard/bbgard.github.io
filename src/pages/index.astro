@@ -9,6 +9,7 @@ import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
+import ContactButtons from "../components/ContactButtons.astro";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -16,17 +17,47 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
 const allProjects = await getCollection("project");
 // Order projects by index
 allProjects.sort((a, b) => a.data.index - b.data.index);
-
 ---
 
 <Layout title={pageTitle}>
   <main>
     <HeroSectionFull>
-      <h1 class="main-title shakeable fade-in title-black-bg">Hi, I'm Ben.</h1>
-      <p class="main-text shakeable fade-in">
-        <span class="main-text-bold">TODO:</span> Add a catchy tagline here...
-      </p>
-      <ButtonLink btnText="Click Me..." btnLink="#about" size="large" customClass="scroll-btn"/>
+      <div class="column left-column">
+        <div class=" title-black-bg main-title shakeable fade-in">
+        <h1 class="">
+         Hi, I'm Ben.
+        </h1>
+        <!-- <div class="card shakeable fade-in"> -->
+        <p class="main-text">
+          <strong class="main-text-bold">A Software Engineer</strong> with a passion
+          for creating innovative and user-friendly web applications.
+        </p>
+        <!-- </div> -->
+        <ContactButtons align="left"/>
+
+      </div>
+        <div class="card shakeable fade-in">
+
+        <div class="button-group">
+          <ButtonLink
+          btnText="Read More"
+          btnLink="#about"
+          size="large"
+          customClass="scroll-btn"
+        />
+      </div>
+
+      </div>
+
+      </div>
+      <div class="headshot fade-in column">
+        <img
+          class="show-cursor shakeable"
+          src={headshot.src}
+          alt="Image of Ben"
+        />
+      </div>
+
     </HeroSectionFull>
     <Divider />
     <section id="about">
@@ -64,16 +95,13 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
             </p>
           </div>
         </div>
-
-        <div class="headshot fade-in">
-          <img
-            class="show-cursor shakeable"
-            src={headshot.src}
-            alt="Image of Ben"
-          />
-        </div>
       </div>
-      <ButtonLink btnText="Keep Going..." btnLink="#projects" size="large" customClass="scroll-btn"/>
+      <ButtonLink
+        btnText="Keep Going..."
+        btnLink="#projects"
+        size="large"
+        customClass="scroll-btn"
+      />
     </section>
     <Divider />
     <!-- Projects Section -->
@@ -111,7 +139,9 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
     <!-- Contact Section -->
     <div id="contact">
       <section>
-        <h2 class="secondary-title show-cursor shakeable slide-in-bottom title-black-bg">
+        <h2
+          class="secondary-title show-cursor shakeable slide-in-bottom title-black-bg"
+        >
           Contact
         </h2>
         <ContactForm />
@@ -119,13 +149,20 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
     </div>
 
     <style>
+      .left-column {
+        width: 50%;
+        padding: 2rem;
+      }
       .main-title {
         text-align: left;
-        margin-bottom: 2rem;
+        /* margin-bottom: 2rem; */
+        /* font-size: var(--font-size-dynamic-3); */
+        padding: 1rem;
+        margin-bottom: 1rem;
       }
 
       .main-text {
-        font-size: var(--font-size-3);
+        font-size: var(--font-size-2);
         margin-bottom: 2rem;
       }
 
@@ -143,7 +180,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
       .about-text {
         /* font-size: var(--font-size-4); */
-        font-size: 1.1rem
+        font-size: 1.1rem;
       }
 
       .next-project {
