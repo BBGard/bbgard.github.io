@@ -565,8 +565,9 @@ article {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: 0.125rem solid var(--accent);
-  background-color: var(--background-dark);
-  color: var(--secondary);
+  /* background-color: var(--background-dark); */
+  background-color: var(--accent-transparent);
+  color: var(--primary);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
