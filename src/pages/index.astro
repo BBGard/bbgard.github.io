@@ -10,6 +10,7 @@ import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
+import Resume from "../components/Resume.astro";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -23,32 +24,22 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
   <main>
     <HeroSectionFull>
       <div class="column left-column">
-        <div class=" title-black-bg main-title shakeable fade-in">
-        <h1 class="">
-         Hi, I'm Ben.
-        </h1>
-        <!-- <div class="card shakeable fade-in"> -->
-        <p class="main-text">
-          <strong class="main-text-bold">A Software Engineer</strong> with a passion
-          for creating innovative and user-friendly web applications.
-        </p>
-        <!-- </div> -->
-        <ContactButtons align="left"/>
-
-      </div>
-        <!-- <div class="card shakeable fade-in hero-button-card">
-
-
-
-      </div> -->
-      <div class="button-group">
-        <ButtonLink
-        btnText="Read More"
-        btnLink="#about"
-        size="large"
-        customClass="scroll-btn"
-      />
-    </div>
+        <div class="card-black-bg main-title shakeable fade-in">
+          <h1 class="">Hi, I'm Ben.</h1>
+          <p class="main-text">
+            <strong class="main-text-bold">A Software Engineer</strong> with a passion
+            for creating innovative and user-friendly web applications.
+          </p>
+          <ContactButtons align="left" />
+        </div>
+        <div class="button-group">
+          <ButtonLink
+            btnText="Read More"
+            btnLink="#profile"
+            size="large"
+            customClass="scroll-btn"
+          />
+        </div>
       </div>
       <div class="headshot fade-in column">
         <img
@@ -57,10 +48,10 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
           alt="Image of Ben"
         />
       </div>
-
     </HeroSectionFull>
     <Divider />
-    <section id="about">
+    <Resume />
+    <!-- <section id="about">
       <h2
         class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
       >
@@ -104,7 +95,6 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       />
     </section>
     <Divider />
-    <!-- Projects Section -->
     <div id="projects">
       <div class="center-title">
         <h2
@@ -136,7 +126,6 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
     <Divider size="full" />
 
-    <!-- Contact Section -->
     <div id="contact">
       <section>
         <h2
@@ -146,7 +135,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         </h2>
         <ContactForm />
       </section>
-    </div>
+    </div> -->
 
     <style>
       .left-column {
@@ -172,15 +161,13 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         align-items: flex-start;
       }
 
-
       .about-text {
-        font-size: 1.1rem;
+        font-size: var(--font-size-3);
       }
 
       article p {
         text-align: center;
       }
-
 
       @media screen and (max-width: 1100px) {
         .left-column {
@@ -196,12 +183,8 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
         .hero-button-card {
           padding: 0;
-
         }
-
       }
-
-
     </style>
   </main>
 </Layout>

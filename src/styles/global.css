@@ -125,21 +125,21 @@ meter {
 
 
   /* Fonts */
-  --font-primary: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
    --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
   /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
   --font-code: 'Fira Code', monospace;
 
   /* Font sizes */
   --font-size-1: 2rem;
-  --font-size-2: 1.5rem;
-  --font-size-3: 1.2rem;
+  --font-size-2: 1.3rem;
+  --font-size-3: 1.1rem;
   --font-size-4: 1rem;
   --font-size-5: 0.875rem;
   --font-size-6: 0.75rem;
-  --font-size-dynamic-1: clamp(5rem, 30vw, 10rem);
-  --font-size-dynamic-2: clamp(3rem, 15vw, 6rem);
-  --font-size-dynamic-3: clamp(2rem, 10vw, 4rem);
+  --font-size-dynamic-1: clamp(3rem, 15vw, 6rem);
+  --font-size-dynamic-2: clamp(2rem, 10vw, 4rem);
+  --font-size-dynamic-3: clamp(1.2rem, 5vw, 2.4rem);
 
 }
 
@@ -151,7 +151,8 @@ meter {
 
 html, body {
   font-family: var(--font-primary);
-  background-color: var(--background-light);
+  /* background-color: var(--background-light); */
+  background-color: var(--secondary);
   background-size: 224px;
   scroll-behavior: smooth;
   margin: 0;
@@ -173,7 +174,7 @@ img {
 /* Text */
 
 h1 {
-  font-size: var(--font-size-dynamic-3);
+  font-size: var(--font-size-dynamic-2);
   font-family: var(--font-primary);
   font-weight: 600;
   line-height: 1.2em;
@@ -190,7 +191,7 @@ h1:hover {
 
 
 h2 {
-  font-size: var(--font-size-dynamic-2);
+  font-size: var(--font-size-dynamic-3);
   margin: 0;
   /* margin-bottom: 1rem; */
   font-family: var(--font-primary);
@@ -582,8 +583,14 @@ article {
 /* End Button */
 
 /* Special Classes */
-
 .title-black-bg {
+  background-color: var(--background-dark);
+  color: var(--secondary);
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-black-bg {
   background-color: var(--background-dark);
   color: var(--secondary);
   padding: 0 1rem;
@@ -601,7 +608,7 @@ border: 0.125rem solid var(--accent);
   /* width: 100%; */
 }
 
-.title-black-bg:hover {
+.card-black-bg:hover {
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
 }
@@ -652,7 +659,7 @@ h2.colorized {
   transform: translate(2px, 2px);
 }
 
-.title-black-bg.colorized {
+.card-black-bg.colorized {
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
 }

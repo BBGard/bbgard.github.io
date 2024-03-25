@@ -13,7 +13,7 @@ document.querySelectorAll(".shakeable").forEach((element) => {
 		console.log("Shake it baby!");
     element.classList.add("shake");
 		// if element uses a shadow, add the colorized class
-		if (element.tagName === "H1" || element.tagName === "H2" || element.className.includes("card") || element.className.includes("title-black-bg")) {
+		if (element.tagName === "H1" || element.tagName === "H2" || element.className.includes("card") || element.className.includes("card-black-bg")) {
 			element.classList.add("colorized");
 		}
 
