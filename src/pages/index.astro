@@ -36,19 +36,19 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         <ContactButtons align="left"/>
 
       </div>
-        <div class="card shakeable fade-in">
+        <!-- <div class="card shakeable fade-in hero-button-card">
 
-        <div class="button-group">
-          <ButtonLink
-          btnText="Read More"
-          btnLink="#about"
-          size="large"
-          customClass="scroll-btn"
-        />
-      </div>
 
-      </div>
 
+      </div> -->
+      <div class="button-group">
+        <ButtonLink
+        btnText="Read More"
+        btnLink="#about"
+        size="large"
+        customClass="scroll-btn"
+      />
+    </div>
       </div>
       <div class="headshot fade-in column">
         <img
@@ -155,8 +155,6 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       }
       .main-title {
         text-align: left;
-        /* margin-bottom: 2rem; */
-        /* font-size: var(--font-size-dynamic-3); */
         padding: 1rem;
         margin-bottom: 1rem;
       }
@@ -174,33 +172,36 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         align-items: flex-start;
       }
 
-      /* .secondary-title {
-        text-align: left;
-      } */
 
       .about-text {
-        /* font-size: var(--font-size-4); */
         font-size: 1.1rem;
-      }
-
-      .next-project {
-        display: flex;
-        justify-content: center;
       }
 
       article p {
         text-align: center;
       }
 
+
       @media screen and (max-width: 1100px) {
+        .left-column {
+          width: 100%;
+        }
         .btn-primary {
           font-size: 1rem;
         }
 
         .headshot {
-          width: 100%;
+          width: 75%;
         }
+
+        .hero-button-card {
+          padding: 0;
+
+        }
+
       }
+
+
     </style>
   </main>
 </Layout>
