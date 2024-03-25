@@ -23,6 +23,9 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
   <main>
     <HeroSectionFull>
       <h1 class="main-title shakeable fade-in title-black-bg">Hi, I'm Ben.</h1>
+      <p class="main-text shakeable fade-in">
+        <span class="main-text-bold">TODO:</span> Add a catchy tagline here...
+      </p>
       <ButtonLink btnText="Click Me..." btnLink="#about" size="large" customClass="scroll-btn"/>
     </HeroSectionFull>
     <Divider />
@@ -103,7 +106,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       }
     </div>
 
-    <Divider size="full" margin="large" />
+    <Divider size="full" />
 
     <!-- Contact Section -->
     <div id="contact">
@@ -121,8 +124,26 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         margin-bottom: 2rem;
       }
 
+      .main-text {
+        font-size: var(--font-size-3);
+        margin-bottom: 2rem;
+      }
+
+      .main-text-bold {
+        font-weight: 600;
+      }
+
+      #about {
+        align-items: flex-start;
+      }
+
+      /* .secondary-title {
+        text-align: left;
+      } */
+
       .about-text {
-        font-size: var(--font-size-4);
+        /* font-size: var(--font-size-4); */
+        font-size: 1.1rem
       }
 
       .next-project {

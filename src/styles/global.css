@@ -192,11 +192,10 @@ h1:hover {
 h2 {
   font-size: var(--font-size-dynamic-2);
   margin: 0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   font-family: var(--font-primary);
   font-weight: 600;
   line-height: 1.2em;
-  margin-bottom: 2rem;
   text-align: center;
   color: var(--primary);
   text-shadow: 4px 4px 0px var(--accent-transparent);
@@ -308,18 +307,6 @@ section {
   margin: 10% auto;
 }
 
-.project-section-full {
-  margin: 10% auto;
-  width: 100%;
-  max-width: 100%;
-  padding: 0 10%;
-}
-
-@media screen and (max-width: 1100px) {
-  .project-section-full {
-    padding: 0 2%;
-  }
-}
 
 .blog {
   max-width: 800px;
@@ -345,7 +332,7 @@ section {
 
 .column {
   width: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 @media screen and (max-width: 1100px) {

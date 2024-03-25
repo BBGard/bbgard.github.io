@@ -198,6 +198,14 @@ const infoParagraphs = info.split("\n");
 
 
 <style>
+
+.project-section-full {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 10%;
+}
+
   .tag-box {
     display: flex;
     justify-content: center;
@@ -227,6 +235,10 @@ const infoParagraphs = info.split("\n");
   }
 
   @media screen and (max-width: 1100px) {
+
+    .project-section-full {
+    padding: 0 2%;
+  }
     .button-box {
       flex-direction: column;
       gap: 1rem;
