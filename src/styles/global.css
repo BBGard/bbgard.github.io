@@ -353,6 +353,7 @@ section {
 
 .bullet-text {
   font-size: var(--font-size-3);
+  width: 90%;
 }
 
 .bullet-text a {
@@ -369,7 +370,9 @@ section {
 .bullet-icon {
   /* font-size: var(--font-size-1); */
   color: var(--accent-gold-dark);
+  width: 10%;
 }
+
 
 
 @media screen and (max-width: 1100px) {
@@ -400,7 +403,7 @@ section {
 .text-box-clamp {
   width: 100%;
   font-size: var(--font-size-4);
-  max-width: 600px;
+  /* max-width: 600px; */
 }
 
 .text-box-reverse {
@@ -571,7 +574,7 @@ article {
   border: 0.125rem solid var(--accent);
   /* background-color: var(--background-dark); */
   /* background-color: var(--accent-transparent); */
-  background-color: var(--accent-blue);
+  background-color: var(--accent-gold);
   color: var(--primary);
   text-decoration: none;
   text-align: center;
@@ -583,7 +586,7 @@ article {
 }
 
 .btn:hover {
-  background-color: var(--accent-blue-dark);
+  background-color: var(--accent-gold-dark);
   /* color: var(--accent); */
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
@@ -622,6 +625,10 @@ article {
   margin-bottom: 4rem;
 }
 
+.full-width {
+  width: 100%;
+
+}
 .title-black-bg {
   background-color: var(--background-dark);
   color: var(--secondary);
