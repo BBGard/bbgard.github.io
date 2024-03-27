@@ -407,26 +407,6 @@ section {
   margin: 0 0 0 10%;
 }
 
-.headshot {
-  width: 50%;
-  padding: 2rem;
-}
-
-.headshot img {
-  border: 4px solid var(--primary);
-  box-shadow: 6px 6px 0px var(--accent-transparent);
-  border-radius: 50%;
-  width: 100%;
-  /* Initially black and white */
-  filter: grayscale(100%);
-  transition: all 0.2s ease-in-out;
-}
-
-.headshot img:hover {
-  filter: grayscale(0%);
-  box-shadow: 3px 3px 0px var(--accent-color-transparent);
-  transform: translate(2px, 2px);
-}
 
 .image-box {
   /* width: 50%; */
