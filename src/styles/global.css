@@ -118,6 +118,10 @@ meter {
   --accent-color: #a800ab;
   --accent-color-light: #fdf6ff;
   --accent-color-transparent: rgba(168, 0, 171, 0.6);
+  --accent-blue: #82c1fa;
+  --accent-blue-dark: #58adfc;
+  --accent-gold: #f9d34b;
+  --accent-gold-dark: #f2af2a;
   --background-light: #f2f2f2;
   --background-nav: #ececec;
   --background-dark: #000000;
@@ -568,7 +572,7 @@ article {
   border: 0.125rem solid var(--accent);
   /* background-color: var(--background-dark); */
   /* background-color: var(--accent-transparent); */
-  background-color: var(--secondary);
+  background-color: var(--accent-blue);
   color: var(--primary);
   text-decoration: none;
   text-align: center;
@@ -580,8 +584,8 @@ article {
 }
 
 .btn:hover {
-  background-color: var(--secondary);
-  color: var(--accent);
+  background-color: var(--accent-blue-dark);
+  /* color: var(--accent); */
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
   transform: translate(2px, 2px);
 }
@@ -630,7 +634,7 @@ border: 0.125rem solid var(--accent);
 
 .card-black-bg:hover {
   box-shadow: 3px 3px 0px var(--accent-color-transparent);
-  transform: translate(2px, 2px);
+  /* transform: translate(2px, 2px); */
 }
 
 
