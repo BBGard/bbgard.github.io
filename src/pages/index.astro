@@ -50,8 +50,8 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </div>
     </HeroSectionFull>
     <Divider />
-    <Resume />
-    <!-- <section id="about">
+
+    <section id="profile">
       <h2
         class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
       >
@@ -59,34 +59,36 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </h2>
       <div class="flex-columns">
         <div class="column">
-          <div class="text-box text-box-clamp slide-in-left card shakeable">
-            <p class="about-text">
-              <strong>High-achieving IT graduate</strong> with a track record of
-              academic excellence.
-            </p>
-          </div>
-          <div class="text-box text-box-clamp slide-in-left-d1 card shakeable">
-            <p class="about-text">
-              <strong>Adept web developer</strong> experienced in creating dynamic
-              and responsive websites.
-            </p>
-          </div>
-          <div class="text-box text-box-clamp slide-in-left-d2 card shakeable">
-            <p class="about-text">
-              <strong>Proactive problem-solver</strong> with a knack for identifying
-              innovative solutions to complex challenges.
-            </p>
-          </div>
-          <div class="text-box text-box-clamp slide-in-left-d3 card shakeable">
-            <p class="about-text">
-              <strong
-                >Committed to continuous self-improvement and learning</strong
-              >, actively seeking out new challenges to expand my skill set and
-              knowledge base.
-            </p>
-          </div>
+          <ul class="bullet-list text-box text-box-clamp slide-in-left card shakeable">
+            <li class="text-box text-box-clamp no-bullet slide-in-left shakeable">
+              <p class="bullet-text">
+                <strong>High-achieving IT graduate</strong> with a track record of academic
+                excellence, excelling with a GPA of 6.9 out of 7.
+              </p>
+            </li>
+            <li class="text-box text-box-clamp slide-in-left-d1 no-bullet shakeable">
+              <p class="bullet-text">
+                <strong>Adept in dynamic web development</strong>, experienced in
+                creating dynamic and responsive websites and applications.
+              </p>
+            </li>
+            <li class="text-box text-box-clamp slide-in-left-d2 no-bullet shakeable">
+              <p class="bullet-text">
+                <strong>Proactive problem-solver</strong> with a knack for identifying
+                innovative solutions to complex challenges.
+              </p>
+            </li>
+            <li class="text-box text-box-clamp slide-in-left-d3 no-bullet shakeable">
+              <p class="bullet-text">
+                <strong>Committed to continuous self-improvement and learning</strong
+                >, actively seeking out new challenges to expand my skill set and
+                knowledge base.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
+
       <ButtonLink
         btnText="Keep Going..."
         btnLink="#projects"
@@ -135,7 +137,10 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         </h2>
         <ContactForm />
       </section>
-    </div> -->
+    </div>
+
+    <Resume />
+
 
     <style>
       .left-column {
@@ -157,7 +162,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         font-weight: 600;
       }
 
-      #about {
+      #profile {
         align-items: flex-start;
       }
 
@@ -168,6 +173,8 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       article p {
         text-align: center;
       }
+
+
 
       @media screen and (max-width: 1100px) {
         .left-column {
