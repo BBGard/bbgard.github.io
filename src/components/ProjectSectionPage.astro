@@ -1,0 +1,238 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+
+/**
+ * @name ProjectSectionPage
+ * @param {string} title - The title of the component.
+ * @param {string} info - The text to display.
+ * @param {string[]} tags - An array of tags to display.
+ * @param {string} blogLink - The link to the blog post.
+ * @param {string} extLink - The link to an external site.
+ * @param {string} image - The image to display.
+ * @param {string} imgAlt - The image alt text.
+ * @param {string} imgLink - The image link.
+ * @param {boolean} nextBtn - Whether to show a next button.
+ * @param {boolean} hidden - Whether to hide the component.
+ */
+interface Props {
+  title?: string;
+  info?: string;
+  tags?: string[];
+  blogLink?: string;
+  extLink?: string;
+  nextBtn?: boolean;
+  prevBtn?: boolean;
+  endBtn?: boolean;
+  image?: {
+    src?: string;
+    width?: number;
+    height?: number;
+    format?: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif";
+  };
+  imgAlt?: string;
+  imgLink?: string;
+  hidden?: boolean;
+}
+
+const {
+  title = "",
+  info = "",
+  tags = [],
+  blogLink = "",
+  extLink = "",
+  nextBtn = false,
+  prevBtn = false,
+  endBtn = false,
+  image = {
+    src: "",
+    width: 0,
+    height: 0,
+    format: "webp",
+  },
+  imgAlt = "",
+  imgLink = "",
+  hidden = false,
+} = Astro.props;
+
+// This is a hackey solution, but it works for now.
+// Grab all image files
+const allImages = await Astro.glob("../assets/images/*.webp");
+
+// Find the image file that matches the image prop
+const projectImage = allImages.find((img) =>
+  img.default.src.includes(image.src)
+);
+
+// Split info into paragraphs
+const infoParagraphs = info.split("\n");
+
+---
+
+<section class={hidden ? 'project-section-full hidden' : 'project-section-full'}>
+
+        <h3
+          class="secondary-title shakeable fade-in"
+        >
+          {title}
+        </h3>
+      <div class="tag-box">
+        {
+          tags ? (
+            <div class="tags">
+              {tags.map((tag) => (
+                <p
+                class='tag fade-in'
+                >
+                    {tag}
+                  </p>
+              ))}
+            </div>
+          ) : null
+        }
+      </div>
+      <ul class="gap-2 bullet-list">
+        {
+          infoParagraphs.map((paragraph, index) => (
+
+          <li class={index === 0 ? "text-box text-box-clamp bullet shakeable slide-in-left" : index === 1 ? "text-box text-box-clamp bullet shakeable slide-in-left-d1" : index === 2 ? "text-box text-box-clamp bullet shakeable slide-in-left-d2" : index === 3 ? "text-box text-box-clamp bullet shakeable slide-in-left-d3" : "text-box text-box-clamp bullet shakeable slide-in-left-d4"}>
+            <p class="bullet-text">
+
+              {/*Place first 4 words of each paragraph inside a span */}
+              <span class="info-text first-words">{paragraph.split(' ').slice(0, 4).join(' ')}</span>
+              {/*Place the rest of the paragraph inside a span */}
+              <span class="info-text">{paragraph.split(' ').slice(4).join(' ')}</span>
+            </p>
+            </li>
+          ))
+        }
+        </ul>
+        <a class="fade-in image-box image-box-contained" href={imgLink} target="_blank">
+          <img
+            src={projectImage.default.src}
+            alt={imgAlt}
+            width={projectImage.default.width}
+            height={projectImage.default.height}
+          />
+        </a>
+        {endBtn ?
+          <div class='gap text-box-center fade-in card shakeable'>
+            <p class="info-text">For more projects, check out my GitHub!</p>
+          </div>
+        : null
+        }
+      <div class="button-box">
+        {
+          extLink ? (
+            <ButtonLink btnText="Visit" btnLink={extLink} btnTarget="_blank" size="medium" animation="fade"/>
+          ) : null
+        }
+        {
+          prevBtn ? (
+            <ButtonLink
+              btnText="<- Previous Project"
+              btnTarget="_self"
+              customClass="prev-btn"
+              size="medium"
+              animation="fade"
+            />
+          ) : null
+        }
+        {
+          nextBtn ? (
+            <ButtonLink
+              btnText="Next Project ->"
+              btnTarget="_self"
+              customClass="next-btn"
+              size="medium"
+              animation="fade"
+            />
+          ) : null
+        }
+        {
+          endBtn ? (
+            <ButtonLink
+              btnText="GitHub"
+              btnLink="https://github.com/bbgard"
+              btnTarget="_blank"
+              size="medium"
+              animation="fade"
+            />
+          ) : null
+        }
+
+      </div>
+    </div>
+
+
+  {endBtn ? (
+
+    <ButtonLink
+      btnText="Next Section..."
+      btnLink="#contact"
+      btnTarget="_self"
+      size="large"
+      animation="fade"
+      customClass="scroll-btn"
+    />
+
+  ) : null}
+
+</section>
+
+
+<style>
+
+.project-section-full {
+  /* margin: 0 auto; */
+  width: 100%;
+  max-width: 100%;
+  /* padding: 0 10%; */
+
+  text-align: left;
+}
+
+.flex-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+  .tag-box {
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 1rem;
+  }
+
+  /* .info-text {
+    font-size: var(--font-size-4);
+  } */
+
+  .first-words {
+    font-weight: 600;
+  }
+
+  .button-box {
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+
+
+  .image-box-contained {
+
+  }
+
+  @media screen and (max-width: 1100px) {
+
+    .project-section-full {
+    padding: 0 2%;
+  }
+    .button-box {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+</style>

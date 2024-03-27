@@ -4,6 +4,23 @@
  * @desc Hero section with full height
  */
 ---
+
 <section class="hero-section" id="#top">
- <slot />
+  <slot />
 </section>
+
+<style>
+  .hero-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 800px){
+    .hero-section {
+      flex-direction: column-reverse;
+      margin-top: 10%;
+    }
+  }
+</style>

@@ -1,9 +1,5 @@
 ---
-import Social from "./Social.astro";
-import githubIcon from "../assets/github-mark-white.png";
-import linkedinIcon from "../assets/LinkedIn_icon.svg";
-import emailIcon from "../assets/email_icon.svg";
-import ButtonLink from "./ButtonLink.astro";
+import ContactButtons from "./ContactButtons.astro"
 ---
 
 <div class="form-container">
@@ -15,29 +11,8 @@ import ButtonLink from "./ButtonLink.astro";
       soon as I can.<br/><br/> Alternatively, you can find me on LinkedIn or GitHub using
       the links below.
     </p>
-    <div class="button-group">
+    <ContactButtons />
 
-      <ButtonLink
-       icon={emailIcon.src}
-       btnText="Send Email"
-       btnLink="mailto:ben.b.gardiner@gmail.com?subject=bbgard%20enquiry"
-       invert={true}
-       invertHover={true}
-       btnTarget="_blank"
-        />
-
-      <Social
-        icon={githubIcon}
-        invertHover={true}
-        platform="GitHub"
-        username="bbgard"
-      />
-      <Social
-        icon={linkedinIcon}
-        platform="LinkedIn"
-        username="in/benjamin-gardiner-6b8478263/"
-      />
-    </div>
   </div>
 
   <style>
@@ -55,6 +30,7 @@ import ButtonLink from "./ButtonLink.astro";
       box-shadow: 6px 6px 0px var(--accent-transparent);
       background-color: var(--secondary);
       padding: 1.5rem;
+      padding-bottom: 0;
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;

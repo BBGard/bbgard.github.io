@@ -9,6 +9,8 @@ import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
+import ContactButtons from "../components/ContactButtons.astro";
+import Resume from "../components/Resume.astro";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -16,67 +18,102 @@ const pageTitle = "Benjamin Gardiner - Software Engineer";
 const allProjects = await getCollection("project");
 // Order projects by index
 allProjects.sort((a, b) => a.data.index - b.data.index);
-
 ---
 
 <Layout title={pageTitle}>
   <main>
     <HeroSectionFull>
-      <h1 class="main-title shakeable fade-in title-black-bg">Hi, I'm Ben.</h1>
-      <p class="main-text shakeable fade-in">
-        <span class="main-text-bold">TODO:</span> Add a catchy tagline here...
-      </p>
-      <ButtonLink btnText="Click Me..." btnLink="#about" size="large" customClass="scroll-btn"/>
-    </HeroSectionFull>
-    <Divider />
-    <section id="about">
-      <h2
-        class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
-      >
-        Profile
-      </h2>
-      <div class="flex-columns">
-        <div class="column">
-          <div class="text-box text-box-clamp slide-in-left card shakeable">
-            <p class="about-text">
-              <strong>High-achieving IT graduate</strong> with a track record of
-              academic excellence.
-            </p>
-          </div>
-          <div class="text-box text-box-clamp slide-in-left-d1 card shakeable">
-            <p class="about-text">
-              <strong>Adept web developer</strong> experienced in creating dynamic
-              and responsive websites.
-            </p>
-          </div>
-          <div class="text-box text-box-clamp slide-in-left-d2 card shakeable">
-            <p class="about-text">
-              <strong>Proactive problem-solver</strong> with a knack for identifying
-              innovative solutions to complex challenges.
-            </p>
-          </div>
-          <div class="text-box text-box-clamp slide-in-left-d3 card shakeable">
-            <p class="about-text">
-              <strong
-                >Committed to continuous self-improvement and learning</strong
-              >, actively seeking out new challenges to expand my skill set and
-              knowledge base.
-            </p>
-          </div>
+      <div class="column left-column">
+        <div class="card-black-bg main-title shakeable fade-in">
+          <h1 class="">Hi, I'm Ben.</h1>
+          <p class="main-text">
+            <strong class="main-text-bold">A Software Engineer</strong> with a passion
+            for creating innovative and user-friendly web applications.
+          </p>
+          <ContactButtons align="left" />
         </div>
-
-        <div class="headshot fade-in">
-          <img
-            class="show-cursor shakeable"
-            src={headshot.src}
-            alt="Image of Ben"
+        <div class="button-group">
+          <ButtonLink
+            btnText="Read More"
+            btnLink="#profile"
+            size="large"
+            customClass="scroll-btn"
           />
         </div>
       </div>
-      <ButtonLink btnText="Keep Going..." btnLink="#projects" size="large" customClass="scroll-btn"/>
+      <div class="headshot fade-in column">
+        <img
+          class="show-cursor shakeable"
+          src={headshot.src}
+          alt="Image of Ben"
+        />
+      </div>
+    </HeroSectionFull>
+    <Divider />
+
+    <section id="profile">
+      <div class="flex-columns">
+        <div class="column left-column">
+          <p class="subtitle gap-2">A little about me...</p>
+          <h2
+            class="secondary-title shakeable slide-in-bottom title-black-bg uppercase gap-2"
+          >
+            Profile
+          </h2>
+
+          <ul
+            class="bullet-list text-box text-box-clamp slide-in-left card shakeable gap-2"
+          >
+            <li
+              class="text-box text-box-clamp no-bullet slide-in-left shakeable icon-li fa-2x"
+            >
+              <i class="bullet-icon fa-solid fa-graduation-cap fa-fw"></i>
+              <p class="bullet-text">
+                <strong>High-achieving IT graduate</strong> with a track record of
+                academic excellence, excelling with a GPA of 6.9 out of 7.
+              </p>
+            </li>
+            <li
+              class="text-box text-box-clamp no-bullet slide-in-left-d1 shakeable icon-li fa-2x"
+            >
+              <i class="bullet-icon fa-solid fa-code fa-fw"></i>
+              <p class="bullet-text">
+                <strong>Adept in dynamic web development</strong>, experienced
+                in creating responsive websites and applications.
+              </p>
+            </li>
+            <li
+              class="text-box text-box-clamp slide-in-left-d2 no-bullet shakeable icon-li fa-2x"
+            >
+              <i class="bullet-icon fa-solid fa-lightbulb fa-fw"></i>
+
+              <p class="bullet-text">
+                <strong>Proactive problem-solver</strong> with a knack for identifying
+                innovative solutions to complex challenges.
+              </p>
+            </li>
+            <li
+              class="text-box text-box-clamp slide-in-left-d3 no-bullet shakeable icon-li fa-2x"
+            >
+              <i class="bullet-icon fa-solid fa-book fa-fw"></i>
+              <p class="bullet-text">
+                <strong
+                  >Committed to continuous self-improvement and learning</strong
+                >, actively seeking out new challenges to expand my skill set
+                and knowledge base.
+              </p>
+            </li>
+          </ul>
+          <ButtonLink
+            btnText="Keep Going..."
+            btnLink="#projects"
+            size="large"
+            customClass="scroll-btn"
+          />
+        </div>
+      </div>
     </section>
     <Divider />
-    <!-- Projects Section -->
     <div id="projects">
       <div class="center-title">
         <h2
@@ -108,10 +145,11 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
     <Divider size="full" />
 
-    <!-- Contact Section -->
     <div id="contact">
       <section>
-        <h2 class="secondary-title show-cursor shakeable slide-in-bottom title-black-bg">
+        <h2
+          class="secondary-title show-cursor shakeable slide-in-bottom title-black-bg"
+        >
           Contact
         </h2>
         <ContactForm />
@@ -119,13 +157,18 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
     </div>
 
     <style>
+      .left-column {
+        width: 50%;
+        padding: 2rem;
+      }
       .main-title {
         text-align: left;
-        margin-bottom: 2rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
       }
 
       .main-text {
-        font-size: var(--font-size-3);
+        font-size: var(--font-size-2);
         margin-bottom: 2rem;
       }
 
@@ -133,35 +176,75 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         font-weight: 600;
       }
 
-      #about {
+      #profile {
         align-items: flex-start;
       }
 
-      /* .secondary-title {
-        text-align: left;
-      } */
-
-      .about-text {
-        /* font-size: var(--font-size-4); */
-        font-size: 1.1rem
+      .subtitle {
+        font-size: var(--font-size-3);
+        font-weight: 600;
+        color: var(--accent-gold-dark);
       }
 
-      .next-project {
-        display: flex;
-        justify-content: center;
+      .about-text {
+        font-size: var(--font-size-3);
       }
 
       article p {
         text-align: center;
       }
 
+      .svg-column {
+        width: 50%;
+      }
+
+      .fa-column {
+        /* font-size: 15rem; */
+        color: var(--accent-color);
+        margin: 2rem;
+      }
+
+      .headshot {
+        width: 50%;
+        max-width: 500px;
+        padding: 2rem;
+      }
+
+      .headshot img {
+        border: 4px solid var(--primary);
+        box-shadow: 6px 6px 0px var(--accent-transparent);
+        border-radius: 50%;
+        width: 100%;
+        /* Initially black and white */
+        /* filter: grayscale(100%); */
+        transition: all 0.2s ease-in-out;
+      }
+
+      .headshot img:hover {
+        /* filter: grayscale(0%); */
+        box-shadow: 3px 3px 0px var(--accent-color-transparent);
+        transform: translate(2px, 2px);
+      }
+
       @media screen and (max-width: 1100px) {
+        .left-column {
+          width: 100%;
+        }
         .btn-primary {
           font-size: 1rem;
         }
 
         .headshot {
-          width: 100%;
+          width: 75%;
+        }
+
+        .hero-button-card {
+          padding: 0;
+        }
+
+        .secondary-title {
+          margin-left: auto;
+          margin-right: auto;
         }
       }
     </style>

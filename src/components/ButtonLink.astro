@@ -37,34 +37,58 @@ const {
   size = "normal",
   customClass = "",
   animation = "slide-in-bottom",
-
 } = Astro.props;
-
 ---
 
-<a href={btnLink} target={btnTarget} class={icon ? `btn btn-${size} btn-icon ${animation} ${customClass}` : `btn btn-${size} ${animation} ${customClass}`}>
+<a
+  href={btnLink}
+  target={btnTarget}
+  class={icon
+    ? `btn btn-${size} btn-icon ${animation} ${customClass}`
+    : `btn btn-${size} ${animation} ${customClass}`}
+>
   {
     reverse ? (
       <>
-      {icon ?
-      <div class={invertHover === true ? `mr-2 ${animation} icon invert-hover` : `mr-2 ${animation}`}>
-        <img class={invert === true ? "invert" : ""} src={icon} alt={btnText} />
-      </div>
-     : null}
-      <div class={icon ? `${animation} link` : `${animation}`}>
-        <span>{btnText}</span>
-      </div>
+        {icon ? (
+          <div
+            class={
+              invertHover === true
+                ? `mr-2 ${animation} icon invert-hover`
+                : `mr-2 ${animation}`
+            }
+          >
+            <img
+              class={invert === true ? "invert" : ""}
+              src={icon}
+              alt={btnText}
+            />
+          </div>
+        ) : null}
+        <div class={icon ? `${animation} link` : `${animation}`}>
+          <span>{btnText}</span>
+        </div>
       </>
     ) : (
       <>
-      <div class={icon ? `${animation} link` : `${animation}`}>
-        <span>{btnText}</span>
-      </div>
-      {icon ?
-      <div class={invertHover === true ? `ml-2 ${animation} icon invert-hover` : `ml-2 ${animation}`}>
-        <img class={invert === true ? "invert" : ""} src={icon} alt={btnText} />
-      </div>
-      : null}
+        <div class={icon ? `${animation} link` : `${animation}`}>
+          <span>{btnText}</span>
+        </div>
+        {icon ? (
+          <div
+            class={
+              invertHover === true
+                ? `ml-2 ${animation} icon invert-hover`
+                : `ml-2 ${animation}`
+            }
+          >
+            <img
+              class={invert === true ? "invert" : ""}
+              src={icon}
+              alt={btnText}
+            />
+          </div>
+        ) : null}
       </>
     )
   }
@@ -92,85 +116,89 @@ const {
   }
 
   a {
-      color: var(--secondary);
-      text-decoration: none;
+    /* color: var(--secondary); */
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: none;
+  }
+
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-gold);
+  }
+
+  .btn-icon:hover {
+    background-color: var(--accent-gold-dark);
+  }
+
+  .btn-icon:hover .invert-hover > img {
+    filter: invert(1);
+  }
+
+  .invert {
+    filter: invert(1);
+  }
+
+  .btn-icon:hover .invert-hover > img.invert {
+    filter: invert(0);
+  }
+
+  .mr-2 {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .ml-2 {
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .link {
+      display: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    img {
-      width: 1.5rem;
-      height: 1.5rem;
-      transition: none;
+    .btn-full .link {
+      display: block;
     }
 
     .btn-icon {
+      padding: 0.5rem;
+    }
+
+    .icon {
+      margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .btn-icon:hover .invert-hover > img {
-      filter: invert(1);
-    }
-
-    .invert {
-      filter: invert(1);
-    }
-
-    .btn-icon:hover .invert-hover > img.invert {
-      filter: invert(0);
-    }
-
     .mr-2 {
-      margin-right: 0.5rem;
-      display: flex;
-      align-items: center;
+      margin-right: 0;
     }
 
     .ml-2 {
+      margin-left: 0;
+    }
+
+    .btn-full .mr-2 {
+      margin-right: 0.5rem;
+    }
+
+    .btn-full .ml-2 {
       margin-left: 0.5rem;
-      display: flex;
-      align-items: center;
     }
-
-    @media screen and (max-width: 1000px) {
-      .link {
-        display: none;
-      }
-
-      .btn-full .link {
-        display: block;
-      }
-
-      .btn-icon {
-        padding: 0.5rem;
-      }
-
-      .icon {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .mr-2 {
-        margin-right: 0;
-      }
-
-      .ml-2 {
-        margin-left: 0;
-      }
-
-      .btn-full .mr-2 {
-        margin-right: 0.5rem;
-      }
-
-      .btn-full .ml-2 {
-        margin-left: 0.5rem;
-      }
-    }
-
+  }
 </style>
