@@ -1,0 +1,85 @@
+---
+interface Props {
+  /**
+   * The URL of an image to display on the card.
+   */
+  image: string;
+
+  /**
+   * The alt text of the image.
+   */
+  alt: string;
+
+  /**
+   * The title of the card.
+   */
+  title: string;
+
+  /**
+   * The subtitle of the card.
+   */
+  subtitle: string;
+
+  /**
+   * The description of the card.
+   */
+  content: string;
+
+  /**
+   * The rating of the card.
+   */
+  rating: number;
+}
+
+const {
+  image = 'https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+  alt = 'A kitten sits patiently between a terracotta pot and decorative grasses.',
+  title = 'Mittens',
+  subtitle = '6 weeks old',
+  content = 'This kitten is as cute as he is playful. Bring him home today!',
+} = Astro.props;
+
+
+// This is a hackey solution, but it works for now.
+// Grab all image files
+const allImages = await Astro.glob("../assets/images/*.webp");
+
+// Find the image file that matches the image prop
+const projectImage = allImages.find((img) =>
+  img.default.src.includes(image.src)
+);
+---
+<sl-card class="card-overview">
+  <img
+    slot="image"
+    src={projectImage.default.src}
+    alt={alt}
+    width={projectImage.default.width}
+    height={projectImage.default.height}
+  />
+
+  <strong>{title}</strong><br />
+  {content}<br />
+  <small>{subtitle}</small>
+
+  <div slot="footer">
+    <sl-button variant="primary" pill>Visit</sl-button>
+    <sl-button variant="primary" pill>Next</sl-button>
+  </div>
+</sl-card>
+
+<style>
+  .card-overview {
+    max-width: 300px;
+  }
+
+  .card-overview small {
+    color: var(--sl-color-neutral-500);
+  }
+
+  .card-overview [slot='footer'] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>

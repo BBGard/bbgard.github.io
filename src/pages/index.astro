@@ -10,7 +10,7 @@ import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
-import Resume from "../components/Resume.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -114,7 +114,37 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </div>
     </section>
     <Divider />
-    <div id="projects">
+    <section id="projects">
+      <div class="center-title">
+        <h2
+          class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
+        >
+          Projects
+        </h2>
+      </div>
+      <div >
+        {
+          allProjects.map((project, index) => (
+            <ProjectCard
+              title={project.data.title}
+              content={project.data.info}
+              // tags={project.data.tags}
+              // blogLink={project.data.blogLink}
+              // extLink={project.data.extLink}
+              image={project.data.image}
+              alt={project.data.imgAlt}
+              imgLink={project.data.imgLink}
+              // reverse={index % 2 === 1}
+              // nextBtn={index !== allProjects.length - 1}
+              // prevBtn={index !== 0}
+              // hidden={index !== 0}
+              // endBtn={index === allProjects.length - 1}
+            />
+          ))
+        }
+      </div>
+    </section>
+    <!-- <div id="projects">
       <div class="center-title">
         <h2
           class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
@@ -141,7 +171,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
           />
         ))
       }
-    </div>
+    </div> -->
 
     <Divider size="full" />
 
