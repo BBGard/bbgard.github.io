@@ -48,13 +48,16 @@ const projectImage = allImages.find((img) =>
   img.default.src.includes(image.src)
 );
 
+const contentParagraphs = content.split("\n");
+
+
 // console.log("Image", projectImage);
 ---
 
 <sl-card class="card-overview shakeable">
   <div
     slot="image"
-    class="fade-in image-box project-image"
+    class="fade-in image-box project-image shakeable"
   >
     <img
       src={projectImage.default.src}
@@ -65,8 +68,22 @@ const projectImage = allImages.find((img) =>
 </div>
 
   <div class="card-content">
-    <strong>{title}</strong><br />
-    {content}<br />
+    <p class="fade-in gap"><strong>{title}</strong><br /></p>
+    <!-- {content}<br /> -->
+    <div class="gap-2">
+      {
+        contentParagraphs.map((paragraph, index) => (
+
+        <div class={index > 0 ? `gap slide-in-left-d${index}` : `gap slide-in-left`}>
+            {/*Place first 4 words of each paragraph inside a span */}
+            <span class="info-text first-words">{paragraph.split(' ').slice(0, 4).join(' ')}</span>
+            {/*Place the rest of the paragraph inside a span */}
+            <span class="info-text">{paragraph.split(' ').slice(4).join(' ')}</span>
+
+          </div>
+        ))
+      }
+  </div>
   </div>
 
   <div slot="footer" class="card-footer">
