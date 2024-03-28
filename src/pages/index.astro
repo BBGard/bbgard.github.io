@@ -114,26 +114,24 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </div>
     </section>
     <Divider />
-    <section id="projects">
-      <div class="center-title">
+    <section id="projects" >
+      <div class="center-title column">
         <h2
           class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
         >
           Projects
         </h2>
       </div>
-      <div >
+      <div class="grid-section">
         {
           allProjects.map((project, index) => (
             <ProjectCard
               title={project.data.title}
               content={project.data.info}
-              // tags={project.data.tags}
-              // blogLink={project.data.blogLink}
-              // extLink={project.data.extLink}
+              tags={project.data.tags}
+              link={project.data.extLink}
               image={project.data.image}
               alt={project.data.imgAlt}
-              imgLink={project.data.imgLink}
               // reverse={index % 2 === 1}
               // nextBtn={index !== allProjects.length - 1}
               // prevBtn={index !== 0}
@@ -208,6 +206,18 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
       #profile {
         align-items: flex-start;
+      }
+
+      #projects {
+        display: block;
+        outline: solid blue 2px;
+        height: 100%;
+      }
+
+      .grid-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        outline: solid green 2px;
       }
 
       .subtitle {
