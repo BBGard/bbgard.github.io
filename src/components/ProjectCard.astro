@@ -1,4 +1,5 @@
 ---
+import ButtonLink from "./ButtonLink.astro";
 interface Props {
   // The image to display on the card.
   image?: {
@@ -47,38 +48,87 @@ const projectImage = allImages.find((img) =>
   img.default.src.includes(image.src)
 );
 
-console.log("Image", projectImage);
+// console.log("Image", projectImage);
 ---
 
-<sl-card class="card-overview">
-  <a class="fade-in image-box project-image" href={link} target="_blank">
+<sl-card class="card-overview shakeable">
+  <div
+    slot="image"
+    class="fade-in image-box project-image"
+  >
     <img
       src={projectImage.default.src}
       alt={alt}
       width={projectImage.default.width}
       height={projectImage.default.height}
     />
-  </a>
+</div>
 
   <div class="card-content">
     <strong>{title}</strong><br />
     {content}<br />
   </div>
 
-  <div slot="footer">
-    <sl-button variant="primary" pill>Visit</sl-button>
-    <sl-button variant="primary" pill>Next</sl-button>
+  <div slot="footer" class="card-footer">
+    <!-- <sl-button variant="primary" pill>Visit</sl-button>
+    <sl-button variant="primary" pill>Next</sl-button> -->
+    <div class="button-box">
+      {
+        link ? (
+          <ButtonLink
+            btnText="Visit"
+            btnLink={link}
+            btnTarget="_blank"
+            size="medium"
+            animation="fade"
+          />
+        ) : null
+      }
+    </div>
   </div>
 </sl-card>
 
 <style>
+  .card-overview::part(base) {
+    display: flex;
+    border-radius: 0.25rem;
+    border: 0.125rem solid var(--accent);
+    color: var(--primary);
+    box-shadow: 6px 6px 0px var(--accent-transparent);
+    background-color: var(--secondary);
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    /* cursor: pointer; */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .card-overview::part(base):hover {
+    box-shadow: 3px 3px 0px var(--accent-color-transparent);
+  }
+
   .card-overview {
     max-width: 500px;
     display: flex;
-    flex-direction: column;
     gap: 1rem;
     padding: 1rem;
-    outline: solid hotpink 2px;
+    align-items: stretch;
+  }
+
+  .card-overview::part(body) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+  }
+
+  .card-overview::part(image) {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .card-overview::part(footer) {
+    display: flex;
+    justify-content: center;
   }
 
   .card-overview [slot="footer"] {
@@ -86,21 +136,24 @@ console.log("Image", projectImage);
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    flex-grow: 0;
   }
 
   .card-content {
     flex-grow: 1;
+    height: 100%;
   }
 
   .project-image {
-    display: block;
+    display: flex;
     width: 100%;
     overflow: hidden;
     position: relative;
   }
 
-  .project-image img {
-    display: block;
+  img {
+    display: flex;
+    padding: 1rem;
     width: auto;
     max-height: 300px;
     margin: 0 auto;
