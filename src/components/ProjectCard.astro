@@ -49,46 +49,46 @@ const projectImage = allImages.find((img) =>
 );
 
 const contentParagraphs = content.split("\n");
-
-
-// console.log("Image", projectImage);
 ---
 
 <sl-card class="card-overview shakeable">
-  <div
-    slot="image"
-    class="fade-in image-box project-image shakeable"
-  >
+  <!-- Image Slot -->
+  <div slot="image" class="fade-in image-box project-image shakeable">
     <img
       src={projectImage.default.src}
       alt={alt}
       width={projectImage.default.width}
       height={projectImage.default.height}
     />
-</div>
+  </div>
 
+  <!-- Card Content -->
   <div class="card-content">
     <p class="fade-in gap"><strong>{title}</strong><br /></p>
-    <!-- {content}<br /> -->
     <div class="gap-2">
       {
         contentParagraphs.map((paragraph, index) => (
-
-        <div class={index > 0 ? `gap slide-in-left-d${index}` : `gap slide-in-left`}>
+          <div
+            class={
+              index > 0 ? `gap slide-in-left-d${index}` : `gap slide-in-left`
+            }
+          >
             {/*Place first 4 words of each paragraph inside a span */}
-            <span class="info-text first-words">{paragraph.split(' ').slice(0, 4).join(' ')}</span>
+            <span class="info-text first-words">
+              {paragraph.split(" ").slice(0, 4).join(" ")}
+            </span>
             {/*Place the rest of the paragraph inside a span */}
-            <span class="info-text">{paragraph.split(' ').slice(4).join(' ')}</span>
-
+            <span class="info-text">
+              {paragraph.split(" ").slice(4).join(" ")}
+            </span>
           </div>
         ))
       }
-  </div>
+    </div>
   </div>
 
+  <!-- Footer -->
   <div slot="footer" class="card-footer">
-    <!-- <sl-button variant="primary" pill>Visit</sl-button>
-    <sl-button variant="primary" pill>Next</sl-button> -->
     <div class="button-box">
       {
         link ? (
@@ -106,6 +106,7 @@ const contentParagraphs = content.split("\n");
 </sl-card>
 
 <style>
+  /* Card */
   .card-overview::part(base) {
     display: flex;
     border-radius: 0.25rem;
@@ -115,10 +116,8 @@ const contentParagraphs = content.split("\n");
     background-color: var(--secondary);
     padding: 1rem;
     transition: all 0.2s ease-in-out;
-    /* cursor: pointer; */
     -webkit-tap-highlight-color: transparent;
   }
-
   .card-overview::part(base):hover {
     box-shadow: 3px 3px 0px var(--accent-color-transparent);
   }
@@ -131,18 +130,45 @@ const contentParagraphs = content.split("\n");
     align-items: stretch;
   }
 
+  /* Content */
   .card-overview::part(body) {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    flex-grow: 1;
+  }
+
+  .card-content {
+    height: 100%;
+    align-content: flex-end;
   }
 
   .card-overview::part(image) {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
   }
 
+
+  /* Image */
+  .project-image {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+  }
+
+  img {
+    display: block;
+    padding: 1rem;
+    width: auto;
+    max-height: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Footer */
   .card-overview::part(footer) {
     display: flex;
     justify-content: center;
@@ -154,25 +180,5 @@ const contentParagraphs = content.split("\n");
     align-items: center;
     gap: 1rem;
     flex-grow: 0;
-  }
-
-  .card-content {
-    flex-grow: 1;
-    height: 100%;
-  }
-
-  .project-image {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  img {
-    display: flex;
-    padding: 1rem;
-    width: auto;
-    max-height: 300px;
-    margin: 0 auto;
   }
 </style>

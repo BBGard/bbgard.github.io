@@ -8,7 +8,7 @@ It serves to provide a more comprehensive overview of the HOSPFLOW project."
 tags: ["HTML5", "CSS3", "Wordpress"]
 blogLink: "/posts/hospflow-post-1"
 extLink: "https://hospflow.app"
-image: "../../assets/images/hf_1.webp"
+image: "../../assets/images/hf_2.webp"
 imgAlt: "HOSPFLOW app screenshots"
 imgLink: "https://www.hospflow.app"
 index: 2
