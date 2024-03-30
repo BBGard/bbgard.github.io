@@ -1,5 +1,7 @@
 ---
 import ButtonLink from "./ButtonLink.astro";
+import githubLogo from "../assets/github-mark.png";
+
 interface Props {
   // The image to display on the card.
   image?: {
@@ -10,7 +12,7 @@ interface Props {
   };
 
   // The alt text of the image.
-  alt: string;
+  alt?: string;
 
   // The title of the card.
   title: string;
@@ -32,12 +34,15 @@ const {
     height: 200,
     format: "jpg",
   },
+
   alt = "A kitten sits patiently between a terracotta pot and decorative grasses.",
   title = "Mittens",
   content = "This kitten is as cute as he is playful. Bring him home today!",
   tags = ["kitten", "playful", "adorable"],
   link = "https://example.com",
 } = Astro.props;
+
+console.log("Image: ", image);
 
 // This is a hackey solution, but it works for now.
 // Grab all image files
@@ -54,12 +59,23 @@ const contentParagraphs = content.split("\n");
 <sl-card class="card-overview shakeable">
   <!-- Image Slot -->
   <div slot="image" class="fade-in image-box project-image shakeable">
-    <img
-      src={projectImage.default.src}
-      alt={alt}
-      width={projectImage.default.width}
-      height={projectImage.default.height}
-    />
+    {
+      projectImage ? (
+        <img
+          src={projectImage.default.src}
+          alt={alt}
+          width={projectImage.default.width}
+          height={projectImage.default.height}
+        />
+      ) : (
+        <img
+          src={githubLogo.src}
+          alt={alt}
+          width={githubLogo.width}
+          height={githubLogo.height}
+        />
+      )
+    }
   </div>
 
   <!-- Card Content -->

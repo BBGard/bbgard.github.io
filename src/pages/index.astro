@@ -11,6 +11,7 @@ import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import githubLogo from '../assets/github-mark.png';
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -153,6 +154,12 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
             />
           ))
         }
+         <ProjectCard
+         title="More Projects"
+         content="For more projects, check out my GitHub profile."
+         tags={[]}
+         link="https://github.com/BBGard"
+       />
       </div>
     </section>
 
