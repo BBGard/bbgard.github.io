@@ -64,7 +64,20 @@ const contentParagraphs = content.split("\n");
 
   <!-- Card Content -->
   <div class="card-content">
-    <p class="fade-in gap"><strong>{title}</strong><br /></p>
+    <p class="fade-in gap card-title title-black-bg">
+      <strong>{title}</strong><br />
+    </p>
+    <div class="tag-box gap">
+      {
+        tags ? (
+          <div class="tags">
+            {tags.map((tag) => (
+              <p class="tag fade-in">{tag}</p>
+            ))}
+          </div>
+        ) : null
+      }
+    </div>
     <div class="gap-2">
       {
         contentParagraphs.map((paragraph, index) => (
@@ -75,11 +88,11 @@ const contentParagraphs = content.split("\n");
           >
             {/*Place first 4 words of each paragraph inside a span */}
             <span class="info-text first-words">
-              {paragraph.split(" ").slice(0, 4).join(" ")}
+              {paragraph.split(" ").slice(0, 3).join(" ")}
             </span>
             {/*Place the rest of the paragraph inside a span */}
             <span class="info-text">
-              {paragraph.split(" ").slice(4).join(" ")}
+              {paragraph.split(" ").slice(3).join(" ")}
             </span>
           </div>
         ))
@@ -149,6 +162,20 @@ const contentParagraphs = content.split("\n");
     flex-grow: 1;
   }
 
+  .card-title {
+    font-size: var(--font-size-3);
+    margin-inline: auto;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .first-words {
+    font-weight: 600;
+  }
+
+  .tag-box {
+    display: flex;
+    justify-content: center;
+  }
 
   /* Image */
   .project-image {
