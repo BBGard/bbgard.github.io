@@ -54,7 +54,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
     <section id="profile">
       <div class="flex-columns">
-        <div class="column left-column">
+        <div id="profile-column" class="column left-column">
           <p class="subtitle gap-2">A little about me...</p>
           <h2
             class="secondary-title shakeable slide-in-bottom title-black-bg uppercase gap-2"
@@ -123,7 +123,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
           Projects
         </h2>
       </div>
-      <div>
+      <div id="individual-projects">
         {
           allProjects.map((project, index) => (
             <ProjectSectionFull
@@ -278,6 +278,14 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       }
 
       @media screen and (max-width: 1100px) {
+        #profile-column {
+          width: 100%;
+          padding: 0;
+        }
+
+        #individual-projects {
+          display: none;
+        }
         .left-column {
           width: 100%;
         }
@@ -312,6 +320,10 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
         .hidden {
           display: none;
+        }
+
+        #all-projects {
+          display: flex;
         }
       }
     </style>

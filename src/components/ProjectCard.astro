@@ -224,4 +224,11 @@ const contentParagraphs = content.split("\n");
     gap: 1rem;
     flex-grow: 0;
   }
+
+  @media screen and (max-width: 800px){
+
+    .card-overview::part(base) {
+      padding: 0;
+    }
+  }
 </style>

@@ -307,4 +307,42 @@ const contentParagraphs = content.split("\n");
       /* left: 0; */
     }
   }
+
+  @media screen and (max-width: 800px) {
+
+    .project-container {
+      max-height: fit-content;
+
+    }
+
+    .content-box {
+      width: 100%;
+      max-width: fit-content;
+    }
+
+    .left-column {
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .right-column {
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .secondary-title {
+      width: 100%;
+    }
+
+    .secondary-title {
+      text-align: center;
+    }
+    .flex-columns {
+      flex-direction:column-reverse;
+    }
+
+  }
 </style>
