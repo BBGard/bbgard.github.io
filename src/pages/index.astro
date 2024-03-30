@@ -137,34 +137,6 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         }
       </div>
     </section>
-    <!-- <div id="projects">
-      <div class="center-title">
-        <h2
-          class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
-        >
-          Projects
-        </h2>
-      </div>
-      {
-        allProjects.map((project, index) => (
-          <ProjectSectionFull
-            title={project.data.title}
-            info={project.data.info}
-            tags={project.data.tags}
-            blogLink={project.data.blogLink}
-            extLink={project.data.extLink}
-            image={project.data.image}
-            imgAlt={project.data.imgAlt}
-            imgLink={project.data.imgLink}
-            reverse={index % 2 === 1}
-            nextBtn={index !== allProjects.length - 1}
-            prevBtn={index !== 0}
-            hidden={index !== 0}
-            endBtn={index === allProjects.length - 1}
-          />
-        ))
-      }
-    </div> -->
 
     <Divider size="full" />
 
@@ -262,6 +234,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       }
 
       @media screen and (max-width: 1100px) {
+
         .left-column {
           width: 100%;
         }
@@ -280,6 +253,13 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         .secondary-title {
           margin-left: auto;
           margin-right: auto;
+        }
+
+        .grid-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
         }
       }
     </style>
