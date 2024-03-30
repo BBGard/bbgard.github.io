@@ -11,7 +11,7 @@ import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import githubLogo from '../assets/github-mark.png';
+import githubLogo from "../assets/github-mark.png";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -115,7 +115,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </div>
     </section>
     <Divider />
-    <section id="projects" >
+    <section id="projects">
       <div class="center-title column">
         <h2
           class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
@@ -123,7 +123,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
           Projects
         </h2>
       </div>
-      <div >
+      <div>
         {
           allProjects.map((project, index) => (
             <ProjectSectionFull
@@ -154,12 +154,21 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
             />
           ))
         }
-         <ProjectCard
-         title="More Projects"
-         content="For more projects, check out my GitHub profile."
-         tags={[]}
-         link="https://github.com/BBGard"
-       />
+        <ProjectCard
+          title="More Projects"
+          content="For more projects, check out my GitHub profile."
+          tags={[]}
+          link="https://github.com/BBGard"
+        />
+
+      </div>
+      <div class="button-box center">
+        <ButtonLink
+          btnText="Keep Going..."
+          btnLink="#contact"
+          size="large"
+          customClass="scroll-btn"
+        />
       </div>
     </section>
 
@@ -216,8 +225,6 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         display: none;
       }
 
-
-
       .subtitle {
         font-size: var(--font-size-3);
         font-weight: 600;
@@ -264,8 +271,13 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         transform: translate(2px, 2px);
       }
 
-      @media screen and (max-width: 1100px) {
+      .button-box.center {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+      }
 
+      @media screen and (max-width: 1100px) {
         .left-column {
           width: 100%;
         }
@@ -286,16 +298,21 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
           margin-right: auto;
         }
 
+        #projects {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
         .grid-section {
           display: flex;
           flex-direction: column;
           align-items: center;
-
         }
 
         .hidden {
-        display: none;
-      }
+          display: none;
+        }
       }
     </style>
   </main>
