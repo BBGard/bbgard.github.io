@@ -122,7 +122,25 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
           Projects
         </h2>
       </div>
-      <div class="grid-section">
+      <div >
+        {
+          allProjects.map((project, index) => (
+            <ProjectSectionFull
+              title={project.data.title}
+              content={project.data.info}
+              tags={project.data.tags}
+              link={project.data.extLink}
+              image={project.data.image}
+              alt={project.data.imgAlt}
+              hidden={index > 0}
+              nextBtn={index < allProjects.length - 1}
+              prevBtn={index > 0}
+              endBtn={index === allProjects.length - 1}
+            />
+          ))
+        }
+      </div>
+      <div id="all-projects" class="grid-section hidden">
         {
           allProjects.map((project, index) => (
             <ProjectCard
@@ -186,6 +204,12 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         /* outline: solid green 2px;hotpink */
       }
+
+      .hidden {
+        display: none;
+      }
+
+
 
       .subtitle {
         font-size: var(--font-size-3);

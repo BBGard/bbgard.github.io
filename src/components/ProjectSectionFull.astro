@@ -5,24 +5,19 @@ import ButtonLink from "./ButtonLink.astro";
  * @name ProjectSectionFull
  * @desc A simple component to display a Card component and an image side by side.
  * @param {string} title - The title of the component.
- * @param {boolean} reverse - Whether to reverse the order of the image and text.
- * @param {string} info - The text to display.
+ * @param {string} content - The text to display.
  * @param {string[]} tags - An array of tags to display.
- * @param {string} blogLink - The link to the blog post.
- * @param {string} extLink - The link to an external site.
+ * @param {string} link - The link to an external site.
  * @param {string} image - The image to display.
- * @param {string} imgAlt - The image alt text.
- * @param {string} imgLink - The image link.
+ * @param {string} alt - The image alt text.
  * @param {boolean} nextBtn - Whether to show a next button.
  * @param {boolean} hidden - Whether to hide the component.
  */
 interface Props {
   title?: string;
-  info?: string;
+  content?: string;
   tags?: string[];
-  blogLink?: string;
-  extLink?: string;
-  reverse?: boolean;
+  link?: string;
   nextBtn?: boolean;
   prevBtn?: boolean;
   endBtn?: boolean;
@@ -32,18 +27,15 @@ interface Props {
     height?: number;
     format?: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif";
   };
-  imgAlt?: string;
-  imgLink?: string;
+  alt?: string;
   hidden?: boolean;
 }
 
 const {
   title = "",
-  info = "",
+  content = "",
   tags = [],
-  blogLink = "",
-  extLink = "",
-  reverse = false,
+  link = "",
   nextBtn = false,
   prevBtn = false,
   endBtn = false,
@@ -53,8 +45,7 @@ const {
     height: 0,
     format: "webp",
   },
-  imgAlt = "",
-  imgLink = "",
+  alt = "",
   hidden = false,
 } = Astro.props;
 
@@ -67,68 +58,76 @@ const projectImage = allImages.find((img) =>
   img.default.src.includes(image.src)
 );
 
-// Split info into paragraphs
-const infoParagraphs = info.split("\n");
-
+// Split content into paragraphs
+const contentParagraphs = content.split("\n");
 ---
 
-<section class={hidden ? 'project-section-full hidden' : 'project-section-full'}>
-  <div class={reverse ? "flex-columns-reverse" : "flex-columns"}>
-    <div
-      class={reverse ? "fade-in text-box text-box-reverse" : "fade-in text-box"}
+<section
+  class={hidden ? "project-section-full hidden" : "project-section-full"}
+>
+  <div class="project-container">
+    <!-- Title -->
+    <h3
+      class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
     >
-      <div class="center-title gap">
-        <h3
-          class="secondary-title shakeable fade-in title-black-bg uppercase"
-        >
-          {title}
-        </h3>
-      </div>
-      <div class="tag-box">
-        {
-          tags ? (
-            <div class="tags">
-              {tags.map((tag) => (
-                // <a
-                //   class={reverse ? 'tag fade-in' : 'tag fade-in'}
-                //   href={`/tags/${tag.toLowerCase()}`}
-                // >
-                //   {tag}
-                // </a>
-                <p
-                class={reverse ? 'tag fade-in' : 'tag fade-in'}
-                >
-                    {tag}
-                  </p>
-              ))}
-            </div>
-          ) : null
-        }
-      </div>
-      <div class="gap-2">
-        {
-          infoParagraphs.map((paragraph) => (
+      {title}
+    </h3>
 
-          <div class={reverse ? 'gap text-box-center fade-in card shakeable' : 'gap text-box-center fade-in card shakeable'}>
-              {/*Place first 4 words of each paragraph inside a span */}
-              <span class="info-text first-words">{paragraph.split(' ').slice(0, 4).join(' ')}</span>
-              {/*Place the rest of the paragraph inside a span */}
-              <span class="info-text">{paragraph.split(' ').slice(4).join(' ')}</span>
-
-            </div>
-          ))
-        }
-        {endBtn ?
-          <div class={reverse ? 'gap text-box-center fade-in card shakeable' : 'gap text-box-center fade-in card shakeable'}>
-            <p class="info-text">For more projects, check out my GitHub!</p>
+    <!-- Tags -->
+    <div class="tag-box">
+      {
+        tags ? (
+          <div class="tags">
+            {tags.map((tag) => (
+              <p class="tag slide-in-top">{tag}</p>
+            ))}
           </div>
-        : null
-        }
+        ) : null
+      }
     </div>
-      <div class="button-box">
+    <div class="flex-columns">
+      <!-- Content Column -->
+      <div class="text-box left-column">
+        <!-- Content -->
+        <div class="content-box">
+          {
+            contentParagraphs.map((paragraph, index) => (
+              <div
+                class={
+                  index > 0
+                    ? `gap text-box-center card shakeable slide-in-left-d${index}`
+                    : `gap text-box-center card shakeable slide-in-left`
+                }
+              >
+                {/*Place first 4 words of each paragraph inside a span */}
+                <span class="info-text first-words">
+                  {paragraph.split(" ").slice(0, 4).join(" ")}
+                </span>
+                {/*Place the rest of the paragraph inside a span */}
+                <span class="info-text">
+                  {paragraph.split(" ").slice(4).join(" ")}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="slide-in-right image-box project-image right-column">
+        <img
+          src={projectImage.default.src}
+          alt={alt}
+          width={projectImage.default.width}
+          height={projectImage.default.height}
+        />
+      </div>
+    </div>
+
+    <!-- <div class="button-box">
         {
-          extLink ? (
-            <ButtonLink btnText="Visit" btnLink={extLink} btnTarget="_blank" size="medium" animation="fade"/>
+          link ? (
+            <ButtonLink btnText="Visit" btnLink={link} btnTarget="_blank" size="medium" animation="fade"/>
           ) : null
         }
         {
@@ -165,42 +164,129 @@ const infoParagraphs = info.split("\n");
           ) : null
         }
 
-      </div>
-    </div>
-    <a class="fade-in image-box" href={imgLink} target="_blank">
-      <img
-        src={projectImage.default.src}
-        alt={imgAlt}
-        width={projectImage.default.width}
-        height={projectImage.default.height}
-      />
-    </a>
+      </div> -->
+
+    <!-- {
+      endBtn ? (
+        <ButtonLink
+          btnText="Next Section..."
+          btnLink="#contact"
+          btnTarget="_self"
+          size="large"
+          animation="fade"
+          customClass="scroll-btn"
+        />
+      ) : null
+    } -->
+
+    <!-- {
+          endBtn ? (
+            <div class="gap text-box-center fade-in card shakeable">
+              <p class="info-text">For more projects, check out my GitHub!</p>
+            </div>
+          ) : null
+        } -->
   </div>
-
-  {endBtn ? (
-
-    <ButtonLink
-      btnText="Next Section..."
-      btnLink="#contact"
-      btnTarget="_self"
-      size="large"
-      animation="fade"
-      customClass="scroll-btn"
-    />
-
-  ) : null}
+  {
+    prevBtn ? (
+      <div class="left-btn">
+        <ButtonLink
+          btnText="<- Previous Project"
+          btnTarget="_self"
+          customClass="prev-btn"
+          size="medium"
+          animation="fade"
+        />
+      </div>
+    ) : null
+  }
+  {
+    nextBtn ? (
+      <div class="right-btn">
+        <ButtonLink
+          btnText="Next Project ->"
+          btnTarget="_self"
+          customClass="next-btn"
+          size="medium"
+          animation="fade"
+        />
+      </div>
+    ) : null
+  }
+  {
+    endBtn ? (
+    <div class="right-btn">
+      <ButtonLink
+          btnText="All Projects..."
+          btnTarget="_self"
+          size="medium"
+          animation="fade"
+          customClass="next-btn"
+        />
+    </div>
+      ) : null
+    }
 
 </section>
 
-
 <style>
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 800px;
 
-.project-section-full {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
-  padding: 0 10%;
-}
+    border-radius: 0.25rem;
+    border: 0.125rem solid var(--accent);
+    color: var(--primary);
+    box-shadow: 6px 6px 0px var(--accent-transparent);
+    background-color: var(--secondary);
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Content */
+  .flex-columns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-column {
+    width: 50%;
+  }
+
+  .right-column {
+    width: 50%;
+  }
+
+  .content-box {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Image */
+  .project-image {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+  }
+
+  img {
+    display: block;
+    padding: 1rem;
+    width: auto;
+    max-height: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 
   .tag-box {
     display: flex;
@@ -213,13 +299,24 @@ const infoParagraphs = info.split("\n");
   }
 
   .first-words {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .button-box {
     display: flex;
     margin-top: 1rem;
     gap: 1rem;
+  }
+
+  /* Buttons */
+  .right-btn {
+    position: absolute;
+    right: 6rem;
+  }
+
+  .left-btn {
+    position: absolute;
+    left: 6rem;
   }
 
   .gap {
@@ -231,14 +328,12 @@ const infoParagraphs = info.split("\n");
   }
 
   @media screen and (max-width: 1100px) {
-
     .project-section-full {
-    padding: 0 2%;
-  }
+      padding: 0 2%;
+    }
     .button-box {
       flex-direction: column;
       gap: 1rem;
     }
   }
-
 </style>

@@ -29,7 +29,13 @@ nextButtons.forEach((button) => {
     button.closest("section").classList.add("hidden");
 
     // Find the next project-section element
-    const nextElement = button.closest("section").nextElementSibling;
+    let nextElement = button.closest("section").nextElementSibling;
+
+    if(nextElement === null) {
+      // Find the element with id="all-projects"
+      nextElement = document.querySelector("#all-projects");
+    }
+
     // Remove the "hidden" class from the next section
     nextElement.classList.remove("hidden");
     // Scroll to the next element
