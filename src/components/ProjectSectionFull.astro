@@ -123,73 +123,10 @@ const contentParagraphs = content.split("\n");
         />
       </div>
     </div>
-
-    <!-- <div class="button-box">
-        {
-          link ? (
-            <ButtonLink btnText="Visit" btnLink={link} btnTarget="_blank" size="medium" animation="fade"/>
-          ) : null
-        }
-        {
-          prevBtn ? (
-            <ButtonLink
-              btnText="<- Previous Project"
-              btnTarget="_self"
-              customClass="prev-btn"
-              size="medium"
-              animation="fade"
-            />
-          ) : null
-        }
-        {
-          nextBtn ? (
-            <ButtonLink
-              btnText="Next Project ->"
-              btnTarget="_self"
-              customClass="next-btn"
-              size="medium"
-              animation="fade"
-            />
-          ) : null
-        }
-        {
-          endBtn ? (
-            <ButtonLink
-              btnText="GitHub"
-              btnLink="https://github.com/bbgard"
-              btnTarget="_blank"
-              size="medium"
-              animation="fade"
-            />
-          ) : null
-        }
-
-      </div> -->
-
-    <!-- {
-      endBtn ? (
-        <ButtonLink
-          btnText="Next Section..."
-          btnLink="#contact"
-          btnTarget="_self"
-          size="large"
-          animation="fade"
-          customClass="scroll-btn"
-        />
-      ) : null
-    } -->
-
-    <!-- {
-          endBtn ? (
-            <div class="gap text-box-center fade-in card shakeable">
-              <p class="info-text">For more projects, check out my GitHub!</p>
-            </div>
-          ) : null
-        } -->
   </div>
   {
     prevBtn ? (
-      <div class="left-btn">
+      <div class="left-btn full-screen-btn">
         <ButtonLink
           btnText="<- Previous Project"
           btnTarget="_self"
@@ -202,7 +139,7 @@ const contentParagraphs = content.split("\n");
   }
   {
     nextBtn ? (
-      <div class="right-btn">
+      <div class="right-btn full-screen-btn">
         <ButtonLink
           btnText="Next Project ->"
           btnTarget="_self"
@@ -215,17 +152,17 @@ const contentParagraphs = content.split("\n");
   }
   {
     endBtn ? (
-    <div class="right-btn">
-      <ButtonLink
+      <div class="right-btn full-screen-btn">
+        <ButtonLink
           btnText="All Projects..."
           btnTarget="_self"
           size="medium"
           animation="fade"
           customClass="next-btn"
         />
-    </div>
-      ) : null
-    }
+      </div>
+    ) : null
+  }
 
 </section>
 
@@ -302,13 +239,10 @@ const contentParagraphs = content.split("\n");
     font-weight: 600;
   }
 
-  .button-box {
-    display: flex;
-    margin-top: 1rem;
-    gap: 1rem;
-  }
-
   /* Buttons */
+  .button-box {
+    display: none;
+  }
   .right-btn {
     position: absolute;
     right: 6rem;
@@ -332,8 +266,24 @@ const contentParagraphs = content.split("\n");
       padding: 0 2%;
     }
     .button-box {
-      flex-direction: column;
+      display: flex;
+      margin-top: 1rem;
       gap: 1rem;
+      flex-direction: column;
     }
+
+    .fullscreen-btn {
+      display: none;
+    }
+
+    /* .right-btn {
+      position: relative;
+      right: 0;
+    }
+
+    .left-btn {
+      position: relative;
+      left: 0;
+    } */
   }
 </style>
