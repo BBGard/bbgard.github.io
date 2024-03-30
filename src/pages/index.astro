@@ -10,7 +10,8 @@ import "../styles/global.css";
 import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
-import Resume from "../components/Resume.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import githubLogo from "../assets/github-mark.png";
 
 const pageTitle = "Benjamin Gardiner - Software Engineer";
 
@@ -53,7 +54,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
     <section id="profile">
       <div class="flex-columns">
-        <div class="column left-column">
+        <div id="profile-column" class="column left-column">
           <p class="subtitle gap-2">A little about me...</p>
           <h2
             class="secondary-title shakeable slide-in-bottom title-black-bg uppercase gap-2"
@@ -114,34 +115,62 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </div>
     </section>
     <Divider />
-    <div id="projects">
-      <div class="center-title">
+    <section id="projects">
+      <div class="center-title column">
         <h2
           class="secondary-title shakeable slide-in-bottom title-black-bg uppercase"
         >
           Projects
         </h2>
       </div>
-      {
-        allProjects.map((project, index) => (
-          <ProjectSectionFull
-            title={project.data.title}
-            info={project.data.info}
-            tags={project.data.tags}
-            blogLink={project.data.blogLink}
-            extLink={project.data.extLink}
-            image={project.data.image}
-            imgAlt={project.data.imgAlt}
-            imgLink={project.data.imgLink}
-            reverse={index % 2 === 1}
-            nextBtn={index !== allProjects.length - 1}
-            prevBtn={index !== 0}
-            hidden={index !== 0}
-            endBtn={index === allProjects.length - 1}
-          />
-        ))
-      }
-    </div>
+      <div id="individual-projects">
+        {
+          allProjects.map((project, index) => (
+            <ProjectSectionFull
+              title={project.data.title}
+              content={project.data.info}
+              tags={project.data.tags}
+              link={project.data.extLink}
+              image={project.data.image}
+              alt={project.data.imgAlt}
+              hidden={index > 0}
+              nextBtn={index < allProjects.length - 1}
+              prevBtn={index > 0}
+              endBtn={index === allProjects.length - 1}
+            />
+          ))
+        }
+      </div>
+      <div id="all-projects" class="grid-section hidden">
+        {
+          allProjects.map((project, index) => (
+            <ProjectCard
+              title={project.data.title}
+              content={project.data.info}
+              tags={project.data.tags}
+              link={project.data.extLink}
+              image={project.data.image}
+              alt={project.data.imgAlt}
+            />
+          ))
+        }
+        <ProjectCard
+          title="More Projects"
+          content="For more projects, check out my GitHub profile."
+          tags={[]}
+          link="https://github.com/BBGard"
+        />
+
+      </div>
+      <div class="button-box center">
+        <ButtonLink
+          btnText="Keep Going..."
+          btnLink="#contact"
+          size="large"
+          customClass="scroll-btn"
+        />
+      </div>
+    </section>
 
     <Divider size="full" />
 
@@ -178,6 +207,22 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 
       #profile {
         align-items: flex-start;
+      }
+
+      #projects {
+        display: block;
+        /* outline: solid blue 2px;hotpink */
+        height: 100%;
+      }
+
+      .grid-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        /* outline: solid green 2px;hotpink */
+      }
+
+      .hidden {
+        display: none;
       }
 
       .subtitle {
@@ -226,7 +271,21 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         transform: translate(2px, 2px);
       }
 
+      .button-box.center {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
       @media screen and (max-width: 1100px) {
+        #profile-column {
+          width: 100%;
+          padding: 0;
+        }
+
+        #individual-projects {
+          display: none;
+        }
         .left-column {
           width: 100%;
         }
@@ -245,6 +304,26 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         .secondary-title {
           margin-left: auto;
           margin-right: auto;
+        }
+
+        #projects {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .grid-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hidden {
+          display: none;
+        }
+
+        #all-projects {
+          display: flex;
         }
       }
     </style>

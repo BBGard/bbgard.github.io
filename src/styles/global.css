@@ -122,6 +122,8 @@ meter {
   --accent-blue-dark: #58adfc;
   --accent-gold: #f9d34b;
   --accent-gold-dark: #f2af2a;
+  --accent-red: #e86a4a;
+  --accent-red-dark: #b45239;
   /* --background-light: #f2f2f2; */
   --background-light: #f0f1f3;
   --background-nav: #ececec;
@@ -483,25 +485,24 @@ article {
 }
 
 .tag {
-  font-size: var(--font-size-4);
-  background-color: var(--background-dark);
-  box-shadow: 2px 2px 0px var(--accent-transparent);
+  font-size: var(--font-size-6);
+  background-color: var(--accent-red);
+  box-shadow: 2px 2px 0px var(--accent);
   border: 0.125rem solid var(--accent);
   color: var(--secondary);
-  font-weight: 600;
-  padding: 0.5em 0.75em;
-  line-height: 1;
+  font-weight: 500;
+  padding: 0.25em 0.5em;
+  /* line-height: 1; */
   border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;
 }
 
-.tag:hover {
+/* .tag:hover {
   text-decoration: none;
-  background-color: var(--secondary);
-  color: var(--primary);
+  background-color: var(--accent-red-dark);
   box-shadow: 1px 1px 0px var(--accent-color-transparent);
   transform: translate(1px, 1px);
-}
+} */
 
 .title {
   font-size: var(--font-size-3);
@@ -525,7 +526,7 @@ article {
 
 @media screen and (max-width: 1100px) {
   section {
-    display: block;
+    /* display: block; */
     margin: 0 auto;
     text-align: center;
     height: 100%;
