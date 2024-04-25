@@ -12,13 +12,17 @@
   background-color: var(--primary-100);
   border: 3px solid var(--primary-100);
   border-radius: 3px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  box-shadow: 4px 4px 0px var(--secondary-100);
+  transition: all 0.2s ease-in-out;
+  // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
   &:hover,
   &:focus {
     text-decoration: underline;
     background-color: var(--primary-200);
     border-color: var(--primary-200);
+    box-shadow: 2px  0px var(--secondary-100);
+    transform: transl2pxate(2px, 2px);
   }
 
   &:visited {
@@ -28,17 +32,23 @@
   &.color-secondary {
     background-color: var(--secondary-100);
     border-color: (var(--secondary-100));
+    box-shadow: 4px 4px 0px var(--primary-100);
+
 
     &:hover,
     &:focus {
       background-color: var(--secondary-400);
       border-color: var(--secondary-400);
+      box-shadow: 2px 2px 0px var(--primary-100);
+
     }
   }
 
   &.color-neutral {
     background-color: var(--neutral-500);
     border-color: (var(--neutral-500));
+    box-shadow: 4px 4px 0px var(--primary-100);
+
 
     &:hover,
     &:focus {
@@ -91,14 +101,17 @@
     }
   }
 
-  &.color-transparent {
+  &.color-translucent {
     background-color: var(--translucent-100);
     border-color: var(--translucent-100);
+    box-shadow: none;
 
     &:hover,
     &:focus {
       background-color: var(--translucent-100);
       border-color: var(--translucent-100);
+      box-shadow: none;
+      transform: none;
     }
   }
 
