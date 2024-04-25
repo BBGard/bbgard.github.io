@@ -120,9 +120,9 @@ meter {
   --accent-color-transparent: rgba(168, 0, 171, 0.6);
   --accent-blue: #82c1fa;
   --accent-blue-dark: #58adfc;
-  --accent-gold: #f9d34b;
+  --accent-gold: hsl(47, 94%, 64%);
   --accent-gold-dark: #f2af2a;
-  --accent-red: #e86a4a;
+  --accent-red: hsl(12, 77%, 60%);
   --accent-red-dark: #b45239;
   /* --background-light: #f2f2f2; */
   --background-light: #f0f1f3;
