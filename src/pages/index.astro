@@ -13,7 +13,7 @@ import { Icon } from 'astro-icon/components'
   <!-- Profile -->
   <section class="my-64">
     <div id="profile" class="container">
-      <h2 class="mb-16 text-6xl">Profile</h2>
+      <h2 class="mb-16 text-8xl section-title">Profile</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
         <Feature icon="mdi:school" title="Academic Achiever">
           High-achieving IT graduate with a track record of academic excellence. <br />
@@ -44,9 +44,9 @@ import { Icon } from 'astro-icon/components'
   <!-- Projects -->
   <section class="my-64">
     <div id="projects" class="container">
-      <h2 class="mb-16 text-6xl">Projects</h2>
+      <h2 class="mb-16 text-8xl section-title">Projects</h2>
       <ContentMedia imgSrc="/hospflow-app.webp">
-        <h2 class="title-bg max-w-fit"><a href="https://hospflow.com.au/" rel="external nofollow" target="_blank">Hospflow App</a></h2>
+        <h3 class="title-bg max-w-fit"><a href="https://hospflow.com.au/" rel="external nofollow" target="_blank">Hospflow App</a></h3>
         <p class="text-2xl">
           A web-based hospitality management system bult for a local startup.
           <br />
@@ -56,7 +56,7 @@ import { Icon } from 'astro-icon/components'
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/hospflow-web.webp" reverseImg={true}>
-        <h2 class="title-bg max-w-fit"><a href="https://hospflow.com.au/" rel="external nofollow" target="_blank">Hospflow Website</a></h2>
+        <h3 class="title-bg max-w-fit"><a href="https://hospflow.com.au/" rel="external nofollow" target="_blank">Hospflow Website</a></h3>
         <p class="text-2xl">
           A complimentary website used to pitch HOSPFLOW to potential investors.
           <br />
@@ -66,7 +66,7 @@ import { Icon } from 'astro-icon/components'
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/dont-undermine-daylesford.webp">
-        <h2 class="title-bg max-w-fit"><a href="https://dont-undermine-daylesford.website/" rel="external nofollow" target="_blank">Don't Undermine Daylesford</a></h2>
+        <h3 class="title-bg max-w-fit"><a href="https://dont-undermine-daylesford.website/" rel="external nofollow" target="_blank">Don't Undermine Daylesford</a></h3>
         <p class="text-2xl">
           A website created for a non profit, community group in Daylesford, Victoria, Australia. <br />
           Serves as a hub for information and resources about the potential impacts of mining in the area. <br />
@@ -74,7 +74,7 @@ import { Icon } from 'astro-icon/components'
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/daily-workouts.webp" reverseImg={true}>
-        <h2 class="title-bg max-w-fit"><a href="https://daily-workouts.netlify.app/" rel="external nofollow" target="_blank">Daily Workouts App</a></h2>
+        <h3 class="title-bg max-w-fit"><a href="https://daily-workouts.netlify.app/" rel="external nofollow" target="_blank">Daily Workouts App</a></h3>
         <p class="text-2xl">
           Personal project to collate various YouTube workout videos into a single app.
           <br />
@@ -86,7 +86,7 @@ import { Icon } from 'astro-icon/components'
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/ben-gardiner-photography.webp" reverseImg={true}>
-        <h2 class="title-bg max-w-fit"><a href="https://bengardinerphotography.com/" rel="external nofollow" target="_blank">Ben Gardiner Photography</a></h2>
+        <h3 class="title-bg max-w-fit"><a href="https://bengardinerphotography.com/" rel="external nofollow" target="_blank">Ben Gardiner Photography</a></h3>
         <p class="text-2xl">
           My personal photography website.          <br />
           Built using Astro (previously WordPress), this site showcases my passion for landscape and nature photography.
@@ -108,3 +108,42 @@ import { Icon } from 'astro-icon/components'
     </div>
   </section> -->
 </DefaultLayout>
+
+<style lang="scss">
+  @use "../assets/scss/base/breakpoint" as *;
+
+
+  .title-bg {
+    background: linear-gradient(var(--neutral-100), var(--neutral-100)) padding-box,
+      linear-gradient(to right, var(--primary-100), var(--secondary-100)) border-box;
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    margin: 0;
+    display: inline-block;
+  }
+
+  .section-title {
+    opacity: 0.7;
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+
+  :global(.darkmode .title-bg) {
+    background: linear-gradient(var(--neutral-900), var(--neutral-900)) padding-box,
+      linear-gradient(to right, var(--secondary-100), var(--primary-100)) border-box;
+  }
+
+  :global(.darkmode .section-title) {
+    opacity: 0.5;
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
