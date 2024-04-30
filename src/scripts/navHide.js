@@ -2,7 +2,7 @@
  * Hide the navbar when scrolling down and show it when scrolling up
  */
 
-const nav = document.querySelector(".navbar"); // The navbar element
+const nav = document.querySelector(".main-navigation"); // The navbar element
 const navHeight = nav.getBoundingClientRect().height; // The height of the navbar
 let prevScrollTop = 0; // The previous scroll position
 
