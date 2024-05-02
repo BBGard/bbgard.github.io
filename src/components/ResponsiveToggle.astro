@@ -27,12 +27,24 @@
       toggle.innerHTML = `<svg width="26" height="21" aria-hidden="true" fill="var(--action-color)" xmlns="http://www.w3.org/2000/svg"><path d="M2 1.667h24m-24 8h24m-24 8h24" stroke="var(--action-color)" stroke-width="2.667" stroke-linecap="round" stroke-linejoin="round"/></svg>`
     }
 
+     const mobileMenuButtons = document.querySelector('.mobile-menu').querySelectorAll('ul');
+
+
     // execution
     responsiveToggle.addEventListener('click', (_) => {
       const mobileNavigation = document.querySelector('.mobile-menu')
 
       mobileNavigation.classList.toggle('show')
       mobileNavigation.classList.contains('show') ? openMenu(responsiveToggle) : closeMenu(responsiveToggle)
+    })
+
+    mobileMenuButtons.forEach((button) => {
+      button.addEventListener('click', (_) => {
+        const mobileNavigation = document.querySelector('.mobile-menu')
+
+        mobileNavigation.classList.remove('show')
+        closeMenu(responsiveToggle)
+      })
     })
   })
 </script>

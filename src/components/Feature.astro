@@ -1,12 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const { icon = "mdi:rocket", title = "Title" } = Astro.props;
+const { icon = "mdi:rocket", title = "Title", customClasses="" } = Astro.props;
 ---
 
-<div class="feature shakeable flex flex-col gap-4">
-  <Icon name={icon} />
-  <div class="content fade-in">
+<div class=`feature shakeable flex flex-col gap-4 ${customClasses}`>
+  {icon !== "none" && <Icon name={icon} />}
+  <div class='content fade-in'>
     <h3 class="mb-2">{title}</h3>
     <p>
       <slot

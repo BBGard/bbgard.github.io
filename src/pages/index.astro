@@ -1,10 +1,10 @@
 ---
-import DefaultLayout from '../layouts/DefaultLayout.astro';
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
-import ContentMedia from '../components/ContentMedia.astro'
-import { Icon } from 'astro-icon/components'
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Hero from "../components/Hero.astro";
+import Feature from "../components/Feature.astro";
+import Counter from "../components/Counter.astro";
+import ContentMedia from "../components/ContentMedia.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <DefaultLayout title="Benjamin Gardiner">
@@ -13,23 +13,36 @@ import { Icon } from 'astro-icon/components'
   <!-- Profile -->
   <section class="my-64">
     <div id="about" class="container">
-      <h2 class="mb-16 text-8xl section-title">Profile</h2>
+      <h2 class="section-title mb-16 text-6xl">Profile</h2>
+      <!-- <Feature icon="none" title="Hey there!" customClasses="mb-12 max-w-xl mx-auto">
+        I'm Ben, a tech enthusiast and front-end developer with a passion for
+        building accessible solutions with the latest technologies. As a recent
+        graduate with a Bachelor of Information Technology, I've seamlessly
+        transitioned from a successful decade in hospitality to pursue software
+        engineering and web development. I thrive on combining technical
+        expertise with a passion for social and environmental causes. Currently
+        working with TypeScript, React, Next, and Astro.
+      </Feature> -->
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
         <Feature icon="mdi:school" title="Academic Achiever">
-          High-achieving IT graduate with a track record of academic excellence. <br />
+          High-achieving IT graduate with a track record of academic excellence. <br
+          />
           <br />Graduating with a distinction and a GPA of 6.9 out of 7.
         </Feature>
         <Feature icon="mdi:code" title="Web Developer">
-          Adept in dynamic web development and software engineering principles. <br /><br />Skilled in creating
-          responsive user interfaces and intuitive user experiences.
+          Adept in dynamic web development and software engineering principles. <br
+          /><br />Skilled in creating responsive user interfaces and intuitive
+          user experiences.
         </Feature>
         <Feature icon="mdi:lightbulb" title="Problem Solver">
-          Proactive problem-solver with a knack for identifying innovative solutions to complex challenges. <br /><br
-          />Able to think critically and analytically to resolve issues.
+          Proactive problem-solver with a knack for identifying innovative
+          solutions to complex challenges. <br /><br />Able to think critically
+          and analytically to resolve issues.
         </Feature>
         <Feature icon="mdi:library" title="Lifelong Learner">
-          Committed to continuous self-improvement and learning. <br /><br />Actively seeking out new challenges to
-          expand my skill set and knowledge base.
+          Committed to continuous self-improvement and learning. <br /><br
+          />Actively seeking out new challenges to expand my skill set and
+          knowledge base.
         </Feature>
       </div>
       <div class="my-12 flex flex-col gap-3 min-[500px]:flex-row">
@@ -44,54 +57,89 @@ import { Icon } from 'astro-icon/components'
   <!-- Projects -->
   <section class="my-64">
     <div id="projects" class="container">
-      <h2 class="mb-16 text-8xl section-title">Projects</h2>
+      <h2 class="section-title mb-16 text-6xl">Projects</h2>
       <ContentMedia imgSrc="/hospflow-app.webp">
-        <h3 class="title-bg max-w-fit"><a href="https://hospflow.com.au/" rel="external nofollow" target="_blank">Hospflow App</a></h3>
+        <h3 class="title-bg max-w-fit">
+          <a
+            href="https://hospflow.com.au/"
+            rel="external nofollow"
+            target="_blank">Hospflow App</a>
+        </h3>
         <p class="text-2xl">
           A web-based hospitality management system bult for a local startup.
           <br />
-          Originally a final year university project, HOSPFLOW is now in the early stages of commercialization.
+          Originally a final year university project, HOSPFLOW is now in the early
+          stages of commercialization.
           <br />
-          Uses React.js for the front-end and Amazon's AWS Amplify for the back-end infrastructure.
+          Uses React.js for the front-end and Amazon's AWS Amplify for the back-end
+          infrastructure.
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/hospflow-web.webp" reverseImg={true}>
-        <h3 class="title-bg max-w-fit"><a href="https://hospflow.com.au/" rel="external nofollow" target="_blank">Hospflow Website</a></h3>
+        <h3 class="title-bg max-w-fit">
+          <a
+            href="https://hospflow.com.au/"
+            rel="external nofollow"
+            target="_blank">Hospflow Website</a>
+        </h3>
         <p class="text-2xl">
           A complimentary website used to pitch HOSPFLOW to potential investors.
           <br />
-          The decision to create this website was a last-minute addition, accomplished in less than a day.
+          The decision to create this website was a last-minute addition, accomplished
+          in less than a day.
           <br />
           It serves to provide a more comprehensive overview of the HOSPFLOW project.
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/dont-undermine-daylesford.webp">
-        <h3 class="title-bg max-w-fit"><a href="https://dont-undermine-daylesford.website/" rel="external nofollow" target="_blank">Don't Undermine Daylesford</a></h3>
+        <h3 class="title-bg max-w-fit">
+          <a
+            href="https://dont-undermine-daylesford.website/"
+            rel="external nofollow"
+            target="_blank">Don't Undermine Daylesford</a>
+        </h3>
         <p class="text-2xl">
-          A website created for a non profit, community group in Daylesford, Victoria, Australia. <br />
-          Serves as a hub for information and resources about the potential impacts of mining in the area. <br />
-          Subscription and automated newsletter functionality to keep community members informed and engaged.
+          A website created for a non profit, community group in Daylesford,
+          Victoria, Australia. <br />
+          Serves as a hub for information and resources about the potential impacts
+          of mining in the area. <br />
+          Subscription and automated newsletter functionality to keep community members
+          informed and engaged.
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/daily-workouts.webp" reverseImg={true}>
-        <h3 class="title-bg max-w-fit"><a href="https://daily-workouts.netlify.app/" rel="external nofollow" target="_blank">Daily Workouts App</a></h3>
+        <h3 class="title-bg max-w-fit">
+          <a
+            href="https://daily-workouts.netlify.app/"
+            rel="external nofollow"
+            target="_blank">Daily Workouts App</a>
+        </h3>
         <p class="text-2xl">
-          Personal project to collate various YouTube workout videos into a single app.
+          Personal project to collate various YouTube workout videos into a
+          single app.
           <br />
-          Provides recommendations and minimizes the friction involved in working out.
+          Provides recommendations and minimizes the friction involved in working
+          out.
           <br />
           React.js and Material UI front-end, Firebase for the backend.
-          <br>
+          <br />
           The app is hosted on Netlify and the project is publicly available on GitHub.
         </p>
       </ContentMedia>
       <ContentMedia imgSrc="/ben-gardiner-photography.webp" reverseImg={true}>
-        <h3 class="title-bg max-w-fit"><a href="https://bengardinerphotography.com/" rel="external nofollow" target="_blank">Ben Gardiner Photography</a></h3>
+        <h3 class="title-bg max-w-fit">
+          <a
+            href="https://bengardinerphotography.com/"
+            rel="external nofollow"
+            target="_blank">Ben Gardiner Photography</a>
+        </h3>
         <p class="text-2xl">
-          My personal photography website.          <br />
-          Built using Astro (previously WordPress), this site showcases my passion for landscape and nature photography.
+          My personal photography website. <br />
+          Built using Astro (previously WordPress), this site showcases my passion
+          for landscape and nature photography.
           <br />
-          Undergoes yearly updates as I continue to learn and improve my skills as a developer and photographer.
+          Undergoes yearly updates as I continue to learn and improve my skills as
+          a developer and photographer.
         </p>
       </ContentMedia>
     </div>
@@ -112,10 +160,11 @@ import { Icon } from 'astro-icon/components'
 <style lang="scss">
   @use "../assets/scss/base/breakpoint" as *;
 
-
   .title-bg {
-    background: linear-gradient(var(--neutral-100), var(--neutral-100)) padding-box,
-      linear-gradient(to right, var(--primary-100), var(--secondary-100)) border-box;
+    background: linear-gradient(var(--neutral-100), var(--neutral-100))
+        padding-box,
+      linear-gradient(to right, var(--primary-100), var(--secondary-100))
+        border-box;
     border: 2px solid transparent;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -125,7 +174,11 @@ import { Icon } from 'astro-icon/components'
 
   .section-title {
     opacity: 0.7;
-    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background: linear-gradient(
+      315deg,
+      var(--primary-200) 25%,
+      var(--secondary-500)
+    );
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -135,13 +188,19 @@ import { Icon } from 'astro-icon/components'
   }
 
   :global(.darkmode .title-bg) {
-    background: linear-gradient(var(--neutral-900), var(--neutral-900)) padding-box,
-      linear-gradient(to right, var(--secondary-100), var(--primary-100)) border-box;
+    background: linear-gradient(var(--neutral-900), var(--neutral-900))
+        padding-box,
+      linear-gradient(to right, var(--secondary-100), var(--primary-100))
+        border-box;
   }
 
   :global(.darkmode .section-title) {
     opacity: 0.5;
-    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background: linear-gradient(
+      315deg,
+      var(--primary-200) 25%,
+      var(--secondary-400)
+    );
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

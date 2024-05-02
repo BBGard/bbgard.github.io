@@ -9,7 +9,7 @@ import logo from "../assets/img/logo.svg";
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
       <Image src={logo} alt="Logo" width="47" height="37" />
-      <span class="font-bold">Benjamin Gardiner</span>
+      <span class="logo-text font-bold">Benjamin Gardiner</span>
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -33,6 +33,8 @@ import logo from "../assets/img/logo.svg";
     // variables
     const mainNav = document.querySelector("#main-navigation");
     const mainMenu = mainNav.querySelector("ul");
+    const menuButton = mainNav.querySelector(".responsive-toggle");
+    const mobileMenu = mainNav.querySelector(".mobile-menu");
     const dropdownMenus = [
       ...document.querySelectorAll(".has-dropdown button"),
     ];
@@ -102,6 +104,7 @@ import logo from "../assets/img/logo.svg";
     };
 
     // execution
+    // Hide the navbar when scrolling down and show it when scrolling up
     mainNav &&
       window.addEventListener("scroll", () => {
         const currentScrollTop =
@@ -250,6 +253,16 @@ import logo from "../assets/img/logo.svg";
         closeAllDropdownMenus();
       }
     });
+
+    // Toggle scroll lock on mobile menu open
+    menuButton &&
+      menuButton.addEventListener("click", () => {
+        if (!mobileMenu.classList.contains("show")) {
+          document.querySelector("body").classList.toggle("no-scroll");
+        } else {
+          document.querySelector("body").classList.remove("no-scroll");
+        }
+      });
   });
 </script>
 
@@ -275,6 +288,11 @@ import logo from "../assets/img/logo.svg";
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+
+      .logo-text {
+        font-size: 1.3rem;
+        line-height: 1.875rem;
+      }
     }
 
     &.is-desktop {
@@ -329,6 +347,7 @@ import logo from "../assets/img/logo.svg";
 
         a,
         button {
+          font-weight: 600;
           text-decoration: none;
           font-size: 1.125rem;
           line-height: 1.6875rem;
@@ -353,9 +372,13 @@ import logo from "../assets/img/logo.svg";
     .mobile-menu {
       flex-basis: 100%;
       padding: 2rem 0;
+      height: calc(100svh);
 
       > ul {
+        height: 100%;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         ul {
           position: relative;
