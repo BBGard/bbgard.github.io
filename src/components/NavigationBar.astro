@@ -4,10 +4,10 @@ import Hamburger from "./Hamburger.astro";
 const Navbar = {
   logo: "/path/to/logo.png",
   links: [
-    { text: "About", url: "/#about" },
-    { text: "Projects", url: "/#projects" },
-    { text: "Contact", url: "/#contact" },
-    { text: "Dev.Log", url: "/blog" },
+    // { text: "About", url: "/#about" },
+    // { text: "Projects", url: "/#projects" },
+    // { text: "Contact", url: "/#contact" },
+    // { text: "Dev.Log", url: "/blog" },
   ],
 };
 ---
@@ -20,7 +20,7 @@ const Navbar = {
   </div>
 
   <ul class="nav-links">
-    <li>
+    <!-- <li>
       <a href={Navbar.links[0].url}>{Navbar.links[0].text}</a>
     </li>
     <li>
@@ -28,7 +28,7 @@ const Navbar = {
     </li>
     <li>
       <a href={Navbar.links[2].url}>{Navbar.links[2].text}</a>
-    </li>
+    </li> -->
     <!-- <li>
       <a href={Navbar.links[3].url}>{Navbar.links[3].text}</a>
     </li> -->
@@ -50,7 +50,6 @@ const Navbar = {
     background-color: var(--background-light);
     color: var(--primary);
     border-bottom: 2px solid var(--accent);
-    box-shadow: 0 1px 2px var(--accent-transparent);
     transition: all 0.5s;
     z-index: 2;
   }
@@ -60,7 +59,7 @@ const Navbar = {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto;
     padding-bottom: 1rem;
   }

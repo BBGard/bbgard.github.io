@@ -105,6 +105,11 @@ meter {
 
 /* Begin of custom styles */
 
+@font-face {
+  font-family: 'Anton SC';
+  src: url(src/assets/fonts/AntonSC-Regular.ttf);
+}
+
 :root {
   /* Define variables */
   /* Theme: elegant newspaper style */
@@ -133,10 +138,16 @@ meter {
 
 
   /* Fonts */
+
+
+  --font-heading: 'Anton SC', 'Arial Black', sans-serif;
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+
    --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
   /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
   --font-code: 'Fira Code', monospace;
+
+
 
   /* Font sizes */
   --font-size-1: 2rem;
@@ -186,42 +197,21 @@ h1 {
   font-family: var(--font-primary);
   font-weight: 600;
   line-height: 1.2em;
-  margin: 0;
-  margin-bottom: 1rem;
-  text-shadow: 3px 3px 0px var(--accent-transparent);
-  transition: all 0.2s ease-in-out;
-  -webkit-tap-highlight-color:transparent;
-}
-
-h1:hover {
-  text-shadow: 3px 3px 0px var(--accent-color-transparent);
 }
 
 
 h2 {
   font-size: var(--font-size-dynamic-3);
   margin: 0;
-  /* margin-bottom: 1rem; */
   font-family: var(--font-primary);
   font-weight: 600;
   line-height: 1.2em;
-  text-align: center;
-  color: var(--primary);
-  text-shadow: 4px 4px 0px var(--accent-transparent);
-  transition: all 0.2s ease-in-out;
-  -webkit-tap-highlight-color:transparent;
-}
-
-h2:hover {
-  text-shadow: 2px 2px 0px var(--accent-color-transparent);
 }
 
 h3 {
   font-size: var(--font-size-dynamic-3);
   font-family: var(--font-primary);
   font-weight: 500;
-  margin: 0;
-  margin-bottom: 1rem;
   line-height: 1.2em;
   color: var(--primary);
 }
@@ -230,22 +220,16 @@ h3 {
 h4 {
   font-size: var(--font-size-4);
   font-weight: 500;
-  margin: 0;
-  margin-bottom: 1rem;
 }
 
 h5 {
   font-size: var(--font-size-5);
   font-weight: 500;
-  margin: 0;
-  margin-bottom: 1rem;
 }
 
 h6 {
   font-size: var(--font-size-6);
   font-weight: 500;
-  margin: 0;
-  margin-bottom: 1rem;
 }
 
 p {
@@ -294,12 +278,12 @@ strong {
 /* Sections */
 
 section {
-  height: 100svh;
+  height: calc(100svh - 6rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1440;
   margin: 0 auto;
 }
 
