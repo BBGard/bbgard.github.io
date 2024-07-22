@@ -105,7 +105,7 @@ const Navbar = {
     position: fixed;
     top: 4.5rem;
     left: 100vw;
-    width: 100%;
+    width: 50vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -118,8 +118,9 @@ const Navbar = {
     transition: all 0.2s ease-in-out;
   }
   .slide-out-menu.expanded {
-    left: 0;
+    left: 50vw;
   }
+
 
   .nav-links {
     padding: 0;
@@ -171,6 +172,16 @@ const Navbar = {
 
     .email-text.expanded {
       display: flex;
+    }
+
+    /* Make slide out menu fullscreen on tablet and mobile */
+    .slide-out-menu {
+      width: 100vw;
+      left: 100vw;
+    }
+
+    .slide-out-menu.expanded {
+      left: 0;
     }
 
   }
