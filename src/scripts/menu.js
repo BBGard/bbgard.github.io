@@ -2,7 +2,7 @@
 // Menu
 document.querySelector('.hamburger').addEventListener('click', () => {
   // Toggle the expanded class on the nav-links
-  document.querySelector('.mobile-nav').classList.toggle('expanded');
+  document.querySelector('.slide-out-menu').classList.toggle('expanded');
 
   // Toggle the is-active class on the hamburger
   document.querySelector('.hamburger').classList.toggle('is-active');
@@ -15,7 +15,7 @@ document.querySelector('.hamburger').addEventListener('click', () => {
 document.querySelectorAll('.email-text a').forEach((link) => {
   link.addEventListener('click', () => {
     // Remove the expanded class from the nav-links
-    document.querySelector('.mobile-nav').classList.remove('expanded');
+    document.querySelector('.slide-out-menu').classList.remove('expanded');
 
     // Remove the is-active class from the hamburger
     document.querySelector('.hamburger').classList.remove('is-active');
