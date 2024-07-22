@@ -14,29 +14,20 @@ const Navbar = {
 
 <nav class="navbar">
   <div class="nav-container">
-  <div class="logo">
-    <!-- <img src={Navbar.logo} alt="Logo" /> -->
-    <a class="logo-text" href="/">Benjamin Gardiner</a>
+    <div class="logo">
+      <a class="logo-text" href="/">Benjamin Gardiner</a>
+    </div>
+    <div class="email">
+      <!-- <img src={Navbar.logo} alt="Logo" /> -->
+      <a class="email-text" href="mailto:ben.b.gardiner@gmail.com"
+          >ben.b.gardiner@gmail.com</a>
+    </div>
+
+    <!-- <ul class="nav-links">
+    </ul> -->
+    <Hamburger />
   </div>
-
-  <ul class="nav-links">
-    <!-- <li>
-      <a href={Navbar.links[0].url}>{Navbar.links[0].text}</a>
-    </li>
-    <li>
-      <a href={Navbar.links[1].url}>{Navbar.links[1].text}</a>
-    </li>
-    <li>
-      <a href={Navbar.links[2].url}>{Navbar.links[2].text}</a>
-    </li> -->
-    <!-- <li>
-      <a href={Navbar.links[3].url}>{Navbar.links[3].text}</a>
-    </li> -->
-  </ul>
-  <Hamburger />
-</div>
 </nav>
-
 
 <style>
   /* Navbar Styles */
@@ -56,21 +47,16 @@ const Navbar = {
 
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     width: 100%;
     max-width: 2000px;
     margin: 0 auto;
-    padding-bottom: 1rem;
+    padding: 0 3rem 1rem 3rem;
   }
 
-  .navbar .logo {
-    display: flex;
-    align-items: center;
-  }
 
-  .navbar .logo .logo-text {
-    margin-left: 1rem;
+  .navbar .logo .logo-text, .navbar .email .email-text {
     font-size: var(--font-size-1);
     font-family: var(--font-logo);
     font-weight: 600;
@@ -82,37 +68,39 @@ const Navbar = {
     transition: all 0.2s ease-in-out;
   }
 
-  .navbar .logo .logo-text:hover {
+  .navbar .logo .logo-text:hover, .navbar .email .email-text:hover {
     /* color: var(--secondary); */
     background-color: var(--accent);
     transform: translate(1px, 1px);
   }
+
 
   .logo img {
     width: 100px;
   }
 
   .nav-links {
-    display: flex;
-    justify-content: space-evenly;
+    /* display: flex;
+    justify-content: flex-end;
     width: 50%;
     margin: 0;
+    margin-right: 1rem;
     padding: 0;
-    font-weight: 600;
+    font-weight: 600; */
   }
 
   .nav-links li {
-    list-style: none;
+    /* list-style: none;
     margin: 0;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
     box-shadow: 2px 2px 0px var(--accent-transparent);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; */
   }
 
   .nav-links li:hover {
-    list-style: none;
+    /* list-style: none;
     margin: 0;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -121,16 +109,20 @@ const Navbar = {
       1px 1px 0px var(--accent-color-transparent),
       -1px -1px 0px var(--accent-transparent);
     transition: all 0.2s ease-in-out;
-
-    transform: translate(2px, 2px);
+    transform: translate(2px, 2px); */
   }
 
   .nav-links a {
-    color: var(--primary);
+    /* color: var(--primary);
     text-decoration: none;
     font-size: var(--font-size-4);
     font-family: var(--font-logo);
-    font-weight: 600;
+    font-weight: 600; */
+  }
+
+  .email-text {
+    /* font-family: var(--font-heading);
+    font-size: 1rem; */
   }
 
   .expanded {
@@ -164,7 +156,6 @@ const Navbar = {
     top: -5rem;
   }
 
-
   @media (max-width: 768px) {
     .nav-links {
       display: none;
@@ -177,6 +168,4 @@ const Navbar = {
       font-size: var(--font-size-2);
     }
   }
-
-
 </style>
