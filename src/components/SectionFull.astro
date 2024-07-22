@@ -1,0 +1,26 @@
+---
+/**
+ * @name SectionFull
+ * @desc Section with full height
+ */
+
+// Destructure the id prop from Astro.props
+const { id = ""} = Astro.props;
+
+---
+
+<section class="section-full" id={id}>
+  <slot />
+</section>
+
+<style>
+  .section-full {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+  }
+
+
+</style>

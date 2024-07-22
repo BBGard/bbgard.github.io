@@ -11,6 +11,7 @@ import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import githubLogo from "../assets/github-mark.png";
+import SectionFull from "../components/SectionFull.astro";
 
 const pageTitle = "Benjamin Gardiner - Web Developer";
 
@@ -24,16 +25,91 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
   <main>
     <HeroSectionFull>
       <h1 class="hero-heading fade-in">BBGard</h1>
+      <a class="down-chevron hero-chevron" href="#about">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="5em"
+          height="5em"
+          viewBox="0 0 16 16"
+          ><path
+            fill="black"
+            d="m15.146 6.263l-1.292-1.526L8 9.69L2.146 4.737L.854 6.263L8 12.31z"
+          ></path></svg
+        >
+      </a>
     </HeroSectionFull>
+    <SectionFull id="about">
+      <h2 class="about-heading accent">Modern websites. No BS.</h2>
+      <p class="about-text">
+        I'm a freelance web developer specializing in sleek, minimalist designs.
+        My process is straightforward, <strong><em class="accent">no frills, just results.</em></strong>
+      </p>
+			<p class="about-text">
+				<!-- Let's build something great together. -->
+				 Let me take care of the hard work.
+			</p>
+			<a class="down-chevron" href="#services">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="5em"
+          height="5em"
+          viewBox="0 0 16 16"
+          ><path
+            fill="#f9d34b"
+            d="m15.146 6.263l-1.292-1.526L8 9.69L2.146 4.737L.854 6.263L8 12.31z"
+          ></path></svg
+        >
+      </a>
+    </SectionFull>
   </main>
 
-	<style>
-		.hero-heading {
-			font-size: calc(100vw / 3);
-			font-family: var(--font-heading);
-			/* margin-top: 6rem; */
+  <style>
+    /* Hero Section */
+    .hero-heading {
+      font-size: calc(100vw / 3);
+      font-family: var(--font-title);
+    }
+
+    .down-chevron {
+			margin-top: 2rem;
+      animation: bounce 2s infinite;
+    }
+
+		.hero-chevron {
+			margin-top: -4rem;
 		}
 
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
 
-	</style>
+    /* About Section */
+    .about-heading {
+      font-size: 4.5rem;
+      color: var(--secondary);
+    }
+
+		.about-text {
+			font-size: var(--body-large);
+			color: var(--secondary);
+			max-width: 800px;
+			text-align: center;
+		}
+
+		.accent {
+			color: var(--accent-gold);
+		}
+  </style>
 </Layout>
