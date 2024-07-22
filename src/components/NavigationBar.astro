@@ -83,7 +83,7 @@ const Navbar = {
   }
 
   .navbar .logo .logo-text,
-  .navbar .email .email-text {
+  .nav-links .email-text {
     font-size: var(--heading-4);
     font-family: var(--font-logo);
     font-weight: 600;
@@ -95,9 +95,10 @@ const Navbar = {
   }
 
   .navbar .logo .logo-text:hover,
-  .navbar .email .email-text:hover {
-    background-color: var(--accent);
-    transform: translate(1px, 1px);
+  .nav-links .email-text:hover {
+    background-color: var(--secondary);
+    color: var(--accent);
+    box-shadow: -2px -2px 0px var(--accent-transparent);
   }
 
 
@@ -118,7 +119,7 @@ const Navbar = {
     transition: all 0.2s ease-in-out;
   }
   .slide-out-menu.expanded {
-    left: 50vw;
+    left: 49vw;
   }
 
 
