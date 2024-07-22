@@ -1,5 +1,4 @@
 ---
-
 const Navbar = {
   logo: "/path/to/logo.png",
   links: [
@@ -29,16 +28,44 @@ const Navbar = {
     </ul> -->
     <div class="email">
       <a class="email-text" href="mailto:ben.b.gardiner@gmail.com"
-          >ben.b.gardiner@gmail.com</a>
+        >ben.b.gardiner@gmail.com</a
+      >
     </div>
 
-<div class="hamburger">
-  <span class="material-symbols-outlined menu-icon"> menu</span>
-  <span class="material-symbols-outlined close-icon"> close</span>
-</div>
-
+    <div class="hamburger">
+      <svg
+        class="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="2em"
+        height="2em"
+        viewBox="0 0 16 16"
+        ><path fill="black" d="M15 4H1V2h14zm0 5H1V7h14zM1 14h14v-2H1z"
+        ></path></svg
+      >
+      <svg
+        class="close-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="2em"
+        height="2em"
+        viewBox="0 0 16 16"
+        ><path
+          fill="black"
+          d="m3.5 2.086l4.5 4.5l4.5-4.5L13.914 3.5L9.414 8l4.5 4.5l-1.414 1.414l-4.5-4.5l-4.5 4.5L2.086 12.5l4.5-4.5l-4.5-4.5z"
+        ></path></svg
+      >
+    </div>
   </div>
 </nav>
+<div class="mobile-nav">
+  <ul class="mobile-links">
+    <li>
+      <a class="email-text" href="mailto:ben.b.gardiner@gmail.com"
+      >ben.b.gardiner@gmail.com</a
+    >
+    </li>
+
+  </ul>
+</div>
 
 <style>
   /* Navbar Styles */
@@ -58,7 +85,7 @@ const Navbar = {
 
   .nav-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 2000px;
@@ -66,9 +93,9 @@ const Navbar = {
     padding: 0 3rem 1rem 3rem;
   }
 
-
-  .navbar .logo .logo-text, .navbar .email .email-text {
-    font-size: var(--font-size-1);
+  .navbar .logo .logo-text,
+  .navbar .email .email-text {
+    font-size: var(--heading-4);
     font-family: var(--font-logo);
     font-weight: 600;
     text-decoration: none;
@@ -78,63 +105,60 @@ const Navbar = {
     transition: all 0.2s ease-in-out;
   }
 
-  .navbar .logo .logo-text:hover, .navbar .email .email-text:hover {
+  .navbar .logo .logo-text:hover,
+  .navbar .email .email-text:hover {
     background-color: var(--accent);
     transform: translate(1px, 1px);
   }
 
-  .expanded {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+  .mobile-nav {
+    position: fixed;
+    top: 4.5rem;
+    left: 100vw;
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 6rem;
+    box-shadow: -2px 2px 0px var(--accent-transparent);
     background-color: var(--background-light);
-    position: absolute;
-    top: 0;
-    left: 0;
     z-index: 1;
+    transition: all 0.2s ease-in-out;
+  }
+  .mobile-nav.expanded {
+    left: 0;
+  }
+
+  .mobile-links {
     padding: 0;
   }
 
-  .expanded .email-text {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    box-shadow: none;
+  .mobile-links a {
+    font-size: var(--heading-4);
+    font-family: var(--font-logo);
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--secondary);
+    background-color: var(--primary);
+    padding: 0 0.5rem;
+    transition: all 0.2s ease-in-out;
   }
 
-  .expanded .email-text a {
-    font-size: 3rem;
-    line-height: 5rem;
-  }
+
 
   .hide-nav {
     top: -5rem;
   }
 
   /* Hamburger */
-  .material-symbols-outlined {
-    font-family: "Material Symbols Outlined";
-    color: var(--accent);
-    font-size: 3rem;
-    font-variation-settings:
-      "FILL" 0,
-      "wght" 200,
-      "GRAD" 0,
-      "opsz" 24;
-  }
-
-
   .hamburger {
     display: none;
-    right: 1.5rem;
-    padding-right: 1.5rem;
     cursor: pointer;
     z-index: 2;
   }
-
   .menu-icon {
     display: block;
   }
@@ -151,10 +175,9 @@ const Navbar = {
     display: block;
   }
 
-
-
   @media (max-width: 991px) {
-    .nav-links, .navbar .email .email-text  {
+    .nav-links,
+    .navbar .email .email-text {
       display: none;
     }
 
@@ -165,17 +188,14 @@ const Navbar = {
     .hamburger {
       display: block;
     }
-
   }
 
-  @media (min-width: 768) {
-    .logo-text {
-      font-size: 0.5rem;
+  @media (max-width: 768px) {
+    .navbar .logo .logo-text,
+    .mobile-nav .mobile-links a {
+      font-size: var(--heading-6);
     }
   }
-
-
-
 
 
 </style>
