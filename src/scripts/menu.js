@@ -8,7 +8,7 @@ document.querySelector('.hamburger').addEventListener('click', () => {
   document.querySelector('.hamburger').classList.toggle('is-active');
 
   // Toggle the no-scroll class on the body
-  document.querySelector('body').classList.toggle('no-scroll');
+  // document.querySelector('body').classList.toggle('no-scroll');
 });
 
 // Add alistener to nav-links to close the menu when a link is clicked
