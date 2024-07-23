@@ -1,0 +1,31 @@
+---
+/**
+ * Simple button component
+ * @param _props
+ */
+
+const { text = "Button", link = "#", target="" } = Astro.props;
+---
+
+<a href={link} class="btn" target={target}>{text}</a>
+
+<style>
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--gold-100);
+    font-size: var(--heading-5);
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--black-100);
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: var(--gold-90);
+  }
+</style>

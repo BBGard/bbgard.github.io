@@ -57,25 +57,31 @@
   /* Define variables */
   /* Theme: elegant newspaper style */
   /* Colors */
-  --primary: #000000;
-  --secondary: #ffffff;
-  --accent: #4c4c4c;
-  --accent-light: #a1a1a1;
-  --accent-form: #e7e7e7;
-  --accent-transparent: rgba(76, 76, 76, 0.6);
-  --accent-color: #a800ab;
-  --accent-color-light: #fdf6ff;
-  --accent-color-transparent: rgba(168, 0, 171, 0.6);
-  --accent-blue: #82c1fa;
-  --accent-blue-dark: #58adfc;
-  --accent-gold: #f9d34b;
-  --accent-gold-dark: #f2af2a;
-  --accent-red: #e86a4a;
-  --accent-red-dark: #b45239;
-  /* --background-light: #f2f2f2; */
+  --black-100: #000000;
+  --black-90: #1a1a1a;
+  --black-80: #333333;
+  --black-70: #4d4d4d;
+  --black-60: #666666;
+  --black-50: #808080;
+
+  --white-100: #ffffff;
+  --white-90: #f2f2f2;
+  --white-80: #e6e6e6;
+  --white-70: #d9d9d9;
+  --white-60: #cccccc;
+  --white-50: #bfbfbf;
+
+  --gold-100: #f9d34b;
+  --gold-90: #cdaf40;
+  --gold-80: #a28a35;
+
+
   --background-light: #f0f1f3;
   --background-nav: #ececec;
   --background-dark: #000000;
+
+  --background-dark-transparent: rgba(77, 77, 77, 0.7);
+
   --link: #2258cb;
 
 
@@ -117,7 +123,7 @@
 html, body {
   font-family: var(--font-body);
   background-color: var(--background-light);
-  /* background-color: var(--secondary); */
+  /* background-color: var(--white-100); */
   /* background-size: 224px; */
   scroll-behavior: smooth;
   margin: 0;
@@ -184,7 +190,7 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: var(--black-70);
   text-decoration: none;
 }
 
@@ -211,7 +217,7 @@ blockquote {
   margin: 0;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  border-left: 0.25rem solid rgb(var(--accent));
+  border-left: 0.25rem solid rgb(var(--black-70));
 }
 
 strong {
@@ -284,7 +290,7 @@ em {
 
 .bullet-icon {
   /* font-size: var(--font-size-1); */
-  color: var(--accent-gold-dark);
+  color: var(--gold-100-dark);
   width: 10%;
 }
 

@@ -60,8 +60,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       </a>
     </SectionFull>
 		<SectionFull id="services">
-			<Card title="Basic" price="$500" btnLink="#contact" features={["1 Page", "Responsive Design", "Contact Form"]}>
-				<p>Simple, one-page websites for personal use or small businesses.</p>
+			<Card title="Basic" price="$500" recurringPrice="$250" description="Simple, one-page websites for personal use or small businesses." btnLink="#contact" features={["1 Page", "Responsive Design", "Contact Form"]}>
 			</Card>
 		</SectionFull>
   </main>
@@ -101,18 +100,18 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
     /* About Section */
     .about-heading {
       font-size: 4.5rem;
-      color: var(--secondary);
+      color: var(--white-100);
     }
 
 		.about-text {
 			font-size: var(--body-large);
-			color: var(--secondary);
+			color: var(--white-100);
 			max-width: 800px;
 			text-align: center;
 		}
 
 		.accent {
-			color: var(--accent-gold);
+			color: var(--gold-100);
 		}
   </style>
 </Layout>

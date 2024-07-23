@@ -1,33 +1,121 @@
 ---
-import ButtonLink from './ButtonLink.astro';
+import Button from './Button.astro';
 
 const {
   title = "",
   price = "",
+  recurringPrice = "",
+  description = "",
   features = [],
   btnLink = "",
 } = Astro.props;
 
 ---
 
-<div class="cards">
   <article class="card shakeable">
     <h2 class="title">{title}</h3>
-    <h3 class="price">{price}</h3>
-    <slot class="description"/>
+    <h3 class="price">{price}<span class="sub"></span></h3>
+    <p class="recurring-price">Then {recurringPrice} yearly</p>
+    <p class="description">{description}</p>
+    <div class="card-button-group">
+      <Button link={btnLink} text="Get Started" />
+    </div>
     <div class="features">
       <ul class="feature-list">
-        {features.forEach((feature) => (
+        {features.map((feature) => (
           <li class="feature">{feature}</li>
         ))}
       </ul>
     </div>
-    <div class="card-button-group">
-      <ButtonLink btnLink={btnLink} btnText="Get Started" />
-    </div>
+
   </article>
-</div>
 
 <style>
+  /* Card Styles */
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+    background-color: var(--white-50);
+    padding: 1.8rem 1.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .title {
+    font-size: var(--body-small);
+    /* font-family: var(--font-body); */
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--black-100);
+    background-color: var(--gold-100);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+  }
+
+
+  .price {
+    font-size: var(--heading-3);
+    font-weight: 600;
+    color: var(--black-100);
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .sub {
+    font-size: var(--heading-5);
+    color: var(--black-100);
+  }
+
+  .recurring-price {
+    font-size: var(--text-2);
+    font-weight: 600;
+    color: var(--black-70);
+    margin: 0;
+    line-height: 50%;
+  }
+
+  .description {
+    font-size: var(--body-regular);
+    /* font-family: var(--font-body); */
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--black-100);
+    margin-top: 2rem;
+  }
+
+  /* .features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+  } */
+
+  .feature-list {
+    list-style: none;
+    /* padding-left: 2rem; */
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .feature {
+    font-size: var(--body-small);
+    /* font-family: var(--font-body); */
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--black-100);
+  }
+
+  .card-button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
 
 </style>

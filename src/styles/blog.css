@@ -109,14 +109,14 @@ meter {
   /* Define variables */
   /* Theme: elegant newspaper style */
   /* Colors */
-  --primary: #000000;
-  --secondary: #ffffff;
-  --accent: #4c4c4c;
-  --accent-light: #a1a1a1;
-  --accent-transparent: rgba(76, 76, 76, 0.6);
-  --accent-color: #a800ab;
-  --accent-color-light: #fdf6ff;
-  --accent-color-transparent: rgba(168, 0, 171, 0.6);
+  --black-100: #000000;
+  --white-100: #ffffff;
+  --black-70: #4c4c4c;
+  --black-70-light: #a1a1a1;
+  --background-dark-transparent: rgba(76, 76, 76, 0.6);
+  --black-70-color: #a800ab;
+  --black-70-color-light: #fdf6ff;
+  --black-70-color-transparent: rgba(168, 0, 171, 0.6);
   --background-light: #ffffff;
   --background-dark: #000000;
 
@@ -149,7 +149,7 @@ meter {
 html, body {
   font-family: var(--font-primary);
   font-size: var(--font-size-4);
-  color: var(--primary);
+  color: var(--black-100);
   background-color: var(--background-light);
   background-size: 224px;
   scroll-behavior: smooth;
@@ -263,7 +263,7 @@ p {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--black-70-color);
 }
 
 .tags {
@@ -278,20 +278,20 @@ a {
   margin: 0.25em;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  border: 0.125rem solid var(--accent-transparent);
+  border: 0.125rem solid var(--background-dark-transparent);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 4px 4px 0px var(--accent-transparent);
-  background-color: var(--secondary);
+  box-shadow: 4px 4px 0px var(--background-dark-transparent);
+  background-color: var(--white-100);
   transition: all 0.2s ease-in-out;
 }
 
 .tag:hover {
-  background-color: var(--secondary);
-  box-shadow: 3px 3px 0px var(--accent-color-transparent);
+  background-color: var(--white-100);
+  box-shadow: 3px 3px 0px var(--black-70-color-transparent);
   transform: translate(2px, 2px);
 }
 
@@ -326,7 +326,7 @@ blockquote {
   margin: 0;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  border-left: 0.25rem solid rgb(var(--accent));
+  border-left: 0.25rem solid rgb(var(--black-70));
 }
 
 strong {
@@ -340,22 +340,22 @@ strong {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  border: 0.125rem solid var(--accent);
-  background-color: var(--accent);
-  color: var(--secondary);
+  border: 0.125rem solid var(--black-70);
+  background-color: var(--black-70);
+  color: var(--white-100);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 6px 6px 0px var(--accent-transparent);
+  box-shadow: 6px 6px 0px var(--background-dark-transparent);
   transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
-  background-color: var(--primary);
-  color: var(--secondary);
-  box-shadow: 3px 3px 0px var(--accent-color-transparent);
+  background-color: var(--black-100);
+  color: var(--white-100);
+  box-shadow: 3px 3px 0px var(--black-70-color-transparent);
   transform: translate(2px, 2px);
 }
 
