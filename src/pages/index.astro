@@ -3,15 +3,13 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/HeroSectionFull.astro";
-import ProjectSectionFull from "../components/ProjectSectionFull.astro";
 import Divider from "../components/Divider.astro";
 import ContactForm from "../components/ContactForm.astro";
-import headshot from "../assets/images/Headshot_2024_crop_square.webp";
 import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import githubLogo from "../assets/github-mark.png";
 import SectionFull from "../components/SectionFull.astro";
+import Card from "../components/Card.astro";
 
 const pageTitle = "Benjamin Gardiner - Web Developer";
 
@@ -61,6 +59,11 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         >
       </a>
     </SectionFull>
+		<SectionFull id="services">
+			<Card title="Basic" price="$500" btnLink="#contact" features={["1 Page", "Responsive Design", "Contact Form"]}>
+				<p>Simple, one-page websites for personal use or small businesses.</p>
+			</Card>
+		</SectionFull>
   </main>
 
   <style>
