@@ -70,8 +70,9 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
 					All plans include a free domain and hosting for the first year.
 					<br />I build my sites using basic HTML, CSS, and JavaScript, WordPress, or Webflow depending on your needs. I can also provide training on how to manage your site once it's live.
 				</p>
-        <Grid columns={3}>
+        <Grid columns={3} gap={2}>
           <PriceCard
+						style="glass"
             title="Basic"
             price="$500"
             featureHighlight="Free hosting and domain for the first year"
@@ -92,6 +93,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
             ]}
           />
           <PriceCard
+						style="glass"
             title="Standard"
             price="$1200"
             featureHighlight="Free hosting and domain for the first year"
@@ -114,6 +116,7 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
             ]}
           />
           <PriceCard
+						style="glass"
             title="e-Commerce"
             price="$2500"
             featureHighlight="Free hosting and domain for the first year"

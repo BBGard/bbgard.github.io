@@ -4,10 +4,10 @@
  * @param props
  */
 
-const { columns = 3 } = Astro.props;
+const { columns = 3, gap = 1 } = Astro.props;
 ---
 
-<div class=`grid col-${columns}`>
+<div class=`grid grid-col-${columns} grid-gap-${gap}`>
   <slot />
 </div>
 
@@ -15,32 +15,42 @@ const { columns = 3 } = Astro.props;
   .grid {
     display: grid;
     min-width: 100%;
-    gap: 1rem;
     padding: 0 1rem;
   }
 
-  .col-auto {
+  .grid-col-auto {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
-  .col-2 {
+  .grid-col-2 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-columns: 1fr;
   }
 
-  .col-3 {
+  .grid-col-3 {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-columns: 1fr;
   }
 
-  .col-4 {
+  .grid-col-4 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-columns: 1fr;
   }
 
+  .grid-gap-1 {
+    gap: 1rem;
+  }
+
+  .grid-gap-2 {
+    gap: 2rem;
+  }
+
+  .grid-gap-3 {
+    gap: 3rem;
+  }
   @media (max-width: 991px) {
     .grid {
       grid-template-columns: 1fr;

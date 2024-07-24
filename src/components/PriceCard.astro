@@ -24,11 +24,12 @@ const {
   featuresInfo = [],
   btnLink = "",
   btnText = "Get Started",
+  style = "",
 } = Astro.props;
 ---
 
-<article class="card shakeable">
-  <div>
+<article class=`card card-style-${style} shakeable`>
+  <div class="card-content">
     <div class="card-header">
       <h2 class="title">{title}</h2>
       <h3 class="price">{price}<span class="sub"></span></h3>
@@ -63,6 +64,25 @@ const {
     /* margin: 1rem; */
     border-radius: 4px;
     box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+    /* transition: all 0.2s ease-in-out;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) translateZ(0);
+    backface-visibility: hidden; */
+
+  }
+
+  /* .card-content:hover {
+
+  } */
+
+  .card-style-glass {
+    /* background-color: var(--white-100); */
+    background-color: rgba(207, 207, 207, 0.3);
+    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+
   }
 
   .card-header {
@@ -153,3 +173,6 @@ const {
    }
   }
 </style>
+
+<!-- Tilt Script - vanilla-tilt.js -->
+<!-- <script type="text/javascript" src="../scripts/vanilla-tilt.js"></script> -->

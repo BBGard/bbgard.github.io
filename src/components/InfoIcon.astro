@@ -24,10 +24,11 @@ const {
   <div class="info-tooltip">{info}</div>
 </div>
 
+
 <style>
   .info-icon {
     display: inline-block;
-    cursor: pointer;
+    cursor: help;
   }
 
   .info-icon svg {
@@ -45,12 +46,10 @@ const {
   .info-tooltip {
     display: none;
     position: absolute;
-    background-color: var(--black-100);
-    color: var(--white-100);
-    padding: 0.5rem;
+    /* top: 1rem; */
+    right: 2.5rem;
+    max-width: 300px;
     border-radius: 4px;
-    box-shadow: 2px 2px 0px var(--background-dark-transparent);
-    z-index: 1;
   }
 
   .info-icon:hover .info-tooltip {
@@ -60,8 +59,9 @@ const {
     font-family: var(--font-body-thin);
     font-size: var(--body-small);
     line-height: 1.4rem;
-    max-width: 300px;
+    /* max-width: 300px; */
     padding: 1rem;
+
   }
 
 </style>

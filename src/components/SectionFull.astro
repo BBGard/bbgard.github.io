@@ -5,8 +5,7 @@
  */
 
 // Destructure the id prop from Astro.props
-const { id = "", background=""} = Astro.props;
-
+const { id = "", background = "" } = Astro.props;
 ---
 
 <section class=`section-full bg-${background}` id={id}>
@@ -20,7 +19,6 @@ const { id = "", background=""} = Astro.props;
     justify-content: center;
     align-items: center;
     min-height: 100svh;
-    clip-path: circle(100% at right 50%);
   }
 
   .bg-black {
@@ -32,8 +30,11 @@ const { id = "", background=""} = Astro.props;
   }
 
   .bg-gradient {
-    background: linear-gradient(90deg, var(--white-100), var(--black-30));
-  }
+    /* background: linear-gradient(90deg, var(--white-100), var(--black-30)); */
+    /* background-image: url('/src/assets/images/backg-pattern.svg'); */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2)) , url('/src/assets/images/backg-pattern.svg') center center;
+    background-size: cover;
 
+  }
 
 </style>
