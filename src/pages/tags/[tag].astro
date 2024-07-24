@@ -9,10 +9,10 @@ export async function getStaticPaths() {
   // Map all tags from all posts into one array
   // .flat() flattens the array of arrays into one array
   // [...new Set()] removes duplicates
-  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+  const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 
   // Map each tag to a page with all posts that have that tag
-  return uniqueTags.map((tag) => {
+  return uniqueTags.map((tag: String) => {
     const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
     return {
       params: { tag: tag.toLowerCase() }, // Convert tag to lowercase

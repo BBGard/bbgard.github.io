@@ -8,31 +8,28 @@
 const { id = "", background = "white" } = Astro.props;
 ---
 
-<section class=`section-full bg-${background}` id={id}>
+<section class=`section bg-${background}` id={id}>
   <slot />
 </section>
 
-<style define:vars={{background: `${background}`}}>
-  .section-full {
+<style>
+  .section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100svh;
-    background-color: --background;
-  }
-
-  .bg-black {
-    background-color: var(--black-100);
   }
 
   .bg-white {
     background-color: var(--white-100);
   }
 
-  .bg-gradient {
-    /* background: linear-gradient(90deg, var(--white-100), var(--black-30)); */
-    /* background-image: url('/src/assets/images/backg-pattern.svg'); */
+  .bg-black {
+    background-color: var(--black-100);
+  }
+
+  .bg-special {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2)) , url('/src/assets/images/backg-pattern.svg') center center;
     background-size: cover;
 

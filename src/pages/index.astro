@@ -1,12 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/Layout/HeroSectionFull.astro"
-import ContactForm from "../components/ContactForm.astro";
-import githubLogo from "../assets/github-mark.png";
+// import ContactForm from "../components/ContactForm.astro";
+// import githubLogo from "../assets/github-mark.png";
 import Grid from "../components/Layout/Grid.astro";
-import SectionFull from "../components/Layout/SectionFull.astro";
+import SectionFull from "../components/Layout/SectionFull.astro"
 import PriceCard from "../components/PriceCard.astro";
-import HFlex from "../components/Layout/HFlex.astro";
+// import HFlex from "../components/Layout/HFlex.astro";
 import VFlex from "../components/Layout/VFlex.astro";
 
 const pageTitle = "Benjamin Gardiner - Web Developer";
@@ -14,8 +14,8 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 
 <Layout title={pageTitle}>
   <main>
-    <HeroSectionFull>
-      <h1 class="hero-heading fade-in">BBGard</h1>
+    <HeroSectionFull minHeight="calc(100svh - 5rem)" margin="4rem 0 0 0 ">
+      <h1 class="hero-heading fade-in" data-tilt>BBGard</h1>
       <a class="down-chevron hero-chevron" href="#about">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
         >
       </a>
     </SectionFull>
-    <SectionFull id="services" background="gradient">
+    <SectionFull id="services" background="special">
       <VFlex>
 				<h2 class="services-heading">Site Plans</h2>
 				<p class="services-description">

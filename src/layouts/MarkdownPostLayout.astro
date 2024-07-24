@@ -21,7 +21,7 @@ const tags = frontmatter.tags;
       <slot />
       <div class="tags">
         {
-          tags.map((tag) => (
+          tags.map((tag: String) => (
             <p class="tag">
               <a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>
             </p>

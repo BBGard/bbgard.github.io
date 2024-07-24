@@ -42,7 +42,7 @@ const {
     </div>
     <div class="features">
       <ul class="feature-list">
-        {features.map((feature) => <li class="feature">{feature}
+        {features.map((feature: String) => <li class="feature">{feature}
          <InfoIcon info={featuresInfo[features.indexOf(feature)]} />
         </li>)}
       </ul>
