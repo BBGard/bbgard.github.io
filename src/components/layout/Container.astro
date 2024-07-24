@@ -1,0 +1,26 @@
+---
+/**
+  @description Div block with predefined styles to keep content centered and aligned.
+  On bigger screens defaults to 940px, on smaller screens defaults to 100% width.
+  @param {string} width - Width of the container. Defaults to 940px.
+*/
+---
+
+<div class="container" >
+  <slot />
+</div>
+
+<style>
+  .container {
+    margin: 0 auto;
+    max-width: 940px;
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .container {
+      padding: 0 1rem;
+    }
+  }
+
+</style>
