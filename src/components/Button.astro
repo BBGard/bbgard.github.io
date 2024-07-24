@@ -1,31 +1,45 @@
 ---
 /**
  * Simple button component
- * @param _props
+ * @param props
  */
 
-const { text = "Button", link = "#", target="" } = Astro.props;
+const { text = "Button", link = "#", target="", variant="normal"} = Astro.props;
 ---
 
-<a href={link} class="btn" target={target}>{text}</a>
+<a href={link} class=`btn btn-${variant}` target={target}>{text}</a>
 
 <style>
   .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: var(--gold-100);
     font-size: var(--heading-5);
+    background-color: var(--gold-100);
+
     font-weight: 600;
     font-family: var(--font-heading);
     color: var(--black-100);
     text-decoration: none;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px var(--background-dark-transparent);
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   .btn:hover {
-    background-color: var(--gold-90);
+    /* color: var(--black-70); */
+    background-color: var(--white-100);
+    box-shadow: inset 2px 2px 0px var(--background-dark-transparent);
   }
+
+
+  .btn-full {
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+
 </style>

@@ -3,13 +3,14 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/HeroSectionFull.astro";
-import Divider from "../components/Divider.astro";
 import ContactForm from "../components/ContactForm.astro";
-import ButtonLink from "../components/ButtonLink.astro";
 import ContactButtons from "../components/ContactButtons.astro";
 import githubLogo from "../assets/github-mark.png";
+import Grid from "../components/Grid.astro";
 import SectionFull from "../components/SectionFull.astro";
-import Card from "../components/Card.astro";
+import PriceCard from "../components/PriceCard.astro";
+import HFlex from "../components/HFlex.astro";
+import VFlex from "../components/VFlex.astro";
 
 const pageTitle = "Benjamin Gardiner - Web Developer";
 
@@ -40,13 +41,16 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       <h2 class="about-heading accent">Modern websites. No BS.</h2>
       <p class="about-text">
         I'm a freelance web developer specializing in sleek, minimalist designs.
-        My process is <strong><em class="accent">straightforward, no frills, just results.</em></strong>
+        My process is <strong
+          ><em class="accent">straightforward, no frills, just results.</em
+          ></strong
+        >
       </p>
-			<p class="about-text">
-				<!-- Let's build something great together. -->
-				 Let me take care of the hard work.
-			</p>
-			<a class="down-chevron" href="#services">
+      <p class="about-text">
+        <!-- Let's build something great together. -->
+        Let me take care of the hard work.
+      </p>
+      <a class="down-chevron" href="#services">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="5em"
@@ -59,10 +63,87 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
         >
       </a>
     </SectionFull>
-		<SectionFull id="services">
-			<Card title="Basic" price="$500" recurringPrice="$250" description="Simple, one-page websites for personal use or small businesses." btnLink="#contact" features={["1 Page", "Responsive Design", "Contact Form"]}>
-			</Card>
-		</SectionFull>
+    <SectionFull id="services">
+      <VFlex>
+				<h2 class="services-heading">Site Plans</h2>
+				<p class="services-description">
+					All plans include a free domain and hosting for the first year.
+					<br />I build my sites using basic HTML, CSS, and JavaScript, WordPress, or Webflow depending on your needs. I can also provide training on how to manage your site once it's live.
+				</p>
+        <Grid columns={3}>
+          <PriceCard
+            title="Basic"
+            price="$500"
+            featureHighlight="Free hosting and domain for the first year"
+            recurringPrice="Renews at approx $150 / year"
+            description="Simple, one-page websites for personal use or small businesses."
+            btnLink="#contact"
+            features={[
+              "Single page site",
+              "Mobile friendly design",
+              "Basic Search Engine Optimisation (SEO)",
+              "Free hosting & domain for the 1st year*",
+            ]}
+            featuresInfo={[
+              "Single landing page with hero section, services, contact info, etc",
+              "Responsive design to suit all devices from desktops/laptops to mobiles,",
+              "Basic Search Engine Optimisation to give your page the best chance of appearing in search results (Google, Bing, etc)",
+              "Free hosting & domain for the 1st year info, then approximatly $150 / year after.*",
+            ]}
+          />
+          <PriceCard
+            title="Standard"
+            price="$1200"
+            featureHighlight="Free hosting and domain for the first year"
+            recurringPrice="Renews at $300 / year"
+            description="Up to 5 pages, perfect for small businesses or personal portfolios."
+            btnLink="#contact"
+            features={[
+              "Up to 5 pages",
+              "Mobile driendly design",
+              "Search Engine Optimisation (SEO)",
+              "Contact form integration",
+              "Free hosting & domain for the 1st year*",
+            ]}
+            featuresInfo={[
+              "Landing page (home) with hero section, services, and anything else relevant. Seperate pages for services, about, contact, etc.",
+              "Responsive design to suit all devices from desktops/laptops to mobiles,",
+              "Search Engine Optimisation including Google Search Console, and Bing Webmaster Tools setup to give your page the best chance of appearing in search results (Google, Bing, etc)",
+              "Contact form integration to allow users to get in touch with you directly from your site.",
+              "Free hosting & domain for the 1st year info, then approximatly $300 / year after.*",
+            ]}
+          />
+          <PriceCard
+            title="e-Commerce"
+            price="$2500"
+            featureHighlight="Free hosting and domain for the first year"
+            recurringPrice="Renews at $500 / year"
+            description="Full e-commerce functionality, perfect for online stores."
+            btnLink="#contact"
+            features={[
+              "Up to 10 pages",
+              "Mobile friendly design",
+              "E-commerce functionality & SEO",
+              "Basic store training",
+              "Free hosting & domain for the 1st year*",
+            ]}
+            featuresInfo={[
+              "Landing page (home) with hero section, services, and anything else relevant. Seperate pages for services, about, store, shopping cart, contact (including contact form), and anything else relevant.",
+              "Responsive design to suit all devices from desktops/laptops to mobiles,",
+              "E-commerce functionality including product pages, shopping cart, checkout, etc. Search Engine Optimisation",
+              "Basic store training to get you started with managing your store.",
+              "Free hosting & domain for the 1st year info, then approximatly $500 / year after.*",
+            ]}
+          />
+        </Grid>
+        <div class="terms-container">
+          <p class="terms">
+            * Domain name registration and hosting costs are subject to change
+            and may vary depending on the domain name and hosting provider.
+          </p>
+        </div>
+      </VFlex>
+    </SectionFull>
   </main>
 
   <style>
@@ -70,16 +151,13 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
     .hero-heading {
       font-size: calc(100vw / 3);
       font-family: var(--font-title);
+      line-height: 100%;
     }
 
     .down-chevron {
-			margin-top: 2rem;
+      margin-top: 2rem;
       animation: bounce 2s infinite;
     }
-
-		.hero-chevron {
-			margin-top: -4rem;
-		}
 
     @keyframes bounce {
       0%,
@@ -103,15 +181,45 @@ allProjects.sort((a, b) => a.data.index - b.data.index);
       color: var(--white-100);
     }
 
-		.about-text {
-			font-size: var(--body-large);
-			color: var(--white-100);
-			max-width: 800px;
-			text-align: center;
+    .about-text {
+      font-size: var(--body-large);
+      color: var(--white-100);
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .accent {
+      color: var(--gold-100);
+    }
+
+		.services-heading {
+			font-size: var(--heading-2);
+			color: var(--black-100);
+			align-self: flex-start;
+			text-align: left;
+			margin: 0 1rem;
 		}
 
-		.accent {
-			color: var(--gold-100);
+		.services-description {
+			font-family: var(--font-body-regular);
+			font-size: var(--body-medium);
+			line-height: 1.5;
+			margin: 0 1rem 2rem 1rem;
+			align-self: flex-start;
+			text-align: left;
+			max-width: 800px;
+		}
+
+		.terms-container {
+			margin-top: 2rem;
+			max-width: 600px;
+		}
+
+		.terms {
+			font-size: var(--body-small);
+			font-family: var(--font-body-regular);
+			color: var(--black-100);
+			text-align: center;
 		}
   </style>
 </Layout>

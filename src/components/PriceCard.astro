@@ -1,0 +1,155 @@
+---
+/**
+ * PriceCard Component
+ * @param {string} title - The title of the card
+ * @param {string} price - The price of the card
+ * @param {string} featureHighlight - A highlighted feature of the card
+ * @param {string} recurringPrice - The recurring price of the card
+ * @param {string} description - A description of the card
+ * @param {array} features - An array of features of the card
+ * @param {array} featuresInfo - An array of information for each feature
+ * @param {string} btnLink - The link for the button
+ * @param {string} btnText - The text for the button
+ */
+import Button from "./Button.astro";
+import InfoIcon from "./InfoIcon.astro";
+
+const {
+  title = "",
+  price = "",
+  featureHighlight = "",
+  recurringPrice = "",
+  description = "",
+  features = [],
+  featuresInfo = [],
+  btnLink = "",
+  btnText = "Get Started",
+} = Astro.props;
+---
+
+<article class="card shakeable">
+  <div>
+    <div class="card-header">
+      <h2 class="title">{title}</h2>
+      <h3 class="price">{price}<span class="sub"></span></h3>
+      <p class="feature-highlight">{featureHighlight}</p>
+      <p class="recurring-price">{recurringPrice}</p>
+    <p class="description">{description}</p>
+    </div>
+    <div class="card-button-group">
+      <Button link={btnLink} text={btnText} variant="full"/>
+    </div>
+    <div class="features">
+      <ul class="feature-list">
+        {features.map((feature) => <li class="feature">{feature}
+         <InfoIcon info={featuresInfo[features.indexOf(feature)]} />
+        </li>)}
+      </ul>
+    </div>
+  </div>
+</article>
+
+<style>
+  /* Card Styles */
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+    background-color: var(--white-50);
+    padding: 1.4rem;
+    max-width: 400px;
+    /* margin: 1rem; */
+    border-radius: 4px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    min-height: 190px;
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: var(--body-small);
+    /* font-family: var(--font-body); */
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--black-100);
+    background-color: var(--gold-100);
+    border-radius: 4px;
+    padding: 0.5rem 0.875rem;
+    width: fit-content;
+  }
+
+  .price {
+    font-size: var(--heading-3);
+    font-weight: 600;
+    color: var(--black-100);
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .sub {
+    font-size: var(--heading-5);
+    color: var(--black-100);
+  }
+
+  .feature-highlight {
+    font-size: var(--body-regular);
+    font-weight: 600;
+    color: var(--black-70);
+    margin: 0;
+    /* line-height: 50%; */
+  }
+
+  .recurring-price {
+    font-family: var(--font-body-thiin);
+    font-size: var(--body-small);
+    color: var(--black-100);
+    margin: 0;
+    margin-top: 0.25rem;
+  }
+
+  .description {
+    font-size: var(--body-regular);
+    font-family: var(--font-body-semi-bold);
+    text-wrap: balance;
+    /* font-weight: 600; */
+    color: var(--black-100);
+    margin-top: 2rem;
+  }
+
+  .features {
+    margin-top: 2rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    /* padding-left: 2rem; */
+    padding: 0;
+  }
+
+  .feature {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--body-small);
+    /* font-family: var(--font-body); */
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--black-100);
+  }
+
+  .card-button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 991px) {
+   .card {
+    max-width: 100%;
+   }
+  }
+</style>

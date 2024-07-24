@@ -1,0 +1,22 @@
+---
+/**
+ * Vertical Flexbox container
+ * @param _props
+ */
+---
+
+<div class="vflex">
+  <slot />
+</div>
+
+<style>
+  .vflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+</style>

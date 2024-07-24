@@ -1,5 +1,3 @@
-
-
 /* Begin of custom styles */
 
 @font-face {
@@ -81,6 +79,7 @@
   --background-dark: #000000;
 
   --background-dark-transparent: rgba(77, 77, 77, 0.7);
+  --background-dark-transparent-2: rgba(77, 77, 77, 0.9);
 
   --link: #2258cb;
 
@@ -92,15 +91,20 @@
   --font-title: 'Anton SC', sans-serif;
   --font-heading: 'Inter-Black', sans-serif;
   --font-body: 'Inter-Regular', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-   --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
+  --font-body-light: 'Inter-Light', sans-serif;
+  --font-body-bold: 'Inter-Bold', sans-serif;
+  --font-body-medium: 'Inter-Medium', sans-serif;
+  --font-body-semi-bold: 'Inter-SemiBold', sans-serif;
+  --font-body-thin: 'Inter-Thin', sans-serif;
+  --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
   /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
   --font-code: 'Fira Code', monospace;
 
 
 
   /* Font sizes */
-  --body-large: 1.5rem;
-  --body-medium: 1.25rem;
+  --body-large: 1.2rem;
+  --body-medium: 1.125rem;
   --body-regular: 1rem;
   --body-small: 0.875rem;
   --body-tiny: 0.75rem;
@@ -112,12 +116,12 @@
   --heading-5: 1.5rem;
   --heading-6: 1.25rem;
 
+
 }
 
 * {
   box-sizing: border-box;
 }
-
 
 
 html, body {
@@ -210,7 +214,7 @@ li {
 
 img {
   max-width: 100%;
-  -webkit-tap-highlight-color:transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 blockquote {
@@ -336,12 +340,15 @@ em {
 .slide-in-left-d1.slide-in-animation {
   animation: slide-in-from-left 1.5s;
 }
+
 .slide-in-left-d2.slide-in-animation {
   animation: slide-in-from-left 2s;
 }
+
 .slide-in-left-d3.slide-in-animation {
   animation: slide-in-from-left 2.5s;
 }
+
 .slide-in-left-d4.slide-in-animation {
   animation: slide-in-from-left 3s;
 }

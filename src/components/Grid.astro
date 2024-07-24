@@ -1,0 +1,49 @@
+---
+/**
+ * Basic Grid component
+ * @param props
+ */
+
+const { columns = 3 } = Astro.props;
+---
+
+<div class=`grid col-${columns}`>
+  <slot />
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    min-width: 100%;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .col-auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .col-2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+  }
+
+  .col-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+  }
+
+  .col-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+  }
+
+  @media (max-width: 991px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

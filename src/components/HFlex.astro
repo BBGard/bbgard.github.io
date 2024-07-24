@@ -1,0 +1,26 @@
+---
+/**
+ * Horizontal Flex Container
+ * @param _props
+ */
+---
+<div class="hflex">
+  <slot />
+</div>
+
+<style>
+  .hflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hflex {
+      flex-direction: column;
+    }
+  }
+
+</style>

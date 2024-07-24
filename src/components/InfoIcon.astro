@@ -1,0 +1,67 @@
+---
+/**
+ * Info icon component used for tooltips
+ * @param props
+ */
+
+const {
+  info = "This is an info icon",
+} = Astro.props;
+---
+
+<div class="info-icon">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 16 16"
+    ><g fill="black"
+      ><path d="M9 7v5H7V7zM8 4a1 1 0 1 0 0 2a1 1 0 0 0 0-2"></path><path
+        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6a6 6 0 1 0 0 12A6 6 0 0 0 8 2"
+      ></path></g
+    ></svg
+  >
+  <div class="info-tooltip">{info}</div>
+</div>
+
+<style>
+  .info-icon {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .info-icon svg {
+    fill: var(--black-100);
+  }
+
+  .info-icon:hover svg {
+    fill: var(--gold-100);
+  }
+
+  .info-icon svg path {
+    transition: fill 0.2s ease-in-out;
+  }
+
+  .info-tooltip {
+    display: none;
+    position: absolute;
+    background-color: var(--black-100);
+    color: var(--white-100);
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px var(--background-dark-transparent);
+    z-index: 1;
+  }
+
+  .info-icon:hover .info-tooltip {
+    display: block;
+    background-color: var(--black-60);
+    color: var(--white-100);
+    font-family: var(--font-body-thin);
+    font-size: var(--body-small);
+    line-height: 1.4rem;
+    max-width: 300px;
+    padding: 1rem;
+  }
+
+</style>
