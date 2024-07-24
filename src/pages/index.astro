@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroSectionFull from "../components/layout/HeroSectionFull.astro"
+import HeroSectionFull from "../components/layout/HeroSectionFull.astro";
 // import ContactForm from "../components/ContactForm.astro";
 // import githubLogo from "../assets/github-mark.png";
 import Grid from "../components/layout/Grid.astro";
-import SectionFull from "../components/layout/SectionFull.astro"
+import SectionFull from "../components/layout/SectionFull.astro";
 import PriceCard from "../components/PriceCard.astro";
 // import HFlex from "../components/layout/HFlex.astro";
 import VFlex from "../components/layout/VFlex.astro";
@@ -57,14 +57,16 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     </SectionFull>
     <SectionFull id="services" background="special">
       <VFlex>
-				<h2 class="services-heading">Site Plans</h2>
-				<p class="services-description">
-					All plans include a free domain and hosting for the first year.
-					<br />I build my sites using basic HTML, CSS, and JavaScript, WordPress, or Webflow depending on your needs. I can also provide training on how to manage your site once it's live.
-				</p>
+        <h2 class="services-heading">Site Plans</h2>
+        <p class="services-description">
+          All plans include a free domain and hosting for the first year.
+          <br />I build my sites using basic HTML, CSS, and JavaScript,
+          WordPress, or Webflow depending on your needs. I can also provide
+          training on how to manage your site once it's live.
+        </p>
         <Grid columns={3} gap={2}>
           <PriceCard
-						style="glass"
+            style="glass"
             title="Basic"
             price="$500"
             featureHighlight="Free hosting and domain for the first year"
@@ -85,7 +87,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
             ]}
           />
           <PriceCard
-						style="glass"
+            style="glass"
             title="Standard"
             price="$1200"
             featureHighlight="Free hosting and domain for the first year"
@@ -108,7 +110,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
             ]}
           />
           <PriceCard
-						style="glass"
+            style="glass"
             title="e-Commerce"
             price="$2500"
             featureHighlight="Free hosting and domain for the first year"
@@ -186,34 +188,34 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       color: var(--gold-100);
     }
 
-		.services-heading {
-			font-size: var(--heading-2);
-			color: var(--black-100);
-			align-self: flex-start;
-			text-align: left;
-			margin: 0 1rem;
-		}
+    .services-heading {
+      font-size: var(--heading-2);
+      color: var(--black-100);
+      align-self: flex-start;
+      text-align: left;
+      margin: 0 1rem;
+    }
 
-		.services-description {
-			font-family: var(--font-body-semi-bold);
-			font-size: var(--body-medium);
-			line-height: 1.5;
-			margin: 0 1rem 2rem 1rem;
-			align-self: flex-start;
-			text-align: left;
-			max-width: 800px;
-		}
+    .services-description {
+      font-family: var(--font-body-semi-bold);
+      font-size: var(--body-medium);
+      line-height: 1.5;
+      margin: 0 1rem 2rem 1rem;
+      align-self: flex-start;
+      text-align: left;
+      max-width: 800px;
+    }
 
-		.terms-container {
-			margin-top: 2rem;
-			max-width: 600px;
-		}
+    .terms-container {
+      margin-top: 2rem;
+      max-width: 600px;
+    }
 
-		.terms {
-			font-size: var(--body-small);
-			font-family: var(--font-body-regular);
-			color: var(--black-100);
-			text-align: center;
-		}
+    .terms {
+      font-size: var(--body-small);
+      font-family: var(--font-body-regular);
+      color: var(--black-100);
+      text-align: center;
+    }
   </style>
 </Layout>
