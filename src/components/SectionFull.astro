@@ -5,11 +5,11 @@
  */
 
 // Destructure the id prop from Astro.props
-const { id = ""} = Astro.props;
+const { id = "", background=""} = Astro.props;
 
 ---
 
-<section class="section-full" id={id}>
+<section class=`section-full bg-${background}` id={id}>
   <slot />
 </section>
 
@@ -20,6 +20,19 @@ const { id = ""} = Astro.props;
     justify-content: center;
     align-items: center;
     min-height: 100svh;
+    clip-path: circle(100% at right 50%);
+  }
+
+  .bg-black {
+    background-color: var(--black-100);
+  }
+
+  .bg-white {
+    background-color: var(--white-100);
+  }
+
+  .bg-gradient {
+    background: linear-gradient(90deg, var(--white-100), var(--black-30));
   }
 
 
