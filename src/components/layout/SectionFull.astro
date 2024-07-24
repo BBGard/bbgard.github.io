@@ -5,20 +5,21 @@
  */
 
 // Destructure the id prop from Astro.props
-const { id = "", background = "" } = Astro.props;
+const { id = "", background = "white" } = Astro.props;
 ---
 
 <section class=`section-full bg-${background}` id={id}>
   <slot />
 </section>
 
-<style>
+<style define:vars={{background: `${background}`}}>
   .section-full {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100svh;
+    background-color: --background;
   }
 
   .bg-black {

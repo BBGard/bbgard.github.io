@@ -1,8 +1,6 @@
 ---
-import { getCollection } from "astro:content";
-
 import Layout from "../layouts/Layout.astro";
-import HeroSectionFull from "../components/Layout/HeroSectionFull.astro";
+import HeroSectionFull from "../components/Layout/HeroSectionFull.astro"
 import ContactForm from "../components/ContactForm.astro";
 import githubLogo from "../assets/github-mark.png";
 import Grid from "../components/Layout/Grid.astro";
@@ -12,11 +10,6 @@ import HFlex from "../components/Layout/HFlex.astro";
 import VFlex from "../components/Layout/VFlex.astro";
 
 const pageTitle = "Benjamin Gardiner - Web Developer";
-
-// Get all projects
-const allProjects = await getCollection("project");
-// Order projects by index
-allProjects.sort((a, b) => a.data.index - b.data.index);
 ---
 
 <Layout title={pageTitle}>
