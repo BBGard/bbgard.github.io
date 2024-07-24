@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ReturnToTopButton from "../components/ReturnToTopButton.astro";
+import ReturnToTopButton from "../components/buttons/ReturnToTopButton.astro";
 import "../styles/reset.css";
 import "../styles/global.css";
 interface Props {
@@ -32,7 +32,6 @@ const { title } = Astro.props;
       import "../scripts/effects.js";
       import "../scripts/returnToTop.js";
       import "../scripts/navHide.js";
-      import "../scripts/buttons.js";
       import "../scripts/vanilla-tilt.js";
     </script>
   </body>
