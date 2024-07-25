@@ -1,0 +1,403 @@
+---
+import Grid from "../layout/Grid.astro";
+import VFlex from "../layout/VFlex.astro";
+/**
+ * Comparison Table component for displaying a comparison table of all web plans
+ * @param _props
+ */
+---
+
+<Grid>
+  <VFlex>
+    <h2 class="comparison-heading">Comparison Table</h2>
+    <p class="comparison-description">
+      Compare all of my web plans side by side to see which one is right for you.
+    </p>
+  </VFlex>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Basic</th>
+        <th>Standard</th>
+        <th>Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Price</td>
+        <td>$500</td>
+        <td>$1000</td>
+        <td>$1500</td>
+      </tr>
+      <tr>
+        <td>Hosting</td>
+        <td>Free for 1 year</td>
+        <td>Free for 1 year</td>
+        <td>Free for 1 year</td>
+      </tr>
+      <tr>
+        <td>Domain</td>
+        <td>Free for 1 year</td>
+        <td>Free for 1 year</td>
+        <td>Free for 1 year</td>
+      </tr>
+      <tr>
+        <td>Pages</td>
+        <td>1</td>
+        <td>5</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>Design</td>
+        <td>Basic</td>
+        <td>Standard</td>
+        <td>Premium</td>
+      </tr>
+      <tr>
+        <td>Support</td>
+        <td>Email</td>
+        <td>Email + Phone</td>
+        <td>Email + Phone + Chat</td>
+      </tr>
+      <tr>
+        <td>Training</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>SEO</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Analytics</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Domain</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Email</td>
+
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Forms</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Store</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Blog</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Gallery</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Portfolio</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Contact Form</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Services</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom About</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Terms</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom Privacy Policy</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom 404 Page</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom 500 Page</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Custom 503 Page</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</Grid>
+
+<style>
+  /* Comparison Table Styles */
+  .comparison-heading {
+    font-size: 2.5rem;
+    color: var(--black-100);
+  }
+
+  .comparison-description {
+    font-size: var(--body-large);
+    color: var(--black-100);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+
+  .comparison-table th {
+    background-color: var(--black-100);
+    color: var(--white-100);
+    font-size: var(--body-large);
+    padding: 1rem;
+  }
+
+  .comparison-table td {
+    border: 1px solid var(--black-100);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr:nth-child(odd) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr:first-child {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr:first-child th {
+    border-top: 1px solid var(--black-100);
+  }
+
+  .comparison-table tr:last-child {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr:last-child td {
+    border-bottom: 1px solid var(--black-100);
+  }
+
+  .comparison-table tr:last-child td {
+    border-bottom: 1px solid var(--black-100);
+  }
+
+  .comparison-table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+  }
+
+  .comparison-table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+  }
+
+  .comparison-table tr td:first-child {
+    font-weight: 600;
+  }
+
+  .comparison-table tr td:nth-child(2) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(3) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(4) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(5) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(6) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(7) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(8) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(9) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(10) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(11) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(12) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(13) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(14) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(15) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(16) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(17) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(18) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(19) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(20) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(21) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(22) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(23) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(24) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(25) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(26) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(27) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(28) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(29) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(30) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(31) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(32) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(33) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(34) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(35) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(36) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(37) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(38) {
+    background-color: var(--black-200);
+  }
+
+  .comparison-table tr td:nth-child(39) {
+    background-color: var(--black-100);
+  }
+
+  .comparison-table tr td:nth-child(40) {
+    background-color: var(--black-200);
+  }
+
+  </style>
