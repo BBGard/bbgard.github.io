@@ -11,8 +11,20 @@ document.querySelector('.hamburger').addEventListener('click', () => {
   // document.querySelector('body').classList.toggle('no-scroll');
 });
 
+// Slide out close icon
+document.querySelector('.slide-out-close-icon').addEventListener('click', () => {
+  // Remove the expanded class from the nav-links
+  document.querySelector('.slide-out-menu').classList.remove('expanded');
+
+  // Remove the is-active class from the hamburger
+  document.querySelector('.hamburger').classList.remove('is-active');
+
+  // Remove the no-scroll class from the body
+  // document.querySelector('body').classList.remove('no-scroll');
+});
+
 // Add alistener to nav-links to close the menu when a link is clicked
-document.querySelectorAll('.email-text a').forEach((link) => {
+document.querySelectorAll('.nav-links a').forEach((link) => {
   link.addEventListener('click', () => {
     // Remove the expanded class from the nav-links
     document.querySelector('.slide-out-menu').classList.remove('expanded');

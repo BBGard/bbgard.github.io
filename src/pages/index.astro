@@ -14,7 +14,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 ---
 
 <Layout title={pageTitle}>
-  <main>
+  <main id="home">
     <HeroSectionFull minHeight="calc(100svh - 5rem)" margin="4rem 0 0 0 ">
       <h1 class="hero-heading fade-in" data-tilt>BBGard</h1>
       <a class="down-chevron hero-chevron" href="#about">
@@ -31,7 +31,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       </a>
     </HeroSectionFull>
     <SectionFull id="about">
-      <h2 class="about-heading accent">Modern websites. No BS.</h2>
+      <h2 class="about-heading accent">Modern websites. <span class="no-bs">No BS.</span></h2>
       <p class="about-text">
         I'm a freelance web developer specializing in sleek, minimalist designs.
         My process is <strong
@@ -190,6 +190,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     .about-heading {
       font-size: 4.5rem;
       color: var(--white-100);
+			text-align: center;
     }
 
     .about-text {
@@ -198,6 +199,10 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       max-width: 800px;
       text-align: center;
     }
+
+		.no-bs {
+			white-space: nowrap;
+		}
 
     .accent {
       color: var(--gold-100);
@@ -240,6 +245,38 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 			max-width: 600px;
 			text-align: center;
 			margin-bottom: 2rem;
+		}
+
+		@media screen and (max-width: 991px) {
+
+			.about-heading, .about-text, .contact-heading {
+				max-width: 600px;
+			}
+
+
+
+		}
+
+		@media screen and (max-width: 768px) {
+			.about-text, .services-description {
+				padding: 0 1rem;
+			}
+
+			.services-heading {
+				margin-left: 2rem;
+			}
+
+			.about-heading {
+				font-size: var(--heading-1);
+				padding: 0 1rem;
+			}
+
+			.contact-heading {
+				font-size: var(--heading-2);
+				padding: 0 1rem;
+				margin-top: 2rem;
+			}
+
 		}
   </style>
 </Layout>
