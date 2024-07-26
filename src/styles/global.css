@@ -69,12 +69,12 @@
   --color-black-10: #e6e6e6;
 
   /* White */
-  --color-whiite-100: #ffffff;
-  --color-whiite-90: #f2f2f2;
-  --color-whiite-80: #e6e6e6;
-  --color-whiite-70: #d9d9d9;
-  --color-whiite-60: #cccccc;
-  --color-whiite-50: #bfbfbf;
+  --color-white-100: #ffffff;
+  --color-white-90: #f2f2f2;
+  --color-white-80: #e6e6e6;
+  --color-white-70: #d9d9d9;
+  --color-white-60: #cccccc;
+  --color-white-50: #bfbfbf;
 
   /* Accent */
   --color-gold-100: #f9d34b;
@@ -163,7 +163,7 @@
 html, body {
   font-family: var(--font-family-body);
   background-color: var(--color-bg-light);
-  /* background-color: var(--color-whiite-100); */
+  /* background-color: var(--color-white-100); */
   /* background-size: 224px; */
   scroll-behavior: smooth;
   margin: 0;

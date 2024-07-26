@@ -110,7 +110,7 @@ meter {
   /* Theme: elegant newspaper style */
   /* Colors */
   --color-black-100: #000000;
-  --color-whiite-100: #ffffff;
+  --color-white-100: #ffffff;
   --color-black-70: #4c4c4c;
   --color-black-70-light: #a1a1a1;
   --color-shadow-dark-trans: rgba(76, 76, 76, 0.6);
@@ -285,12 +285,12 @@ a {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 4px 4px 0px var(--color-shadow-dark-trans);
-  background-color: var(--color-whiite-100);
+  background-color: var(--color-white-100);
   transition: all 0.2s ease-in-out;
 }
 
 .tag:hover {
-  background-color: var(--color-whiite-100);
+  background-color: var(--color-white-100);
   box-shadow: 3px 3px 0px var(--color-black-70-color-transparent);
   transform: translate(2px, 2px);
 }
@@ -342,7 +342,7 @@ strong {
   border-radius: 0.25rem;
   border: 0.125rem solid var(--color-black-70);
   background-color: var(--color-black-70);
-  color: var(--color-whiite-100);
+  color: var(--color-white-100);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
@@ -354,7 +354,7 @@ strong {
 
 .btn:hover {
   background-color: var(--color-black-100);
-  color: var(--color-whiite-100);
+  color: var(--color-white-100);
   box-shadow: 3px 3px 0px var(--color-black-70-color-transparent);
   transform: translate(2px, 2px);
 }
