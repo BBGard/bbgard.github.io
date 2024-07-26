@@ -4,46 +4,68 @@ import arrow from "../../assets/double-arrow-up.svg";
 
 <div class="return-to-top shakeable">
   <a href="#top">
-    <img src={ arrow.src } alt="Return to top" />
+    <img src={arrow.src} alt="Return to top" />
   </a>
 </div>
 
 <style>
-.return-to-top {
-  display: none;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: 100;
-}
+  .return-to-top {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 100;
+  }
 
-.return-to-top a {
-  display: block;
-  width: 2.5rem;
-  height: 2.5rem;
-  box-shadow: 2px 2px 0px var(--color-shadow-dark-trans);
-      transition: all 0.2s ease-in-out;
-      border-radius: 0.25rem;
-      border: 0.125rem solid var(--color-black-70);
-      background-color: var(--color-black-70);
-  padding: 0.25rem;
-  transition: all 0.3s ease-in-out;
-}
+  .return-to-top a {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    box-shadow: 2px 2px 0px var(--color-shadow-dark-trans);
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.25rem;
+    border: 0.125rem solid var(--color-black-70);
+    background-color: var(--color-black-70);
+    padding: 0.25rem;
+    transition: all 0.2s ease-in-out;
+  }
 
-.return-to-top a:hover {
-  background-color: var(--color-whiite-100);
-      color: var(--color-black-70);
-      box-shadow: 1px 1px 0px var(--color-black-70-color-transparent);
-      transform: translate(2px, 2px);
-}
+  .return-to-top a:hover {
+    background-color: var(--color-whiite-100);
+    color: var(--color-black-70);
+    box-shadow: 1px 1px 0px var(--color-black-70-color-transparent);
+    transform: translate(2px, 2px);
+  }
 
-.return-to-top a img {
-  width: 2rem;
-  filter: invert(1);
-  transition: none;
-}
+  .card-style-glass::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+  }
+  .card-style-glass:hover {
+    transform: scale(1.05);
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-color: var(--color-gold-100);
+  }
 
-.return-to-top a:hover img {
-  filter: invert(0);
-}
+  .return-to-top a img {
+    width: 2rem;
+    filter: invert(1);
+    /* transition: none; */
+    transition: all 0.2s ease-in-out;
+
+  }
+
+  .return-to-top a:hover img {
+    filter: invert(0);
+  }
 </style>

@@ -94,7 +94,9 @@ const {
   }
   .card-style-glass:hover {
     transform: scale(1.05);
-    backdrop-filter: blur(4px);
+    /* NOTE: setting to none causes jumpy animation, setting to blur causes blurred text */
+    /* backdrop-filter: blur(4px); */
+    backdrop-filter: none;
     background-color: rgba(255, 255, 255, 0.35);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.5);
