@@ -1,0 +1,40 @@
+---
+/**
+ * Succes page for form submission
+ * @param _props
+ */
+
+// import Grid from "../components/layout/Grid.astro";
+// import VFlex from "../components/layout/VFlex.astro";
+import Button from "../components/buttons/Button.astro";
+import Layout from "../layouts/Layout.astro";
+import SectionFull from "../components/layout/SectionFull.astro";
+const pageTitle = "Benjamin Gardiner - Web Developer";
+---
+
+<Layout title={pageTitle}>
+  <main>
+    <SectionFull>
+        <h1 class="success-heading">Success!</h1>
+        <p class="success-description">
+          Your message has been sent successfully.<br />I'll get back to you as soon as possible.<br />Looking forward to working with you!
+        </p>
+        <Button link="/" text="Return Home" />
+    </SectionFull>
+  </main>
+</Layout>
+<style>
+  .success-heading {
+    font-size: var(--heading-1);
+    color: var(--black-100);
+    text-align: center;
+  }
+
+  .success-description {
+    font-size: var(--body-large);
+    color: var(--black-100);
+    text-align: center;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>
