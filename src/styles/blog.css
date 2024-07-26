@@ -109,24 +109,24 @@ meter {
   /* Define variables */
   /* Theme: elegant newspaper style */
   /* Colors */
-  --black-100: #000000;
-  --white-100: #ffffff;
-  --black-70: #4c4c4c;
-  --black-70-light: #a1a1a1;
-  --background-dark-transparent: rgba(76, 76, 76, 0.6);
-  --black-70-color: #a800ab;
-  --black-70-color-light: #fdf6ff;
-  --black-70-color-transparent: rgba(168, 0, 171, 0.6);
-  --background-light: #ffffff;
-  --background-dark: #000000;
+  --color-black-100: #000000;
+  --color-whiite-100: #ffffff;
+  --color-black-70: #4c4c4c;
+  --color-black-70-light: #a1a1a1;
+  --color-shadow-dark-trans: rgba(76, 76, 76, 0.6);
+  --color-black-70-color: #a800ab;
+  --color-black-70-color-light: #fdf6ff;
+  --color-black-70-color-transparent: rgba(168, 0, 171, 0.6);
+  --color-bg-light: #ffffff;
+  --color-bg-dark: #000000;
 
 
 
  /* Fonts */
  --font-primary: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
- --font-logo:  'Nimbus Mono PS', 'Courier New', monospace;
- /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
- --font-code: 'Fira Code', monospace;
+ --font-family-logo:  'Nimbus Mono PS', 'Courier New', monospace;
+ /* --font-family-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
+ --font-family-code: 'Fira Code', monospace;
 
   /* Font sizes */
   --font-size-1: 2rem;
@@ -149,8 +149,8 @@ meter {
 html, body {
   font-family: var(--font-primary);
   font-size: var(--font-size-4);
-  color: var(--black-100);
-  background-color: var(--background-light);
+  color: var(--color-black-100);
+  background-color: var(--color-bg-light);
   background-size: 224px;
   scroll-behavior: smooth;
   margin: 0;
@@ -263,7 +263,7 @@ p {
 }
 
 a {
-  color: var(--black-70-color);
+  color: var(--color-black-70-color);
 }
 
 .tags {
@@ -278,20 +278,20 @@ a {
   margin: 0.25em;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  border: 0.125rem solid var(--background-dark-transparent);
+  border: 0.125rem solid var(--color-shadow-dark-trans);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 4px 4px 0px var(--background-dark-transparent);
-  background-color: var(--white-100);
+  box-shadow: 4px 4px 0px var(--color-shadow-dark-trans);
+  background-color: var(--color-whiite-100);
   transition: all 0.2s ease-in-out;
 }
 
 .tag:hover {
-  background-color: var(--white-100);
-  box-shadow: 3px 3px 0px var(--black-70-color-transparent);
+  background-color: var(--color-whiite-100);
+  box-shadow: 3px 3px 0px var(--color-black-70-color-transparent);
   transform: translate(2px, 2px);
 }
 
@@ -326,7 +326,7 @@ blockquote {
   margin: 0;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  border-left: 0.25rem solid rgb(var(--black-70));
+  border-left: 0.25rem solid rgb(var(--color-black-70));
 }
 
 strong {
@@ -340,22 +340,22 @@ strong {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  border: 0.125rem solid var(--black-70);
-  background-color: var(--black-70);
-  color: var(--white-100);
+  border: 0.125rem solid var(--color-black-70);
+  background-color: var(--color-black-70);
+  color: var(--color-whiite-100);
   text-decoration: none;
   text-align: center;
   font-size: var(--font-size-4);
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 6px 6px 0px var(--background-dark-transparent);
+  box-shadow: 6px 6px 0px var(--color-shadow-dark-trans);
   transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
-  background-color: var(--black-100);
-  color: var(--white-100);
-  box-shadow: 3px 3px 0px var(--black-70-color-transparent);
+  background-color: var(--color-black-100);
+  color: var(--color-whiite-100);
+  box-shadow: 3px 3px 0px var(--color-black-70-color-transparent);
   transform: translate(2px, 2px);
 }
 

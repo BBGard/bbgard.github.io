@@ -52,98 +52,106 @@
 }
 
 :root {
-  /* Define variables */
-  /* Theme: elegant newspaper style */
-  /* Colors */
-  --black-100: #000000;
-  --black-90: #1a1a1a;
-  --black-80: #333333;
-  --black-70: #4d4d4d;
-  --black-60: #666666;
-  --black-50: #808080;
-  --black-40: #999999;
-  --black-30: #b3b3b3;
-  --black-20: #cccccc;
-  --black-10: #e6e6e6;
+  /* -------------------------- Variables ---------------------------- */
 
-  --white-100: #ffffff;
-  --white-90: #f2f2f2;
-  --white-80: #e6e6e6;
-  --white-70: #d9d9d9;
-  --white-60: #cccccc;
-  --white-50: #bfbfbf;
+  /* --------------- Colors --------------------*/
 
-  --gold-100: #f9d34b;
-  --gold-90: #cdaf40;
-  --gold-80: #a28a35;
+  /* Black */
+  --color-black-100: #000000;
+  --color-black-90: #1a1a1a;
+  --color-black-80: #333333;
+  --color-black-70: #4d4d4d;
+  --color-black-60: #666666;
+  --color-black-50: #808080;
+  --color-black-40: #999999;
+  --color-black-30: #b3b3b3;
+  --color-black-20: #cccccc;
+  --color-black-10: #e6e6e6;
 
-  --red-100: #c60000;
-  --green-100: #00a300;
+  /* White */
+  --color-whiite-100: #ffffff;
+  --color-whiite-90: #f2f2f2;
+  --color-whiite-80: #e6e6e6;
+  --color-whiite-70: #d9d9d9;
+  --color-whiite-60: #cccccc;
+  --color-whiite-50: #bfbfbf;
 
+  /* Accent */
+  --color-gold-100: #f9d34b;
+  --color-gold-90: #cdaf40;
+  --color-gold-80: #a28a35;
 
-  --background-light: #f0f1f3;
-  --background-nav: #ececec;
-  --background-dark: #000000;
+  /* Message (erro/succeess) */
+  --color-red-100: #c60000;
+  --color-green-100: #00a300;
 
-  --background-dark-transparent: rgba(77, 77, 77, 0.7);
-  --background-dark-transparent-2: rgba(77, 77, 77, 0.9);
+  /* Background */
+  --color-bg-light: #f0f1f3;
+  --color-bg-nav: #ececec;
+  --color-bg-dark: #000000;
 
-  --link: #2258cb;
+  /* Shadows */
+  --color-shadow-dark-trans: rgba(77, 77, 77, 0.7);
+  --color-shadow-dark-trans-2: rgba(77, 77, 77, 0.9);
 
-
-
-  /* Fonts */
-
-
-  --font-title: 'Anton SC', sans-serif;
-  --font-heading: 'Inter-Black', sans-serif;
-  --font-body: 'Inter-Regular', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-  --font-body-light: 'Inter-Light', sans-serif;
-  --font-body-bold: 'Inter-Bold', sans-serif;
-  --font-body-medium: 'Inter-Medium', sans-serif;
-  --font-body-semi-bold: 'Inter-SemiBold', sans-serif;
-  --font-body-thin: 'Inter-Thin', sans-serif;
-  --font-logo: 'Nimbus Mono PS', 'Courier New', monospace;
-  /* --font-logo: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; */
-  --font-code: 'Fira Code', monospace;
+  /* Links */
+  --color-link: #2258cb;
 
 
 
-  /* Font sizes */
-  --body-large: 1.2rem;
-  --body-medium: 1.125rem;
+  /* ---------------------------- Fonts --------------------------------*/
+
+  /* --------- Font Family ----------- */
+  --font-family-title: 'Anton SC', sans-serif;
+  --font-family-heading: 'Inter-Black', sans-serif;
+  --font-family-body: 'Inter-Regular', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-family-body-light: 'Inter-Light', sans-serif;
+  --font-family-body-bold: 'Inter-Bold', sans-serif;
+  --font-family-body-medium: 'Inter-Medium', sans-serif;
+  --font-family-body-semi-bold: 'Inter-SemiBold', sans-serif;
+  --font-family-body-thin: 'Inter-Thin', sans-serif;
+  --font-family-logo: 'Nimbus Mono PS', 'Courier New', monospace;
+  --font-family-code: 'Fira Code', monospace;
+
+  /* --------- Font Size ----------- */
+  /* Body */
+  --font-size-large: 1.2rem;
+  --font-size-medium: 1.125rem;
   --body-regular: 1rem;
-  --body-small: 0.875rem;
-  --body-tiny: 0.75rem;
+  --font-size-small: 0.875rem;
+  --font-size-tiny: 0.75rem;
 
-  --heading-1: 3.5rem;
-  --heading-2: 3rem;
-  --heading-3: 2.5rem;
-  --heading-4: 2rem;
-  --heading-5: 1.5rem;
-  --heading-6: 1.25rem;
+  /* Headings */
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 3rem;
+  --font-size-h3: 2.5rem;
+  --font-size-h4: 2rem;
+  --font-size-h5: 1.5rem;
+  --font-size-h6: 1.25rem;
 
 }
 
 @media screen and (max-width: 991px) {
   :root {
-    --heading-1: 3.25rem;
-    --heading-2: 2.75rem;
-    --heading-3: 2.25rem;
-    --heading-4: 1.75rem;
-    --heading-5: 1.5rem;
-    --heading-6: 1.25rem;
+    /* Headings */
+    --font-size-h1: 3.25rem;
+    --font-size-h2: 2.75rem;
+    --font-size-h3: 2.25rem;
+    --font-size-h4: 1.75rem;
+    --font-size-h5: 1.5rem;
+    --font-size-h6: 1.25rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   :root {
-    --heading-1: 2.5rem;
-    --heading-2: 2.25rem;
-    --heading-3: 2rem;
-    --heading-4: 1.5rem;
-    --heading-5: 1.25rem;
-    --heading-6: 1.125rem;
+    /* Headings */
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2.25rem;
+    --font-size-h3: 2rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1.125rem;
   }
 }
 
@@ -153,9 +161,9 @@
 
 
 html, body {
-  font-family: var(--font-body);
-  background-color: var(--background-light);
-  /* background-color: var(--white-100); */
+  font-family: var(--font-family-body);
+  background-color: var(--color-bg-light);
+  /* background-color: var(--color-whiite-100); */
   /* background-size: 224px; */
   scroll-behavior: smooth;
   margin: 0;
@@ -177,38 +185,38 @@ img {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em;
   letter-spacing: 2px;
-  font-family: var(--font-heading);
+  font-family: var(--font-family-heading);
 }
 
 h1 {
-  font-size: var(--heading-1);
+  font-size: var(--font-size-h1);
   font-weight: 600;
 }
 
 
 h2 {
-  font-size: var(--heading-2);
+  font-size: var(--font-size-h2);
   font-weight: 600;
 }
 
 h3 {
-  font-size: var(--heading-3);
+  font-size: var(--font-size-h3);
   font-weight: 500;
 }
 
 
 h4 {
-  font-size: var(--heading-4);
+  font-size: var(--font-size-h4);
   font-weight: 500;
 }
 
 h5 {
-  font-size: var(--heading-5);
+  font-size: var(--font-size-h5);
   font-weight: 500;
 }
 
 h6 {
-  font-size: var(--heading-6);
+  font-size: var(--font-size-h6);
   font-weight: 500;
 }
 
@@ -223,7 +231,7 @@ p {
 }
 
 a {
-  color: var(--black-70);
+  color: var(--color-black-70);
   text-decoration: none;
 }
 
@@ -250,7 +258,7 @@ blockquote {
   margin: 0;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  border-left: 0.25rem solid rgb(var(--black-70));
+  border-left: 0.25rem solid rgb(var(--color-black-70));
 }
 
 strong {
@@ -311,7 +319,7 @@ em {
 }
 
 .bullet-text a {
-  color: var(--link);
+  color: var(--color-link);
 }
 
 .icon-li {
@@ -323,7 +331,7 @@ em {
 
 .bullet-icon {
   /* font-size: var(--font-size-1); */
-  color: var(--gold-100-dark);
+  color: var(--color-gold-100-dark);
   width: 10%;
 }
 

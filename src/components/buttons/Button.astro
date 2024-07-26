@@ -13,24 +13,24 @@ const { text = "Button", link = "#", target="", variant="normal"} = Astro.props;
   .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    font-size: var(--heading-5);
-    background-color: var(--gold-100);
+    font-size: var(--font-size-h5);
+    background-color: var(--color-gold-100);
     font-weight: 600;
-    font-family: var(--font-heading);
-    color: var(--black-100);
+    font-family: var(--font-family-heading);
+    color: var(--color-black-100);
     text-decoration: none;
     border: none;
     border-radius: 4px;
-    box-shadow: 2px 2px 0px var(--background-dark-transparent);
+    box-shadow: 2px 2px 0px var(--color-shadow-dark-trans);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
 
 
   .btn:hover {
-    /* color: var(--black-70); */
-    background-color: var(--gold-90);
-    /* box-shadow: inset 2px 2px 0px var(--background-dark-transparent); */
+    /* color: var(--color-black-70); */
+    background-color: var(--color-gold-90);
+    /* box-shadow: inset 2px 2px 0px var(--color-shadow-dark-trans); */
     box-shadow: none;
     transform: translate(2px, 2px);
   }
