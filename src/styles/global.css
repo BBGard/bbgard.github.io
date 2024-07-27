@@ -516,3 +516,18 @@ em {
     opacity: 100%;
   }
 }
+
+/* Disable some animations on mobile devices */
+@media screen and (max-width: 768px) {
+  /* .slide-in-animation {
+    animation: none;
+  }
+
+  .fade-in-animation {
+    animation: none;
+  } */
+
+  .shake {
+    animation: none !important;
+  }
+}

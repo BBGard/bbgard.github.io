@@ -493,7 +493,12 @@ if (typeof document !== "undefined") {
   /**
    * Auto load
    */
-  VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+
+  // Only load if on desktop device
+  if (window.innerWidth > 768) {
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+  }
+
 }
 
 return VanillaTilt;
