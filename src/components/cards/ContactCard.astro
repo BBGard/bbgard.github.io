@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<article class=`contact-card ${style} slide-in-bottom` data-tilt>
+<article class=`contact-card ${style} slide-in-bottom`>
   <div class="contact-card-content">
     <div class="contact-card-header">
       <div class="heading-container">
@@ -31,6 +31,7 @@ const {
       <a class="phone fade-in" href=`tel:${phone}` target="_blank">{phone}</a>
       <p class="address fade-in">{address}</p>
       <p class="description fade-in">{description}</p>
+      <p class="tagline fade-in">Let's build something great together!</p>
     </div>
   </div>
 </article>
@@ -40,11 +41,12 @@ const {
   .contact-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: stretch;
     width: 100%;
     max-width: 600px;
-    margin: 2rem auto;
+    /* height: 100%; */
+    /* margin: 2rem auto; */
     background-color: var(--color-white-100);
     padding: 1.4rem;
     border-radius: 4px;
@@ -52,14 +54,6 @@ const {
 
   }
 
-  /* Semi transparent card */
-  .glass {
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(4px);
-  }
 
   .heading-container {
     display: flex;
@@ -100,8 +94,53 @@ const {
     font-weight: 600;
   }
 
+  .tagline {
+    font-size: var(--font-size-medium);
+    /* text-transform: uppercase; */
+    font-weight: 600;
+    color: var(--color-black-100);
+    background-color: var(--color-gold-100);
+    border-radius: 2px;
+    padding: 0.5rem 0.75rem;
+    width: fit-content;
+  }
 
+  /* Card Styles */
+   /* Semi transparent card */
+   .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+  }
 
+  /* No background */
+  .none {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  /* No background, white text */
+  .text-only-white {
+    background-color: transparent;
+    color: var(--color-white-100);
+    /* box-shadow: none; */
+  }
+
+  /* No background, black text */
+  .text-only-black {
+    background-color: transparent;
+    color: var(--color-black-100);
+    /* box-shadow: none; */
+  }
+
+  .text-only-white .email, .text-only-white .description {
+    color: var(--color-white-100);
+  }
+
+  .text-only-white .phone, .text-only-white .address {
+    color: var(--color-white-60);
+  }
   @media (max-width: 991px) {
     .card {
       max-width: 100%;

@@ -1,10 +1,12 @@
 ---
 /**
  * Horizontal Flex Container
- * @param _props
+ * @param {string} width - The width of the container
  */
+
+const {width} = Astro.props;
 ---
-<div class="hflex">
+<div class=`hflex width-${width}`>
   <slot />
 </div>
 
@@ -13,9 +15,35 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-items: center; */
+    /* align-items: space-around; */
     gap: 1rem;
+    width: 100%;
   }
+
+  .width-100 {
+    width: 100%;
+  }
+
+  .width-90 {
+    width: 90%;
+  }
+
+  .width-80 {
+    width: 80%;
+  }
+
+  .width-70 {
+    width: 70%;
+  }
+
+  .width-60 {
+    width: 60%;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
+
 
   @media (max-width: 768px) {
     .hflex {

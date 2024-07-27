@@ -3,15 +3,17 @@
  * Vertical Flexbox container
  * @param {string} align - Align items in the container
  * @param {string} justify - Justify content in the container
+ * @param {string} width - The width of the container
  */
 
 const {
   align = "center",
   justify = "center",
+  width = "",
 } = Astro.props;
 ---
 
-<div class=`vflex align-${align} justify-${justify}`>
+<div class=`vflex align-${align} justify-${justify} width-${width}`>
   <slot />
 </div>
 
@@ -20,6 +22,7 @@ const {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* justify-content: space-between; */
     align-items: center;
     gap: 1rem;
     margin: 2rem 0;
@@ -65,7 +68,29 @@ const {
     align-items: space-around;
   }
 
+  .width-100 {
+    width: 100%;
+  }
 
+  .width-90 {
+    width: 90%;
+  }
+
+  .width-80 {
+    width: 80%;
+  }
+
+  .width-70 {
+    width: 70%;
+  }
+
+  .width-60 {
+    width: 60%;
+  }
+
+  .width-50 {
+    width: 50%;
+  }
 
 
 </style>

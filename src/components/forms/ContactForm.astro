@@ -4,11 +4,12 @@
  * Public access key: d80958f4-49ea-4d23-b0dc-030c3e93d9d5
  */
 
-import ContactCard from "../cards/ContactCard.astro"
+ const { style="glass" } = Astro.props;
+
 ---
 
 <div class="form-container">
-  <div class="contact glass slide-in-bottom">
+  <div class=`contact ${style} slide-in-bottom`>
     <h3>Get in touch!</h3>
     <form
       name="contact"
@@ -79,8 +80,8 @@ import ContactCard from "../cards/ContactCard.astro"
         />
       </div>
       <div class="form-group btn-container">
-        <button type="reset">Clear</button>
         <button type="submit" class="send-btn">Send</button>
+        <button type="reset" class="clear-btn">Clear</button>
       </div>
     </form>
   </div>
@@ -90,33 +91,27 @@ import ContactCard from "../cards/ContactCard.astro"
   .form-container {
     max-width: 600px;
     width: 100%;
+    height: 100%;
+    /* flex: 1; */
     /* margin: 2rem auto; */
   }
 
   .contact {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: stretch;
     height: 100%;
     background-color: var(--color-white-100);
-    padding: 1.4rem;
+    padding: 3rem;
     border-radius: 4px;
     box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
-  }
-
-  .glass {
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(4px);
   }
 
 
   .contact h3 {
     font-size: var(--font-size-h3);
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
   }
 
   .form-group {
@@ -124,8 +119,9 @@ import ContactCard from "../cards/ContactCard.astro"
   }
 
   .form-group label {
-    font-size: var(--body-regular);
+    font-size: var(--fonst-size-regular);
     font-family: var(--font-family-body-regular);
+    font-weight: 600;
     display: block;
     margin-bottom: 0.5rem;
   }
@@ -134,9 +130,13 @@ import ContactCard from "../cards/ContactCard.astro"
   .form-group textarea {
     width: 100%;
     padding: 0.5rem;
-    font-size: var(--body-regular);
-    border: 2px solid var(--color-black-60);
-    border-radius: 4px;
+    padding-left: 0;
+    font-size: var(--fonst-size-regular);
+    /* border: 2px solid var(--color-black-60); */
+    border-bottom: 2px solid var(--color-black-50);
+    /* border-left: 2px solid var(--color-black-20); */
+    margin-bottom: 2rem;
+    /* border-radius: 4px; */
   }
 
   .form-group input:focus,
@@ -184,7 +184,7 @@ import ContactCard from "../cards/ContactCard.astro"
   .form-group button {
     display: inline-block;
     padding: 0.5rem 1rem;
-    font-size: var(--font-size-h5);
+    font-size: var(--font-size-large);
     background-color: var(--color-gold-100);
     font-weight: 600;
     font-family: var(--font-family-heading);
@@ -207,5 +207,36 @@ import ContactCard from "../cards/ContactCard.astro"
   .form-group.btn-container .send-btn {
     width: 40%;
     text-align: center;
+  }
+
+  .form-group.btn-container .clear-btn {
+    font-size: var(--font-size-);
+    background-color: var(--color-black-20);
+  }
+
+  /* Form styles */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  /* No background */
+  .none {
+    background-color: transparent;
+  }
+
+  /* No background, white text */
+  .text-only-white {
+    background-color: transparent;
+    color: var(--color-white-100);
+  }
+
+  /* No background, black text */
+  .text-only-black {
+    background-color: transparent;
+    color: var(--color-black-100);
   }
 </style>

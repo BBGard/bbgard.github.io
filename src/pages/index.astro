@@ -157,7 +157,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     <!-- <SectionFull id="faq" background="white">
 
 		</SectionFull> -->
-    <SectionFull id="contact" background="special-2">
+    <!-- <SectionFull id="contact" background="special-2">
       <h2 class="contact-heading fade-in">
         Ready to build your online presence?
       </h2>
@@ -172,6 +172,28 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
         style="glass"
       />
       <ContactForm />
+    </SectionFull> -->
+    <SectionFull id="contact" background="black-80">
+      <HFlex width="60">
+        <VFlex width="100" justify="center">
+          <h2 class="contact-heading slide-in-bottom">
+            Ready to build your online presence?
+          </h2>
+          <ContactCard
+            style="text-only-white"
+            title="BBGard"
+            email="ben.b.gardiner@gmail.com"
+            ,
+            phone=""
+            ,
+            address="Daylesford, Victoria, Australia"
+            description="I work with clients across Australia and the world. If you aren't nearby, we can meet virtually."
+          />
+        </VFlex>
+        <VFlex width="100">
+          <ContactForm style="white" />
+        </VFlex>
+      </HFlex>
     </SectionFull>
   </main>
 
@@ -257,12 +279,13 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     }
 
     .contact-heading {
-      /* font-size: 4.5rem; */
-      font-size: var(--font-size-h1);
-      color: var(--color-black-100);
+      font-size: var(--font-size-h3);
+      /* color: var(--color-black-100); */
+      color: var(--color-white-100);
       max-width: 600px;
-      text-align: center;
+      /* text-align: center; */
       margin-bottom: 2rem;
+      padding-left: 1rem;
     }
 
     @media screen and (max-width: 991px) {
