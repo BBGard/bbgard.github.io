@@ -1,0 +1,110 @@
+---
+/**
+ * Contact Details Component
+ * @param {string} title - The title of the card
+ * @param {string} email - The email of the card
+ * @param {string} phone - The phone number of the card
+ * @param {string} address - The address of the card
+ * @param {string} style - The style of the card
+ * @param {string} description - The description for the card
+ */
+
+const {
+  title = "",
+  email = "",
+  phone = "",
+  address = "",
+  description = "",
+  style = "",
+
+} = Astro.props;
+---
+
+<article class=`card ${style} slide-in-bottom` data-tilt>
+  <div class="card-content">
+    <div class="card-header">
+      <div class="heading-container">
+      <h2 class="title fade-in">{title}</h2>
+        <h2 class="sub-title fade-in">Web Development</h2>
+    </div>
+      <a class="email fade-in" href=`mailto:${email}` target="_blank">{email}</a>
+      <a class="phone fade-in" href=`tel:${phone}` target="_blank">{phone}</a>
+      <p class="address fade-in">{address}</p>
+      <p class="description fade-in">{description}</p>
+    </div>
+  </div>
+</article>
+
+<style>
+  /* Card Styles */
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: var(--color-white-100);
+    padding: 1.4rem;
+    border-radius: 4px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+
+  }
+
+  /* Semi transparent card */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  .heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--color-black-20);
+    margin-bottom: 1rem;
+  }
+
+  .title, .sub-title {
+    font-size: var(--font-size-h3);
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-family: var(--font-family-title);
+  }
+
+  .sub-title {
+    font-family: var(--font-family-code);
+    font-size: var(--font-size-large);
+    color: var(--color-black-50);
+    letter-spacing: 1px;
+  }
+
+  .email, .phone, .address, .description {
+    font-size: var(--font-size-regular);
+    margin-bottom: 0.5rem;
+  }
+
+  .email {
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .phone, .address {
+    color: var(--color-black-50);
+    font-weight: 600;
+  }
+
+
+
+  @media (max-width: 991px) {
+    .card {
+      max-width: 100%;
+    }
+  }
+</style>

@@ -395,7 +395,7 @@ em {
 }
 
 .slide-in-bottom.slide-in-animation {
-  animation: slide-in-from-bottom 1s;
+  animation: slide-in-from-bottom 1.5s;
 }
 
 .slide-in-top.slide-in-animation {

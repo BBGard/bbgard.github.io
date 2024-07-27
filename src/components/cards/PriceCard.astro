@@ -11,8 +11,8 @@
  * @param {string} btnLink - The link for the button
  * @param {string} btnText - The text for the button
  */
-import Button from "./buttons/Button.astro";
-import InfoIcon from "./buttons/InfoIcon.astro";
+import Button from "../buttons/Button.astro";
+import InfoIcon from "../buttons/InfoIcon.astro";
 
 const {
   title = "",
@@ -28,23 +28,23 @@ const {
 } = Astro.props;
 ---
 
-<article class=`card card-style-${style} shakeable`>
+<article class=`card card-style-${style} shakeable fade-in`>
   <div class="card-content">
     <div class="card-header">
-      <h2 class="title">{title}</h2>
-      <h3 class="price">{price}<span class="sub"></span></h3>
-      <p class="feature-highlight">{featureHighlight}</p>
-      <p class="recurring-price">{recurringPrice}</p>
-      <p class="description">{description}</p>
+      <h2 class="title fade-in">{title}</h2>
+      <h3 class="price fade-in">{price}<span class="sub"></span></h3>
+      <p class="feature-highlight fade-in">{featureHighlight}</p>
+      <p class="recurring-price fade-in">{recurringPrice}</p>
+      <p class="description fade-in">{description}</p>
     </div>
-    <div class="card-button-group">
+    <div class="card-button-group fade-in">
       <Button link={btnLink} text={btnText} variant="full" />
     </div>
     <div class="features">
       <ul class="feature-list">
         {
           features.map((feature: String) => (
-            <li class="feature">
+            <li class="feature fade-in">
               {feature}
               <InfoIcon info={featuresInfo[features.indexOf(feature)]} />
             </li>

@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSectionFull from "../components/layout/HeroSectionFull.astro";
 import ContactForm from "../components/forms/ContactForm.astro";
-// import githubLogo from "../assets/github-mark.png";
+import ContactCard from "../components/cards/ContactCard.astro";
 import Grid from "../components/layout/Grid.astro";
 import SectionFull from "../components/layout/SectionFull.astro";
-import PriceCard from "../components/PriceCard.astro";
+import PriceCard from "../components/cards/PriceCard.astro";
 // import HFlex from "../components/layout/HFlex.astro";
 import VFlex from "../components/layout/VFlex.astro";
 import Button from "../components/buttons/Button.astro";
+import HFlex from "../components/layout/HFlex.astro";
 
 const pageTitle = "Benjamin Gardiner - Web Developer";
 ---
@@ -16,9 +17,10 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 <Layout title={pageTitle}>
   <main id="home">
     <HeroSectionFull minHeight="calc(100svh - 5rem)" margin="4rem 0 0 0 ">
-      <h1 class="hero-heading fade-in shakeable" data-tilt>BBGard</h1>
+      <h1 class="hero-heading slide-in-left shakeable" data-tilt>BBGard</h1>
       <a class="down-chevron hero-chevron" href="#about">
         <svg
+          class="slide-in-bottom"
           xmlns="http://www.w3.org/2000/svg"
           width="5em"
           height="5em"
@@ -31,20 +33,23 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       </a>
     </HeroSectionFull>
     <SectionFull id="about">
-      <h2 class="about-heading accent">Modern websites. <span class="no-bs">No BS.</span></h2>
-      <p class="about-text">
+      <h2 class="about-heading accent fade-in">
+        Modern websites. <span class="no-bs">No BS.</span>
+      </h2>
+      <p class="about-text fade-in">
         I'm a freelance web developer specializing in sleek, minimalist designs.
         My process is <strong
           ><em class="accent">straightforward, no frills, just results.</em
           ></strong
         >
       </p>
-      <p class="about-text">
+      <p class="about-text fade-in">
         <!-- Let's build something great together. -->
         Let me take care of the hard work.
       </p>
       <a class="down-chevron" href="#services">
         <svg
+          class="fade-in"
           xmlns="http://www.w3.org/2000/svg"
           width="5em"
           height="5em"
@@ -58,8 +63,8 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     </SectionFull>
     <SectionFull id="services" background="special">
       <VFlex>
-        <h2 class="services-heading">Site Plans</h2>
-        <p class="services-description">
+        <h2 class="services-heading fade-in">Site Plans</h2>
+        <p class="services-description fade-in">
           All plans include a free domain and hosting for the first year.
           <br />I build my sites using basic HTML, CSS, and JavaScript,
           WordPress, or Webflow depending on your needs. I can also provide
@@ -135,25 +140,39 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
           />
         </Grid>
         <div class="terms-container">
-          <p class="terms">
+          <p class="terms fade-in">
             * Domain name registration and hosting costs are subject to change
             and may vary depending on the domain name and hosting provider.
           </p>
         </div>
-				<!-- <Button link="#compare" text="Compare Plans" /> -->
+        <!-- <Button link="#compare" text="Compare Plans" /> -->
       </VFlex>
     </SectionFull>
-		<!-- <SectionFull id="compare" background="black">
+    <!-- <SectionFull id="additional" background="black">
 
 		</SectionFull> -->
-		<!-- <SectionFull id="faq" background="white">
+    <!-- <SectionFull id="compare" background="black">
 
 		</SectionFull> -->
-		<SectionFull id="contact" background="special-2">
-			<h2 class="contact-heading">Ready to build your online presence?
-			</h2>
-			<ContactForm />
-		</SectionFull>
+    <!-- <SectionFull id="faq" background="white">
+
+		</SectionFull> -->
+    <SectionFull id="contact" background="special-2">
+      <h2 class="contact-heading fade-in">
+        Ready to build your online presence?
+      </h2>
+      <ContactCard
+        title="BBGard"
+        email="ben.b.gardiner@gmail.com"
+        ,
+        phone=""
+        ,
+        address="Daylesford, Victoria, Australia"
+        description="I work with clients across Australia and the world. If you aren't nearby, we can meet virtually."
+        style="glass"
+      />
+      <ContactForm />
+    </SectionFull>
   </main>
 
   <style>
@@ -161,9 +180,8 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       font-size: calc(100vw / 4);
       font-family: var(--font-family-title);
       line-height: 100%;
-			cursor: pointer;
+      cursor: pointer;
     }
-
 
     .down-chevron {
       margin-top: 2rem;
@@ -190,7 +208,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     .about-heading {
       font-size: 4.5rem;
       color: var(--color-white-100);
-			text-align: center;
+      text-align: center;
     }
 
     .about-text {
@@ -200,9 +218,9 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       text-align: center;
     }
 
-		.no-bs {
-			white-space: nowrap;
-		}
+    .no-bs {
+      white-space: nowrap;
+    }
 
     .accent {
       color: var(--color-gold-100);
@@ -238,45 +256,45 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       text-align: center;
     }
 
-		.contact-heading {
-			/* font-size: 4.5rem; */
-			font-size: var(--font-size-h1);
+    .contact-heading {
+      /* font-size: 4.5rem; */
+      font-size: var(--font-size-h1);
       color: var(--color-black-100);
-			max-width: 600px;
-			text-align: center;
-			margin-bottom: 2rem;
-		}
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-		@media screen and (max-width: 991px) {
+    @media screen and (max-width: 991px) {
+      .about-heading,
+      .about-text,
+      .contact-heading {
+        max-width: 600px;
+      }
+    }
 
-			.about-heading, .about-text, .contact-heading {
-				max-width: 600px;
-			}
+    @media screen and (max-width: 768px) {
+      .about-text,
+      .services-description,
+      .about-heading,
+      .terms {
+        padding: 0 1rem;
+      }
 
+      .services-heading {
+        margin-left: 2rem;
+      }
 
+      .about-heading {
+        /* font-size: var(--font-size-h1); */
+        padding: 0 1rem;
+      }
 
-		}
-
-		@media screen and (max-width: 768px) {
-			.about-text, .services-description, .about-heading, .terms {
-				padding: 0 1rem;
-			}
-
-			.services-heading {
-				margin-left: 2rem;
-			}
-
-			.about-heading {
-				/* font-size: var(--font-size-h1); */
-				padding: 0 1rem;
-			}
-
-			.contact-heading {
-				/* font-size: var(--font-size-h2); */
-				padding: 0 1rem;
-				margin-top: 2rem;
-			}
-
-		}
+      .contact-heading {
+        /* font-size: var(--font-size-h2); */
+        padding: 0 1rem;
+        margin-top: 2rem;
+      }
+    }
   </style>
 </Layout>

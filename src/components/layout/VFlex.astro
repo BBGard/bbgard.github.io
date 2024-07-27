@@ -1,11 +1,17 @@
 ---
 /**
  * Vertical Flexbox container
- * @param _props
+ * @param {string} align - Align items in the container
+ * @param {string} justify - Justify content in the container
  */
+
+const {
+  align = "center",
+  justify = "center",
+} = Astro.props;
 ---
 
-<div class="vflex">
+<div class=`vflex align-${align} justify-${justify}`>
   <slot />
 </div>
 
@@ -18,5 +24,48 @@
     gap: 1rem;
     margin: 2rem 0;
   }
+
+  .align-start {
+    align-items: flex-start;
+  }
+
+  .align-end {
+    align-items: flex-end;
+  }
+
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-end {
+    justify-content: flex-end;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-around {
+    justify-content: space-around;
+  }
+
+  .justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .align-evenly {
+    align-items: stretch;
+  }
+
+  .align-between {
+    align-items: space-between;
+  }
+
+  .align-around {
+    align-items: space-around;
+  }
+
+
+
 
 </style>
