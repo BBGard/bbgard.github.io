@@ -12,13 +12,28 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-slate-900">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Benjamin Gardiner" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="BBGard - Web Development Services in Daylesford, Ballarat, Macedon Ranges, Kyneton, Castlemaine, and Creswick" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Bennjamin Gardiner" />
+    <meta name="keywords" content="web development, Daylesford web developer, Ballarat web developer, Macedon Ranges web developer, Kyneton web developer, Castlemaine web developer, Creswick web developer, web design" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="BBGard - Professional Web Development Services in Daylesford, Ballarat, Macedon Ranges, Kyneton, Castlemaine, and Creswick" />
+    <!-- <meta property="og:image" content="/path/to/image.jpg" /> -->
+    <meta property="og:url" content="https://bbgard.github.io/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content="BBGard - Professional Web Development Services in Daylesford, Ballarat, Macedon Ranges, Kyneton, Castlemaine, and Creswick" />
+    <!-- <meta name="twitter:image" content="/path/to/image.jpg" /> -->
     <title>{title}</title>
   </head>
   <body>
