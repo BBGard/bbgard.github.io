@@ -79,6 +79,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
         <Grid columns={3} gap={2}>
           <PriceCard
             style="glass"
+						className="sticky card-1"
             title="Basic"
             price="$750"
             featureHighlight="Free hosting and domain for the first year"
@@ -100,6 +101,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
           />
           <PriceCard
             style="glass"
+						className="sticky card-2"
             title="Standard"
             price="$1500"
             featureHighlight="Free hosting and domain for the first year"
@@ -123,6 +125,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
           />
           <PriceCard
             style="glass"
+						className="sticky card-3"
             title="e-Commerce"
             price="$3000"
             featureHighlight="Free hosting and domain for the first year"
@@ -321,6 +324,21 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       color: var(--color-gold-100);
     }
 
+		/* Make it sticky */
+	.sticky {
+		position: sticky;
+		top: 20%;
+	}
+
+	@media screen and (max-width: 768px) {
+		.sticky {
+			position: relative;
+		}
+	}
+
+
+
+/* Services Section */
     .services-heading {
       font-size: var(--font-size-h2);
       color: var(--color-black-100);

@@ -10,6 +10,8 @@
  * @param {array} featuresInfo - An array of information for each feature
  * @param {string} btnLink - The link for the button
  * @param {string} btnText - The text for the button
+ * @param {string} style - The style of the card
+ * @param {string} className - Custom classes for the card
  */
 import Button from "../buttons/Button.astro";
 import InfoIcon from "../buttons/InfoIcon.astro";
@@ -25,10 +27,11 @@ const {
   btnLink = "",
   btnText = "Get Started",
   style = "",
+  className="",
 } = Astro.props;
 ---
 
-<article class=`card card-style-${style} fade-in`>
+<article class=`card card-style-${style} fade-in ${className}`>
   <div class="card-content">
     <div class="card-header">
       <h2 class="title fade-in">{title}</h2>
@@ -182,9 +185,35 @@ const {
     margin-top: 2rem;
   }
 
-  @media (max-width: 991px) {
+  @media screen and (max-width: 991px) {
     .card {
       max-width: 100%;
     }
+  }
+
+  /* Special Classes */
+  .sticky {
+    position: sticky;
+    top: 1rem;
+    left: 0;
+    align-self: start;
+  }
+
+  @media screen and (max-width: 991px) {
+    .sticky, .card-style-glass:hover {
+     background-color: var(--color-bg-light);
+    }
+  }
+
+  .card-1 {
+    z-index: 1;
+  }
+
+  .card-2 {
+    z-index: 2;
+  }
+
+  .card-3 {
+    z-index: 3;
   }
 </style>

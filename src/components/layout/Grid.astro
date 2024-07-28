@@ -2,18 +2,22 @@
 /**
  * Basic Grid component
  * @param props
+ * @param {number} columns - The number of columns in the grid
+ * @param {number} gap - The gap between grid items
+ * @param {string} className - Additional classes to add to the grid
  */
 
-const { columns = 3, gap = 1 } = Astro.props;
+const { columns = 3, gap = 1, className="" } = Astro.props;
 ---
 
-<div class=`grid grid-col-${columns} grid-gap-${gap}`>
+<div class=`grid grid-col-${columns} grid-gap-${gap} ${className}`>
   <slot />
 </div>
 
 <style>
   .grid {
     display: grid;
+    position: relative;
     min-width: 100%;
     padding: 0 1rem;
   }
@@ -56,4 +60,5 @@ const { columns = 3, gap = 1 } = Astro.props;
       grid-template-columns: 1fr;
     }
   }
+
 </style>
