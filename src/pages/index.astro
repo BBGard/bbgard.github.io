@@ -36,8 +36,8 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       </a>
     </HeroSectionFull>
     <SectionFull id="about">
-			<div class="about-container sticky-10">
-      <h2 class="about-heading accent fade-in">
+			<!-- <div class="about-container "> -->
+      <h2 class="about-heading accent fade-in sticky-20">
         Modern websites. <span class="no-bs">No BS.</span>
       </h2>
       <p class="about-text fade-in">
@@ -65,7 +65,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
           ></path></svg
         >
       </a>
-		</div>
+		<!-- </div> -->
     </SectionFull>
     <SectionFull id="services" background="special">
       <VFlex>
@@ -221,12 +221,41 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       right: 5rem;
 
       font-size: var(--font-size-h2);
+			/* font-size: calc(100vw / 40); */
       font-family: var(--font-family-logo);
       text-decoration: none;
       color: var(--color-white-100);
       background-color: var(--color-black-100);
       transition: all 0.2s ease-in-out;
     }
+
+		@media screen and (min-width: 2560px) {
+			.subtitle {
+				font-size: var(--font-size-h1);
+			}
+		}
+		@media screen and (max-width: 1500px) {
+			.subtitle {
+				/* bottom: 65%; */
+				right: 2rem;
+				font-size: var(--font-size-h3);
+
+			}
+		}
+
+		@media screen and (max-width: 991px) {
+			.subtitle {
+				bottom: -25%;
+				right: 0;
+				width: 100%;
+				text-align: center;
+			}
+
+			.hero-container {
+				margin-bottom: 5rem;
+			}
+		}
+
 
     .down-chevron {
       margin-top: 2rem;
@@ -321,8 +350,15 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       .about-heading,
       .about-text,
       .contact-heading {
-        max-width: 600px;
+        max-width: 700px;
       }
+
+			.contact-heading {
+				text-align: center;
+			}
+
+
+
     }
 
     @media screen and (max-width: 768px) {
@@ -344,7 +380,6 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 
       .contact-heading {
         /* font-size: var(--font-size-h2); */
-        text-align: center;
         padding: 0 1rem;
         margin-top: 2rem;
       }
