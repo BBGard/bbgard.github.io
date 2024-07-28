@@ -17,7 +17,10 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 <Layout title={pageTitle}>
   <main id="home">
     <HeroSectionFull minHeight="calc(100svh - 5rem)" margin="4rem 0 0 0 ">
-      <h1 class="hero-heading slide-in-left shakeable" data-tilt>BBGard</h1>
+      <div class="hero-container" data-tilt>
+        <h1 class="hero-heading slide-in-left shakeable" >BBGard</h1>
+        <h2 class="subtitle slide-in-right shakeable">Web Development</h2>
+      </div>
       <a class="down-chevron hero-chevron" href="#about">
         <svg
           class="slide-in-bottom"
@@ -198,11 +201,28 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
   </main>
 
   <style>
+    .hero-container {
+      position: relative;
+      /* outline: solid greenyellow 2px; */
+    }
     .hero-heading {
       font-size: calc(100vw / 4);
       font-family: var(--font-family-title);
       line-height: 100%;
       cursor: pointer;
+    }
+
+    .subtitle {
+      position: absolute;
+			bottom: 40%;
+      right: 5rem;
+
+      font-size: var(--font-size-h2);
+      font-family: var(--font-family-logo);
+      text-decoration: none;
+      color: var(--color-white-100);
+      background-color: var(--color-black-100);
+      transition: all 0.2s ease-in-out;
     }
 
     .down-chevron {
@@ -315,7 +335,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
 
       .contact-heading {
         /* font-size: var(--font-size-h2); */
-				text-align: center;
+        text-align: center;
         padding: 0 1rem;
         margin-top: 2rem;
       }
