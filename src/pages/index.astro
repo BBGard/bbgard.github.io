@@ -36,6 +36,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
       </a>
     </HeroSectionFull>
     <SectionFull id="about">
+			<div class="about-container sticky-10">
       <h2 class="about-heading accent fade-in">
         Modern websites. <span class="no-bs">No BS.</span>
       </h2>
@@ -50,6 +51,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
         <!-- Let's build something great together. -->
         Let me take care of the hard work.
       </p>
+
       <a class="down-chevron" href="#services">
         <svg
           class="fade-in"
@@ -63,6 +65,7 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
           ></path></svg
         >
       </a>
+		</div>
     </SectionFull>
     <SectionFull id="services" background="special">
       <VFlex>
@@ -247,6 +250,12 @@ const pageTitle = "Benjamin Gardiner - Web Developer";
     }
 
     /* About Section */
+		.about-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
     .about-heading {
       font-size: 4.5rem;
       color: var(--color-white-100);

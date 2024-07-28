@@ -2,13 +2,16 @@
 /**
  * @name SectionFull
  * @desc Section with full height
+ * @prop {string} id - The id of the section
+ * @prop {string} background - The background style of the section
+ * @prop {string} className - Custom classes for the section
  */
 
 // Destructure the id prop from Astro.props
-const { id = "", background = "white" } = Astro.props;
+const { id = "", background = "white", className="" } = Astro.props;
 ---
 
-<section class=`section bg-${background}` id={id}>
+<section class=`section bg-${background} ${className}` id={id}>
   <slot />
 </section>
 
@@ -45,5 +48,7 @@ const { id = "", background = "white" } = Astro.props;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 10%, rgba(0, 0, 0, 0.2)) , url('/src/assets/images/bg-special-3.svg') center center;
     background-size: cover;
   }
+
+
 
 </style>

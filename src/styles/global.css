@@ -364,6 +364,17 @@ em {
   overflow: hidden;
 }
 
+/* Make it sticky */
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sticky-10 {
+  position: sticky;
+  top: 10%;
+}
+
 
 /* Animations  */
 
