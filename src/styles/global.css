@@ -367,7 +367,7 @@ em {
 /* Make it sticky */
 .sticky {
   position: sticky;
-  top: 0;
+  top: 1rem;
 }
 
 .sticky-10 {
@@ -379,6 +379,7 @@ em {
   position: sticky;
   top: 20%;
 }
+
 
 
 /* Animations  */
