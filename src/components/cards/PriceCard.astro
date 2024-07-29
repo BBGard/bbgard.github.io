@@ -66,12 +66,20 @@ const {
     justify-content: space-between;
     align-items: stretch;
     height: 100%;
-    background-color: var(--color-white-50);
+    background-color: var(--color-white-80);
     padding: 1.4rem;
     max-width: 400px;
     border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 2px 5px 32px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-color: var(--color-gold-100);
   }
 
   /* Semi transparent card */

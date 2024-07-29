@@ -157,9 +157,44 @@ const pageTitle = "BBGard - Web Development";
         <!-- <Button link="#compare" text="Compare Plans" /> -->
       </VFlex>
     </SectionFull>
-    <!-- <SectionFull id="additional" background="black">
+    <SectionFull id="additional" background="black">
+      <VFlex>
+        <h2 class="additional-heading fade-in">Additional Services</h2>
 
-		</SectionFull> -->
+        <Grid columns={4} gap={2}>
+          <PriceCard
+						className="sticky card-3"
+            title="e-Commerce"
+            price="$3000"
+            featureHighlight="Free hosting and domain for the first year"
+            recurringPrice="Renews at $500 / year"
+            description="Full e-commerce functionality, perfect for online stores."
+            btnLink="#contact"
+            features={[
+              "Up to 10 pages",
+              "Mobile friendly design",
+              "E-commerce functionality & SEO",
+              "Basic store training",
+              "Free hosting & domain for the 1st year *",
+            ]}
+            featuresInfo={[
+              "Landing page (home) with hero section, services, and anything else relevant. Seperate pages for services, about, store, shopping cart, contact (including contact form), and anything else relevant.",
+              "Responsive design to suit all devices from desktops/laptops to mobiles,",
+              "E-commerce functionality including product pages, shopping cart, checkout, etc. Search Engine Optimisation",
+              "Basic store training to get you started with managing your store.",
+              "Free hosting & domain for the 1st year info, then approximatly $500 / year after.*",
+            ]}
+           />
+          <PriceCard />
+
+          <PriceCard />
+
+          <PriceCard />
+
+        </Grid>
+
+        </VFlex>
+		</SectionFull>
     <!-- <SectionFull id="compare" background="black">
 
 		</SectionFull> -->
@@ -323,12 +358,16 @@ const pageTitle = "BBGard - Web Development";
 
 
 /* Services Section */
-    .services-heading {
+    .services-heading, .additional-heading {
       font-size: var(--font-size-h2);
       color: var(--color-black-100);
       align-self: flex-start;
       text-align: left;
       margin: 0 1rem;
+    }
+
+    .additional-heading {
+      color: var(--color-white-100);
     }
 
     .services-description {
