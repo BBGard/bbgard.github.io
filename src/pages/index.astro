@@ -8,6 +8,7 @@ import SectionFull from "../components/layout/SectionFull.astro";
 import PriceCard from "../components/cards/PriceCard.astro";
 // import HFlex from "../components/layout/HFlex.astro";
 import VFlex from "../components/layout/VFlex.astro";
+import Container from "../components/layout/Container.astro";
 import Button from "../components/buttons/Button.astro";
 import HFlex from "../components/layout/HFlex.astro";
 
@@ -164,7 +165,7 @@ const pageTitle = "BBGard - Web Development";
       </VFlex>
     </SectionFull>
     <SectionFull id="additional" background="black">
-      <VFlex>
+      <Container size="large">
         <h2 class="additional-heading fade-in">Additional Services</h2>
 
         <Grid columns={4} gap={2}>
@@ -263,7 +264,7 @@ const pageTitle = "BBGard - Web Development";
         <div class="btn-container">
           <Button link="#contact" text="Get in Touch" />
         </div>
-      </VFlex>
+      </Container>
     </SectionFull>
     <!-- <SectionFull id="compare" background="black">
 

@@ -2,11 +2,12 @@
 /**
   @description Div block with predefined styles to keep content centered and aligned.
   On bigger screens defaults to 940px, on smaller screens defaults to 100% width.
-  @param {string} width - Width of the container. Defaults to 940px.
 */
+
+const { className = "", size="" } = Astro.props;
 ---
 
-<div class="container" >
+<div class=`container ${className} ${size}` >
   <slot />
 </div>
 
@@ -15,6 +16,14 @@
     margin: 0 auto;
     max-width: 940px;
     width: 100%;
+  }
+
+  .large {
+    max-width: 1200px;
+  }
+
+  .full {
+    max-width: 100%;
   }
 
   @media (max-width: 991px) {
