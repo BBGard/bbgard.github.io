@@ -18,7 +18,7 @@ const pageTitle = "BBGard - Web Development";
   <main id="home">
     <HeroSectionFull minHeight="calc(100svh - 5rem)" margin="4rem 0 0 0 ">
       <div class="hero-container" data-tilt>
-        <h1 class="hero-heading slide-in-left shakeable" >BBGard</h1>
+        <h1 class="hero-heading slide-in-left shakeable">BBGard</h1>
         <h2 class="subtitle slide-in-right shakeable">Web Development</h2>
       </div>
       <a class="down-chevron hero-chevron" href="#about">
@@ -36,7 +36,7 @@ const pageTitle = "BBGard - Web Development";
       </a>
     </HeroSectionFull>
     <SectionFull id="about">
-			<!-- <div class="about-container "> -->
+      <!-- <div class="about-container "> -->
       <h2 class="about-heading accent fade-in sticky">
         Modern websites. <span class="no-bs">No BS.</span>
       </h2>
@@ -65,7 +65,7 @@ const pageTitle = "BBGard - Web Development";
           ></path></svg
         >
       </a>
-		<!-- </div> -->
+      <!-- </div> -->
     </SectionFull>
     <SectionFull id="services" background="special">
       <VFlex>
@@ -79,12 +79,14 @@ const pageTitle = "BBGard - Web Development";
         <Grid columns={3} gap={2}>
           <PriceCard
             style="glass"
-						className="sticky card-1"
+            className="sticky card-1"
             title="Basic"
             price="$750"
             featureHighlight="Free hosting and domain for the first year"
             recurringPrice="Renews at approx $280 / year"
-            description={["Simple, one-page websites for personal use or small businesses."]}
+            description={[
+              "Simple, one-page websites for personal use or small businesses.",
+            ]}
             btnLink="#contact"
             features={[
               "Single page site",
@@ -101,12 +103,14 @@ const pageTitle = "BBGard - Web Development";
           />
           <PriceCard
             style="glass"
-						className="sticky card-2"
+            className="sticky card-2"
             title="Standard"
             price="$1500"
             featureHighlight="Free hosting and domain for the first year"
             recurringPrice="Renews at $280 / year"
-            description={["Up to 5 pages, perfect for small businesses or personal portfolios."]}
+            description={[
+              "Up to 5 pages, perfect for small businesses or personal portfolios.",
+            ]}
             btnLink="#contact"
             features={[
               "Up to 5 pages",
@@ -125,12 +129,14 @@ const pageTitle = "BBGard - Web Development";
           />
           <PriceCard
             style="glass"
-						className="sticky card-3"
+            className="sticky card-3"
             title="e-Commerce"
             price="$3000"
             featureHighlight="Free hosting and domain for the first year"
             recurringPrice="Renews at $500 / year"
-            description={["Full e-commerce functionality, perfect for online stores."]}
+            description={[
+              "Full e-commerce functionality, perfect for online stores.",
+            ]}
             btnLink="#contact"
             features={[
               "Up to 10 pages",
@@ -154,7 +160,7 @@ const pageTitle = "BBGard - Web Development";
             and may vary depending on the domain name and hosting provider.
           </p>
         </div>
-        <!-- <Button link="#compare" text="Compare Plans" /> -->
+        <Button link="#additional" text="Additional Services" />
       </VFlex>
     </SectionFull>
     <SectionFull id="additional" background="black">
@@ -163,37 +169,102 @@ const pageTitle = "BBGard - Web Development";
 
         <Grid columns={4} gap={2}>
           <PriceCard
-						className="sticky card-3"
+            className="sticky card-1"
             title="Maintenance"
             price="$500"
             featureHighlight="Updates, upgrades, addons"
-            description={["Website broken, old, outdated?", "Let me have a look around and fix things up."]}
+            description={[
+              "Website broken, old, outdated?",
+              "Let me have a look around and fix things up.",
+            ]}
             btnLink="#contact"
             features={[
               "CMS & plugin updates",
               "Site style changes",
               "Fix broken links",
-              "Add new pages",
-              "Add new features",
+              "Add new pages / features",
+              "Hosting migration / setup",
             ]}
             featuresInfo={[
               "Keep your site up to date with the latest security patches and features.",
               "Change the look and feel of your site to keep it fresh and modern.",
               "Fix any broken links or pages that are no longer working.",
-              "Add new pages to your site to keep your content fresh and up to date.",
-              "Add new features to your site to keep your users engaged and coming back for more.",
+              "Add new pages or features to your site to keep your content fresh and up to date.",
+              "Move your site to a new hosting provider or set up a new hosting account for you.",
             ]}
-           />
-          <PriceCard />
+          />
+          <PriceCard
+            className="sticky card-2"
+            title="Photography"
+            price="$300"
+            featureHighlight="Product, business or portrait photography"
+            description={[
+              "Need some product photos for your store?",
+              "Or maybe some professional headshots?",
+            ]}
+            btnLink="#contact"
+            features={[
+              "Product photography",
+              "Business photography",
+              "Portrait photography",
+              "Photo editing & optimisation",
+            ]}
+            featuresInfo={[
+              "Up to 100 high quality product photos to show off your products in the best light.",
+              "Professional photos of your business premises, staff, products, etc.",
+              "Professional headshots for your website, social media, or business cards.",
+              "Photo editing and optimisation to make your photos look their best.",
+            ]}
+          />
 
-          <PriceCard />
+          <PriceCard
+            className="sticky card-3"
+            title="News / blog"
+            price="$250"
+            featureHighlight="Newsletter or blog setup"
+            description={[
+              "Want to keep your customers up to date?",
+              "Share your thoughts with the world?",
+            ]}
+            btnLink="#contact"
+            features={[
+              "Newsletter setup",
+              "Blog setup",
+              "Subscrition integration",
+              "Custom styling",
+              "Additional fees may apply for mail services",
+            ]}
+            featuresInfo={[
+              "Setup a newsletter to keep your customers up to date with your latest news and offers.",
+              "Setup a blog to share your thoughts, ideas, and news with the world.",
+              "Integrate a subscription form to allow users to sign up for your newsletter or blog.",
+              "Custom styling to match your site's branding and style.",
+              "Additional fees may apply for mail services such as Mailchimp, Sendinblue, etc.",
+            ]}
+          />
 
-          <PriceCard />
-
+          <PriceCard
+            className="sticky card-4"
+            title="Custom"
+            price="Custom"
+            featureHighlight="Custom solutions"
+            description={[
+              "Have a unique problem?",
+              "Let's chat about how I can help.",
+            ]}
+            btnLink="#contact"
+            features={["Tailored solutions", "Custom pricing"]}
+            featuresInfo={[
+              "Tailored solutions to meet your unique needs.",
+              "Custom pricing based on the complexity of the project.",
+            ]}
+          />
         </Grid>
-
-        </VFlex>
-		</SectionFull>
+        <div class="btn-container">
+          <Button link="#contact" text="Get in Touch" />
+        </div>
+      </VFlex>
+    </SectionFull>
     <!-- <SectionFull id="compare" background="black">
 
 		</SectionFull> -->
@@ -238,11 +309,11 @@ const pageTitle = "BBGard - Web Development";
 
     .subtitle {
       position: absolute;
-			bottom: 40%;
+      bottom: 40%;
       right: 5rem;
 
       font-size: var(--font-size-h2);
-			/* font-size: calc(100vw / 40); */
+      /* font-size: calc(100vw / 40); */
       font-family: var(--font-family-logo);
       text-decoration: none;
       color: var(--color-white-100);
@@ -250,48 +321,46 @@ const pageTitle = "BBGard - Web Development";
       transition: all 0.2s ease-in-out;
     }
 
+    @media screen and (min-width: 2560px) {
+      .subtitle {
+        font-size: var(--font-size-h1);
+      }
+    }
+    @media screen and (max-width: 1500px) {
+      .subtitle {
+        /* bottom: 65%; */
+        right: 2rem;
+        font-size: var(--font-size-h3);
+      }
+    }
 
-		@media screen and (min-width: 2560px) {
-			.subtitle {
-				font-size: var(--font-size-h1);
-			}
-		}
-		@media screen and (max-width: 1500px) {
-			.subtitle {
-				/* bottom: 65%; */
-				right: 2rem;
-				font-size: var(--font-size-h3);
-			}
-		}
+    @media screen and (max-width: 991px) {
+      .subtitle {
+        bottom: -25%;
+        right: 0;
+        width: 100%;
+        text-align: center;
+      }
 
-		@media screen and (max-width: 991px) {
-			.subtitle {
-				bottom: -25%;
-				right: 0;
-				width: 100%;
-				text-align: center;
-			}
+      .hero-container {
+        margin-bottom: 5rem;
+      }
+    }
 
-			.hero-container {
-				margin-bottom: 5rem;
-			}
-		}
+    @media screen and (max-width: 768px) {
+      .subtitle {
+        font-size: var(--font-size-h4);
+        bottom: -30%;
+      }
+    }
 
-		@media screen and (max-width: 768px) {
-			.subtitle {
-				font-size: var(--font-size-h4);
-				bottom: -30%;
-			}
-		}
-
-		.hero-chevron {
-			/* position: absolute;
+    .hero-chevron {
+      /* position: absolute;
 			bottom: 2rem;
 			left: 50%;
 			transform: translateX(-50%);
 			 */
-		}
-
+    }
 
     .down-chevron {
       margin-top: 2rem;
@@ -315,12 +384,12 @@ const pageTitle = "BBGard - Web Development";
     }
 
     /* About Section */
-		.about-container {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .about-heading {
       font-size: 4.5rem;
       color: var(--color-white-100);
@@ -342,22 +411,21 @@ const pageTitle = "BBGard - Web Development";
       color: var(--color-gold-100);
     }
 
-		/* Make it sticky */
-	.sticky {
-		position: sticky;
-		top: 20%;
-	}
+    /* Make it sticky */
+    .sticky {
+      position: sticky;
+      top: 20%;
+    }
 
-	@media screen and (max-width: 768px) {
-		.sticky {
-			position: relative;
-		}
-	}
+    @media screen and (max-width: 768px) {
+      .sticky {
+        position: relative;
+      }
+    }
 
-
-
-/* Services Section */
-    .services-heading, .additional-heading {
+    /* Services Section */
+    .services-heading,
+    .additional-heading {
       font-size: var(--font-size-h2);
       color: var(--color-black-100);
       align-self: flex-start;
@@ -391,6 +459,16 @@ const pageTitle = "BBGard - Web Development";
       text-align: center;
     }
 
+    /* Additional */
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    /* Contact */
+
     .contact-heading {
       font-size: var(--font-size-h3);
       /* color: var(--color-black-100); */
@@ -408,18 +486,14 @@ const pageTitle = "BBGard - Web Development";
         max-width: 700px;
       }
 
-			.about-heading {
-				/* font-size: var(--font-size-h1); */
-				font-size: 3.25rem;
-			}
+      .about-heading {
+        /* font-size: var(--font-size-h1); */
+        font-size: 3.25rem;
+      }
 
-			.contact-heading {
-				text-align: center;
-			}
-
-
-
-
+      .contact-heading {
+        text-align: center;
+      }
     }
 
     @media screen and (max-width: 768px) {
