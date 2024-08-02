@@ -84,7 +84,7 @@ const pageTitle = "BBGard - Web Development";
             price="$750"
             featureHighlight="Free hosting and domain for the first year"
             recurringPrice="Renews at approx $280 / year"
-            description="Simple, one-page websites for personal use or small businesses."
+            description={["Simple, one-page websites for personal use or small businesses."]}
             btnLink="#contact"
             features={[
               "Single page site",
@@ -106,7 +106,7 @@ const pageTitle = "BBGard - Web Development";
             price="$1500"
             featureHighlight="Free hosting and domain for the first year"
             recurringPrice="Renews at $280 / year"
-            description="Up to 5 pages, perfect for small businesses or personal portfolios."
+            description={["Up to 5 pages, perfect for small businesses or personal portfolios."]}
             btnLink="#contact"
             features={[
               "Up to 5 pages",
@@ -130,7 +130,7 @@ const pageTitle = "BBGard - Web Development";
             price="$3000"
             featureHighlight="Free hosting and domain for the first year"
             recurringPrice="Renews at $500 / year"
-            description="Full e-commerce functionality, perfect for online stores."
+            description={["Full e-commerce functionality, perfect for online stores."]}
             btnLink="#contact"
             features={[
               "Up to 10 pages",
@@ -157,32 +157,31 @@ const pageTitle = "BBGard - Web Development";
         <!-- <Button link="#compare" text="Compare Plans" /> -->
       </VFlex>
     </SectionFull>
-    <!-- <SectionFull id="additional" background="black">
+    <SectionFull id="additional" background="black">
       <VFlex>
         <h2 class="additional-heading fade-in">Additional Services</h2>
 
         <Grid columns={4} gap={2}>
           <PriceCard
 						className="sticky card-3"
-            title="e-Commerce"
-            price="$3000"
-            featureHighlight="Free hosting and domain for the first year"
-            recurringPrice="Renews at $500 / year"
-            description="Full e-commerce functionality, perfect for online stores."
+            title="Maintenance"
+            price="$500"
+            featureHighlight="Updates, upgrades, addons"
+            description={["Website broken, old, outdated?", "Let me have a look around and fix things up."]}
             btnLink="#contact"
             features={[
-              "Up to 10 pages",
-              "Mobile friendly design",
-              "E-commerce functionality & SEO",
-              "Basic store training",
-              "Free hosting & domain for the 1st year *",
+              "CMS & plugin updates",
+              "Site style changes",
+              "Fix broken links",
+              "Add new pages",
+              "Add new features",
             ]}
             featuresInfo={[
-              "Landing page (home) with hero section, services, and anything else relevant. Seperate pages for services, about, store, shopping cart, contact (including contact form), and anything else relevant.",
-              "Responsive design to suit all devices from desktops/laptops to mobiles,",
-              "E-commerce functionality including product pages, shopping cart, checkout, etc. Search Engine Optimisation",
-              "Basic store training to get you started with managing your store.",
-              "Free hosting & domain for the 1st year info, then approximatly $500 / year after.*",
+              "Keep your site up to date with the latest security patches and features.",
+              "Change the look and feel of your site to keep it fresh and modern.",
+              "Fix any broken links or pages that are no longer working.",
+              "Add new pages to your site to keep your content fresh and up to date.",
+              "Add new features to your site to keep your users engaged and coming back for more.",
             ]}
            />
           <PriceCard />
@@ -194,7 +193,7 @@ const pageTitle = "BBGard - Web Development";
         </Grid>
 
         </VFlex>
-		</SectionFull> -->
+		</SectionFull>
     <!-- <SectionFull id="compare" background="black">
 
 		</SectionFull> -->

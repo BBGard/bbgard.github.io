@@ -21,7 +21,7 @@ const {
   price = "",
   featureHighlight = "",
   recurringPrice = "",
-  description = "",
+  description = [],
   features = [],
   featuresInfo = [],
   btnLink = "",
@@ -38,7 +38,10 @@ const {
       <h3 class="price fade-in">{price}<span class="sub"></span></h3>
       <p class="feature-highlight fade-in">{featureHighlight}</p>
       <p class="recurring-price fade-in">{recurringPrice}</p>
-      <p class="description fade-in">{description}</p>
+      <!-- <p class="description fade-in">{description}</p> -->
+       {description.map((desc: String) => (
+        <p class="description fade-in">{desc}</p>
+      ))}
     </div>
     <div class="card-button-group fade-in">
       <Button link={btnLink} text={btnText} variant="full" />
@@ -166,6 +169,11 @@ const {
     text-wrap: balance;
     color: var(--color-black-100);
     margin-top: 2rem;
+  }
+
+  /* Select all descriptions after 1st */
+  .description ~ * {
+    margin-top: 0;
   }
 
   .features {
