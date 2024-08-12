@@ -2,7 +2,7 @@
 // import Social from './Social.astro';
 // import githubIcon from '../assets/github-mark-white.png';
 // import linkedinIcon from '../assets/LinkedIn_icon.svg';
-import ConstructionBanner from "./special/ConstructionBanner.astro"
+import ConstructionBanner from "./special/ConstructionBanner.astro";
 ---
 
 <footer>
@@ -11,18 +11,42 @@ import ConstructionBanner from "./special/ConstructionBanner.astro"
   <!-- <p>-- Fin --</p> -->
 
   <!-- <p>© 2024 Benjamin Gardiner</p> -->
-   <ConstructionBanner />
+  <div class="badges">
+    <div
+      class="badge"
+      data-iframe-width="150"
+      data-iframe-height="270"
+      data-share-badge-id="0fc89425-a6ff-41f2-9880-2aa3537d0412"
+      data-share-badge-host="https://www.credly.com"
+    >
+    </div><script
+      type="text/javascript"
+      async
+      src="//cdn.credly.com/assets/utilities/embed.js"></script>
+  </div>
+
+  <ConstructionBanner />
 </footer>
 
 <style>
   footer {
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem 0; */
+    padding: 1rem 0;
   }
 
+  .badges {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
 
+  .badge {
+    display: flex;
+    flex-direction: column;
+  }
 </style>
