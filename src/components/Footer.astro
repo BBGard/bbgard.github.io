@@ -58,7 +58,7 @@ import ConstructionBanner from "./special/ConstructionBanner.astro";
       async
       src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
-      <!-- End badges -->
+    <!-- End badges -->
   </div>
 
   <!-- <ConstructionBanner /> -->
@@ -75,14 +75,17 @@ import ConstructionBanner from "./special/ConstructionBanner.astro";
   }
 
   .badges {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    justify-content: center;
     gap: 1rem;
-    padding-bottom: 1rem;
+    width: 100%;
   }
 
   .badge {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 150px;
   }
 </style>
