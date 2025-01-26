@@ -65,8 +65,8 @@
     </li>
     <li><a href="/#home">Home</a></li>
     <li><a href="/#about">About</a></li>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#additional">Addons</a></li>
+    <li class="disabled"><a href="/#services">Services</a></li>
+    <li class="disabled"><a href="/#additional">Addons</a></li>
     <li><a href="/#contact">Contact</a></li>
     <!-- <li><a href="/#faq">FAQ</a></li> -->
   </ul>
@@ -182,6 +182,18 @@
     display: none;
     /* outline: solid hotpink 2px; */
   }
+
+  .disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .disabled a {
+    text-decoration: line-through;
+    font-style: italic;
+  }
+
 
   .hide-nav {
     top: -5rem;
